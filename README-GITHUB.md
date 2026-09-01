@@ -2,6 +2,8 @@
 
 This folder is ready to host as a static Progressive Web App on GitHub Pages. Keep every supplied file together in the repository root.
 
+This revision replaces the remaining diagram-style answer graphics with fully rendered visual options, shortens the setup button to **Begin assessment**, and improves device-voice selection for English and Spanish audio. See `IMPLEMENTATION-BRIEF.md` for the controlled-change record.
+
 ## Publish on GitHub Pages
 
 1. Create a new GitHub repository, for example `danco-applicant-assessment`.

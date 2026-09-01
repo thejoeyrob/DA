@@ -1,4 +1,4 @@
-const CACHE_NAME = 'danco-assessment-v10-1-20260901';
+const CACHE_NAME = 'danco-assessment-v10-visual-voice-2-20260901';
 const ASSETS = [
   './','./index.html','./app.css','./app.js','./manifest.webmanifest',
   './danco-logo.webp','./danco-logo-white.png','./danco-helper-english.png','./danco-helper-spanish.png',
