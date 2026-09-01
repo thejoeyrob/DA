@@ -1,7 +1,7 @@
-const CACHE_NAME = 'danco-assessment-v10-visual-voice-2-20260901';
+const CACHE_NAME = 'danco-assessment-v12-layout-credit-20260902';
 const ASSETS = [
   './','./index.html','./app.css','./app.js','./manifest.webmanifest',
-  './danco-logo.webp','./danco-logo-white.png','./danco-helper-english.png','./danco-helper-spanish.png',
+  './danco-logo.webp','./danco-logo-white.png','./joseph-whelan-eds-white.png','./danco-helper-english.png','./danco-helper-spanish.png',
   './icon-192.png','./icon-512.png','./apple-touch-icon.png','./social-preview.png',
   './visual-epdm.png','./visual-tpo.png','./visual-pvc.png','./visual-metal.png',
   './visual-tpo_correct.png','./visual-tpo_exposed.png','./visual-tpo_fishmouth.png','./visual-tpo_badlayout.png',

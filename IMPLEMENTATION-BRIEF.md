@@ -2,7 +2,7 @@
 
 ## Objective
 
-Apply four isolated improvements to the current working assessment without altering its assessment flow, scoring, access controls, result-code format or administration functions.
+Apply six isolated improvements to the current working assessment without altering its assessment flow, scoring, access controls, result-code format or administration functions.
 
 ## Implemented changes
 
@@ -30,7 +30,19 @@ Apply four isolated improvements to the current working assessment without alter
    - Voice lists are refreshed when the browser fires `voiceschanged`, covering devices that load voices asynchronously.
 
 4. **Offline refresh**
-   - Updated only the service-worker cache identifier so existing installations request the revised code and image assets after deployment.
+   - Updated the service-worker cache identifier so existing installations request the revised code and image assets after deployment.
+
+5. **Side-by-side character placement**
+   - Replaced overlapping paired-character compositions with dedicated side-by-side columns.
+   - Applied the same non-overlap rule to the welcome view, setup and instruction guide panels, help drawer and mobile result screen.
+   - The selected-language helper retains visual emphasis without covering the second helper.
+   - The assessment flow, helper-language switching and character source files remain unchanged.
+
+6. **Creator credit and supplied logo**
+   - Added the exact credit `Design & Production by` with the supplied Joseph Whelan EDS logo in the bottom-right corner.
+   - Removed the source JPEG's white background and converted the mark to a transparent, all-white PNG for placement over the app colour.
+   - Kept the credit intentionally small, low-opacity and non-interactive so it has minimal visual impact and cannot block controls.
+   - Added the new transparent logo asset to the offline service-worker cache.
 
 ## Preserved working behaviour
 
@@ -47,6 +59,7 @@ The following were deliberately left unchanged:
 - applicant result privacy, reset behaviour and printable administrator report
 - fullscreen behaviour, PWA manifest and GitHub Pages flat-file structure
 - mascot, brand, email and existing clear roofing assets
+- all existing Danco branding and helper character artwork
 
 ## Acceptance checks
 
@@ -57,3 +70,5 @@ The following were deliberately left unchanged:
 - Spanish voice ranking selects a natural `es-US` female candidate when one is available.
 - Voice selection falls back to another matching-language voice without blocking speech.
 - Static PWA files remain root-relative and suitable for direct GitHub Pages hosting.
+- Every paired full-character presentation uses separate grid columns with no negative offsets or shared absolute positioning.
+- The creator credit reads `Design & Production by`, uses the supplied logo as a transparent white PNG and remains below interactive UI layers.
