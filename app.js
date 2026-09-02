@@ -229,12 +229,12 @@
   const VOICE_PREFERENCES = {
     en:{
       target:'en-US',regional:['en-US','en-CA'],
-      preferred:['microsoft guy','microsoft davis','microsoft christopher','microsoft eric','microsoft roger','microsoft steffan','alex','aaron','matthew','justin','joey','kevin','jason','tony','male'],
+      preferred:['aaron','reed','rocko','eddy','alex','fred','evan','nathan','matthew','microsoft guy','microsoft davis','microsoft christopher','microsoft eric','microsoft roger','microsoft steffan','daniel','tom','justin','joey','kevin','jason','tony','male'],
       avoid:['samantha','ava','allison','susan','zira','jenny','aria','female']
     },
     es:{
       target:'es-US',regional:['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'],
-      preferred:['microsoft paloma','microsoft elena','paloma','lupe','penelope','paulina','monica','gabriela','dalia','dahlia','ximena','sofia','lucia','maria','mia','victoria','isabella','carolina','female','mujer'],
+      preferred:['paulina','monica','marisol','ximena','microsoft paloma','microsoft elena','paloma','lupe','penelope','gabriela','dalia','dahlia','sofia','lucia','maria','mia','victoria','isabella','carolina','helena','laura','female','mujer'],
       avoid:['alonso','miguel','diego','jorge','carlos','antonio','pedro','male','hombre']
     }
   };
@@ -258,11 +258,14 @@
     let score=locale===target?180:45;
     const regionalIndex=profile.regional.map(normaliseLocale).indexOf(locale);
     if(regionalIndex>=0) score+=80-(regionalIndex*7);
-    if(profile.preferred.some(hasToken)) score+=115;
-    if(profile.avoid.some(hasToken)) score-=95;
-    if(/natural|neural|enhanced|premium|online/.test(identity)) score+=35;
-    if(/compact|espeak|robot/.test(identity)) score-=35;
-    if(voice.default) score+=3;
+    const preferredIndex=profile.preferred.findIndex(hasToken);
+    const avoidedIndex=profile.avoid.findIndex(hasToken);
+    if(preferredIndex>=0) score+=Math.max(45,190-(preferredIndex*7));
+    if(avoidedIndex>=0) score-=150;
+    if(/natural|neural|enhanced|premium|studio|siri/.test(identity)) score+=120;
+    if(/compact|espeak|robot|classic/.test(identity)) score-=80;
+    if(voice.localService) score+=8;
+    if(voice.default) score+=2;
     return score;
   }
   function preferredSpeechVoice(language){
@@ -286,8 +289,9 @@
     const voice=preferredSpeechVoice(language);
     utterance.lang=VOICE_PREFERENCES[language].target;
     if(voice){utterance.voice=voice;utterance.lang=voice.lang||utterance.lang;}
-    utterance.rate=language==='es'?.94:.93;
-    utterance.pitch=1;
+    utterance.rate=language==='es'?.9:.88;
+    utterance.pitch=language==='es'?1.03:.92;
+    utterance.volume=1;
     speechSynthesis.cancel();
     speechSynthesis.speak(utterance);
   }

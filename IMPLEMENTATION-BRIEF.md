@@ -2,7 +2,7 @@
 
 ## Objective
 
-Apply six isolated improvements to the current working assessment without altering its assessment flow, scoring, access controls, result-code format or administration functions.
+Apply nine isolated improvements to the current working assessment without altering its assessment flow, scoring, access controls, result-code format or administration functions.
 
 ## Implemented changes
 
@@ -44,6 +44,24 @@ Apply six isolated improvements to the current working assessment without alteri
    - Kept the credit intentionally small, low-opacity and non-interactive so it has minimal visual impact and cannot block controls.
    - Added the new transparent logo asset to the offline service-worker cache.
 
+7. **Natural voice refinement**
+   - Expanded and prioritised known higher-quality Apple, Microsoft and device voice names.
+   - Changed voice-name preference from a simple match to weighted ranking, so the strongest available candidate wins rather than whichever matching voice appears first.
+   - Increased preference for natural, neural, enhanced, premium, studio and Siri-class voices while penalising compact, classic, eSpeak and robotic voices.
+   - Tuned English delivery to a slightly lower pitch and calmer pace, and Spanish delivery to a natural female-oriented pitch and pace.
+   - Preserved graceful language and device-default fallbacks when preferred voices are unavailable.
+
+8. **Compact creator treatment and stable viewport**
+   - Reduced the creator mark to a 76-pixel desktop footprint and 68-pixel mobile footprint.
+   - Reflowed `Design & Production by` above the logo in a cleaner humanist sans-serif font.
+   - Locked the document, screens and main layout shells to the viewport width and suppressed horizontal overscroll.
+
+9. **Panel-aware prototype watermark**
+   - Removed the oversized page-level watermark layer.
+   - Added a restrained light-grey watermark within white panels.
+   - Added a darker translucent navy watermark within blue panels.
+   - Watermarks remain decorative, non-interactive and disappear when owner access is active.
+
 ## Preserved working behaviour
 
 The following were deliberately left unchanged:
@@ -72,3 +90,6 @@ The following were deliberately left unchanged:
 - Static PWA files remain root-relative and suitable for direct GitHub Pages hosting.
 - Every paired full-character presentation uses separate grid columns with no negative offsets or shared absolute positioning.
 - The creator credit reads `Design & Production by`, uses the supplied logo as a transparent white PNG and remains below interactive UI layers.
+- The creator treatment is vertically stacked and cannot increase the document's horizontal layout width.
+- The root document and every primary screen shell remain constrained to the viewport with no horizontal scrolling.
+- Prototype marks use light-grey treatment on white surfaces and dark-navy treatment on blue surfaces.
