@@ -2,7 +2,7 @@
 
 ## Objective
 
-Apply fourteen isolated app improvements and one documentation improvement without altering its assessment flow, scoring, access controls, result-code format or administration functions.
+Apply fifteen isolated app improvements and one documentation improvement without altering its assessment flow, scoring, access controls, result-code format or administration functions.
 
 ## Implemented changes
 
@@ -66,7 +66,7 @@ Apply fourteen isolated app improvements and one documentation improvement witho
    - Restricted English preference to established normal male American voices such as Microsoft Guy, Davis and Christopher, plus Apple Aaron and Alex.
    - Explicitly excludes compact, novelty, character and robotic Apple voices from English selection.
    - Restored English speech to neutral pitch and a normal conversational rate.
-   - If no approved male voice is exposed, the app falls back to a normal English device voice instead of selecting a novelty male voice.
+   - If automatic matching cannot identify a suitable male voice, the app directs the reviewer to the device-voice tester instead of selecting a novelty or unidentified default.
 
 11. **Full-name-only applicant setup**
    - Removed the application-number field from the applicant setup screen.
@@ -81,7 +81,7 @@ Apply fourteen isolated app improvements and one documentation improvement witho
    - Clarified that the first successful visit should be completed online so the app can prepare its offline files.
 
 13. **High-quality American English male voice correction**
-   - Preserved the approved Spanish female voice scoring and delivery unchanged.
+   - Restored the approved Spanish female preference order and its established delivery settings.
    - Rebuilt English selection around explicit American male voice candidates, prioritising Apple Aaron/Alex, Microsoft neural male voices and clearly identified Google US English male voices.
    - Matches the English voice provider to the selected Spanish voice provider where possible, giving the closest male equivalent available on the same device.
    - Prevents known female, novelty and character voices from being selected for English.
@@ -93,11 +93,12 @@ Apply fourteen isolated app improvements and one documentation improvement witho
    - Replays the most recent instruction, question or set of answer choices in the selected language.
    - The repeat control works on demand even when audio support was not enabled during setup.
 
-15. **Forced English voice update and strict gender safeguard**
-   - Versioned the JavaScript, CSS and service-worker URLs so an installed PWA cannot continue serving the previous English voice logic from its old cache.
-   - English speech now waits for an approved `en-US` male voice and does not silently substitute the device's female or novelty default.
-   - If a device exposes no approved American male voice, the app reports that limitation instead of playing an incorrect or disturbing substitute voice.
-   - Spanish female voice selection and delivery remain unchanged.
+15. **Device-specific voice testing, selection and locking**
+   - Versioned the JavaScript, CSS and service-worker URLs so an installed PWA cannot continue serving previous voice logic from its old cache.
+   - Expanded automatic iPhone matching to include Evan, Aaron, Nathan and Apple's numbered male Siri voices while retaining strict novelty-voice exclusions.
+   - Added a bilingual **Test and save voice** control inside Help that lists the real English or Spanish voices exposed by the current device.
+   - Stores English and Spanish selections independently, preventing a later browser voice-list reorder from silently replacing either approved voice.
+   - Restored the Spanish female preference order used by the earlier good build; reviewers can test and lock the exact Spanish voice they prefer.
 
 ## Preserved working behaviour
 
@@ -123,8 +124,9 @@ The following were deliberately left unchanged:
 - Every visual question still has four options and the same correct answer index.
 - English voice ranking selects a natural American male candidate when one is available.
 - English voice ranking rejects compact and known novelty/character voices.
-- Spanish voice ranking selects a natural `es-US` female candidate when one is available.
-- Voice selection falls back to another matching-language voice without blocking speech.
+- Spanish voice ranking selects the established preferred female candidate when one is available.
+- English and Spanish voice choices can be auditioned and saved independently inside Help.
+- A saved voice is reused by stable device identifier on future sessions.
 - Static PWA files remain root-relative and suitable for direct GitHub Pages hosting.
 - Every paired full-character presentation uses separate grid columns with no negative offsets or shared absolute positioning.
 - The creator credit reads `Design & Production by`, uses the supplied logo as a transparent white PNG and remains below interactive UI layers.
@@ -136,5 +138,5 @@ The following were deliberately left unchanged:
 - English audio selects an explicit `en-US` male voice and never selects a known female or novelty voice when a supported male voice is available.
 - Spanish female voice ranking, pacing and pitch remain unchanged.
 - The Help drawer repeats the most recent assessment audio in either supported language.
-- Existing installed copies request the v17 voice script directly rather than receiving a stale cached JavaScript file.
+- Existing installed copies request the v18 voice script directly rather than receiving a stale cached JavaScript file.
 - English never falls through to an unverified default voice.
