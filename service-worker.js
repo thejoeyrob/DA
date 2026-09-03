@@ -1,6 +1,6 @@
-const CACHE_NAME = 'danco-assessment-v18-device-voice-selector-20260903';
+const CACHE_NAME = 'danco-assessment-v19-clean-voice-gate-20260903';
 const ASSETS = [
-  './','./index.html','./app.css?v=18.0.0','./app.js?v=18.0.0','./manifest.webmanifest',
+  './','./index.html','./app.css?v=19.0.0','./app.js?v=19.0.0','./manifest.webmanifest',
   './danco-logo.webp','./danco-logo-white.png','./joseph-whelan-eds-white.png','./danco-helper-english.png','./danco-helper-spanish.png',
   './icon-192.png','./icon-512.png','./apple-touch-icon.png','./social-preview.png',
   './visual-epdm.png','./visual-tpo.png','./visual-pvc.png','./visual-metal.png',

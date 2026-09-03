@@ -13,7 +13,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="icon-192.png">
-  <link rel="stylesheet" href="app.css?v=18.0.0">
+  <link rel="stylesheet" href="app.css?v=19.0.0">
   <title>Danco Roofing Applicant Assessment</title>
 </head>
 <body class="prototype-locked">
@@ -211,12 +211,9 @@
       <button class="button button-secondary button-wide" type="button" data-action="repeat-audio"><span aria-hidden="true">↻</span><span data-i18n="repeatAudio">Repeat spoken audio</span></button>
       <small data-i18n="repeatAudioHint">Hear the current instruction or question again.</small>
       <div class="voice-setup" id="narration-voice-setup">
-        <label for="narration-voice-select" data-i18n="voiceLabel">English narration voice</label>
-        <select id="narration-voice-select" aria-describedby="narration-voice-hint">
-          <option value="" data-i18n="voiceLoading">Finding voices on this device…</option>
-        </select>
-        <button class="button voice-test-button" type="button" data-action="test-narration-voice"><span aria-hidden="true">▶</span><span data-i18n="testVoice">Test and save voice</span></button>
-        <small id="narration-voice-hint" data-i18n="voiceHint">A recommended American male voice is selected automatically. Test another available voice here if needed.</small>
+        <strong data-i18n="voiceLabel">Narration voice</strong>
+        <small id="narration-voice-hint" data-i18n="voiceHint">English uses only an Enhanced/Premium American male voice. Spanish automatically uses the original preferred female voice.</small>
+        <p class="voice-status" id="narration-voice-status" aria-live="polite"></p>
       </div>
     </div>
     <button class="button button-primary button-wide help-confirm" type="button" data-action="close-help" data-i18n="gotIt">Got it</button>
@@ -278,6 +275,6 @@
     <img src="joseph-whelan-eds-white.png" alt="" aria-hidden="true">
   </aside>
 
-  <script src="app.js?v=18.0.0" defer></script>
+  <script src="app.js?v=19.0.0" defer></script>
 </body>
 </html>
