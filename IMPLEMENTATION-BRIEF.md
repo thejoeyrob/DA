@@ -93,15 +93,12 @@ Apply fifteen isolated app improvements and one documentation improvement withou
    - Replays the most recent instruction, question or set of answer choices in the selected language.
    - The repeat control works on demand even when audio support was not enabled during setup.
 
-15. **Screen-recording voice correction**
-   - Inspected the supplied iPhone recording and confirmed the previous selector exposed Apple novelty/compact voices including Bells, Bubbles, Jester, Junior, Organ, Superstar, Trinoids, Whisper, Wobble and Zarvox.
-   - Removed the manual voice picker so testing a novelty voice can no longer make it appear as the recommended voice.
-   - English now plays only through a recognised Enhanced/Premium `en-US` male voice; otherwise the app remains silent and shows a concise setup status instead of substituting a female or novelty voice.
-   - Spanish has been restored to the original automatic female-voice preference logic used before manual voice saving was introduced.
-   - Preserved the previously approved Spanish pacing/pitch (`0.90` / `1.03`); English now uses the same measured pace with neutral pitch (`0.90` / `1.00`).
-   - Moved `speechSynthesis.cancel()` ahead of utterance creation and inserts a short delay before playback to reduce stale-voice reuse on iOS.
-   - Kept **Repeat spoken audio / Repetir audio** in Help and replaced the dropdown with a simple live voice-quality status.
-   - Versioned all relevant PWA resources to v19 to force the new narration logic through installed-app caches.
+15. **Device-specific voice testing, selection and locking**
+   - Versioned the JavaScript, CSS and service-worker URLs so an installed PWA cannot continue serving previous voice logic from its old cache.
+   - Expanded automatic iPhone matching to include Evan, Aaron, Nathan and Apple's numbered male Siri voices while retaining strict novelty-voice exclusions.
+   - Added a bilingual **Test and save voice** control inside Help that lists the real English or Spanish voices exposed by the current device.
+   - Stores English and Spanish selections independently, preventing a later browser voice-list reorder from silently replacing either approved voice.
+   - Restored the Spanish female preference order used by the earlier good build; reviewers can test and lock the exact Spanish voice they prefer.
 
 ## Preserved working behaviour
 
@@ -128,8 +125,8 @@ The following were deliberately left unchanged:
 - English voice ranking selects a natural American male candidate when one is available.
 - English voice ranking rejects compact and known novelty/character voices.
 - Spanish voice ranking selects the established preferred female candidate when one is available.
-- The Help drawer no longer exposes novelty or character voices for manual selection.
-- Spanish automatically uses the restored preferred female-voice ranking rather than a previously saved manual override.
+- English and Spanish voice choices can be auditioned and saved independently inside Help.
+- A saved voice is reused by stable device identifier on future sessions.
 - Static PWA files remain root-relative and suitable for direct GitHub Pages hosting.
 - Every paired full-character presentation uses separate grid columns with no negative offsets or shared absolute positioning.
 - The creator credit reads `Design & Production by`, uses the supplied logo as a transparent white PNG and remains below interactive UI layers.
@@ -141,5 +138,5 @@ The following were deliberately left unchanged:
 - English audio selects an explicit `en-US` male voice and never selects a known female or novelty voice when a supported male voice is available.
 - Spanish female voice ranking, pacing and pitch remain unchanged.
 - The Help drawer repeats the most recent assessment audio in either supported language.
-- Existing installed copies request the v19 voice script directly rather than receiving a stale cached JavaScript file.
+- Existing installed copies request the v18 voice script directly rather than receiving a stale cached JavaScript file.
 - English never falls through to an unverified default voice.

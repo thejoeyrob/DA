@@ -51,13 +51,3 @@ Use `email-applicant-assessment-banner.png` as the image in an applicant email. 
 - Printing from the administrator dashboard produces a dedicated A4 report; the applicant completion screen is excluded.
 
 This prototype is a static, device-local application. For production recruitment use requiring central records, globally enforced code usage, identity management or audit logs, connect the interface to an approved secure backend before collecting live applicant data.
-
-
-## v19 narration correction
-
-- The iPhone screen recording confirmed that the previous selector exposed Apple novelty/compact voices such as Bells, Bubbles, Jester, Junior, Organ, Superstar, Trinoids, Whisper, Wobble and Zarvox. These are now excluded entirely.
-- English narration now plays only when Safari exposes a recognised Enhanced/Premium American male voice. It will never substitute a novelty/female voice.
-- Spanish narration has been restored to the original automatic female-voice selection used before the manual voice picker was introduced.
-- Spanish timing remains at the previously approved 0.90 rate / 1.03 pitch. English uses 0.90 rate / neutral 1.00 pitch.
-- The Help panel retains Repeat spoken audio and now shows a simple voice-quality status instead of a voice picker.
-- On iPhone, if no premium English male voice is exposed, install an Enhanced/Premium US English male voice under Settings > Accessibility > Read & Speak > Voices, then fully close and reopen the app.
