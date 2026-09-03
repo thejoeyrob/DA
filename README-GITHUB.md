@@ -17,6 +17,26 @@ This revision replaces the remaining diagram-style answer graphics with fully re
 
 The full-screen control uses the browser Fullscreen API where supported. On iPhone browser tabs it switches to an expanded in-app view; installing the PWA with **Add to Home Screen** removes Safari's browser bars entirely.
 
+## Save the app to an iPhone or iPad Home Screen
+
+1. Open the published assessment link in **Safari**. If the link opens inside Mail, Outlook, Teams or another app, use its menu to choose **Open in Safari** first.
+2. Select Safari's **Share** button—the square with an upward arrow.
+3. Scroll down and select **Add to Home Screen**.
+4. Keep or edit the displayed app name, then select **Add**.
+5. Launch the assessment from its new Danco icon on the Home Screen.
+
+Opening the Home Screen version gives the most app-like, full-screen experience. Keep an internet connection for the first successful visit so the files can be stored for later offline use.
+
+## Save the app to an Android Home Screen
+
+1. Open the published assessment link in **Google Chrome**.
+2. Select Chrome's **three-dot menu**.
+3. Select **Install app** or **Add to Home screen**—the wording depends on the Android device and Chrome version.
+4. Select **Install** or **Add** to confirm.
+5. Launch the assessment from its new Danco icon on the Home Screen or in the app drawer.
+
+On Samsung Internet, open the menu and select **Add page to → Home screen**. Keep an internet connection for the first successful visit so the app can prepare its offline files.
+
 ## Email graphic
 
 Use `email-applicant-assessment-banner.png` as the image in an applicant email. Add the published GitHub Pages URL as the image hyperlink so selecting the graphic opens the assessment.

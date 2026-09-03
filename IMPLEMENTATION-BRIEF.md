@@ -2,7 +2,7 @@
 
 ## Objective
 
-Apply eleven isolated improvements to the current working assessment without altering its assessment flow, scoring, access controls, result-code format or administration functions.
+Apply eleven isolated app improvements and one documentation improvement without altering its assessment flow, scoring, access controls, result-code format or administration functions.
 
 ## Implemented changes
 
@@ -74,6 +74,12 @@ Apply eleven isolated improvements to the current working assessment without alt
    - Removed the empty application-number separator from the applicant completion screen.
    - Retained the optional administrator-side reference field for hiring staff who want to add an internal reference to a report.
 
+12. **Home Screen installation guidance**
+   - Added step-by-step instructions for saving the published PWA to an iPhone or iPad using Safari's **Add to Home Screen** action.
+   - Added Android instructions covering Chrome's **Install app** and **Add to Home screen** wording.
+   - Added the equivalent Samsung Internet route.
+   - Clarified that the first successful visit should be completed online so the app can prepare its offline files.
+
 ## Preserved working behaviour
 
 The following were deliberately left unchanged:
@@ -107,3 +113,4 @@ The following were deliberately left unchanged:
 - The root document and every primary screen shell remain constrained to the viewport with no horizontal scrolling.
 - Prototype marks use light-grey treatment on white surfaces and dark-navy treatment on blue surfaces.
 - Applicant setup can begin with a full name alone and contains no application-number field.
+- The supplied README contains complete iPhone/iPad, Android Chrome and Samsung Internet Home Screen instructions.
