@@ -2,7 +2,7 @@
 
 ## Objective
 
-Apply nine isolated improvements to the current working assessment without altering its assessment flow, scoring, access controls, result-code format or administration functions.
+Apply eleven isolated improvements to the current working assessment without altering its assessment flow, scoring, access controls, result-code format or administration functions.
 
 ## Implemented changes
 
@@ -47,8 +47,8 @@ Apply nine isolated improvements to the current working assessment without alter
 7. **Natural voice refinement**
    - Expanded and prioritised known higher-quality Apple, Microsoft and device voice names.
    - Changed voice-name preference from a simple match to weighted ranking, so the strongest available candidate wins rather than whichever matching voice appears first.
-   - Increased preference for natural, neural, enhanced, premium, studio and Siri-class voices while penalising compact, classic, eSpeak and robotic voices.
-   - Tuned English delivery to a slightly lower pitch and calmer pace, and Spanish delivery to a natural female-oriented pitch and pace.
+   - Increased preference for natural, neural, enhanced, premium and studio voices while penalising compact, classic, eSpeak and robotic voices.
+   - Tuned speech pacing while keeping Spanish delivery in its approved female-oriented range.
    - Preserved graceful language and device-default fallbacks when preferred voices are unavailable.
 
 8. **Compact creator treatment and stable viewport**
@@ -61,6 +61,18 @@ Apply nine isolated improvements to the current working assessment without alter
    - Added a restrained light-grey watermark within white panels.
    - Added a darker translucent navy watermark within blue panels.
    - Watermarks remain decorative, non-interactive and disappear when owner access is active.
+
+10. **Normal American male voice safeguard**
+   - Restricted English preference to established normal male American voices such as Microsoft Guy, Davis and Christopher, plus Apple Aaron and Alex.
+   - Explicitly excludes compact, novelty, character and robotic Apple voices from English selection.
+   - Restored English speech to neutral pitch and a normal conversational rate.
+   - If no approved male voice is exposed, the app falls back to a normal English device voice instead of selecting a novelty male voice.
+
+11. **Full-name-only applicant setup**
+   - Removed the application-number field from the applicant setup screen.
+   - English and Spanish guidance and validation now require only a full name.
+   - Removed the empty application-number separator from the applicant completion screen.
+   - Retained the optional administrator-side reference field for hiring staff who want to add an internal reference to a report.
 
 ## Preserved working behaviour
 
@@ -85,6 +97,7 @@ The following were deliberately left unchanged:
 - Every referenced answer image exists, decodes as a valid PNG and uses the expected aspect ratio.
 - Every visual question still has four options and the same correct answer index.
 - English voice ranking selects a natural American male candidate when one is available.
+- English voice ranking rejects compact and known novelty/character voices.
 - Spanish voice ranking selects a natural `es-US` female candidate when one is available.
 - Voice selection falls back to another matching-language voice without blocking speech.
 - Static PWA files remain root-relative and suitable for direct GitHub Pages hosting.
@@ -93,3 +106,4 @@ The following were deliberately left unchanged:
 - The creator treatment is vertically stacked and cannot increase the document's horizontal layout width.
 - The root document and every primary screen shell remain constrained to the viewport with no horizontal scrolling.
 - Prototype marks use light-grey treatment on white surfaces and dark-navy treatment on blue surfaces.
+- Applicant setup can begin with a full name alone and contains no application-number field.

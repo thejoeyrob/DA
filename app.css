@@ -323,3 +323,6 @@ body:not(.owner-access) .inline-helper-duo{
   .creator-credit span{max-width:62px;font-size:6.5px}
   .creator-credit img{width:24px;height:22px}
 }
+
+/* v14: the applicant setup requires only one full-width name field. */
+.field-grid{grid-template-columns:minmax(0,1fr)}

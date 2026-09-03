@@ -1,4 +1,4 @@
-const CACHE_NAME = 'danco-assessment-v13-voice-layout-watermark-20260902';
+const CACHE_NAME = 'danco-assessment-v14-natural-male-name-only-20260902';
 const ASSETS = [
   './','./index.html','./app.css','./app.js','./manifest.webmanifest',
   './danco-logo.webp','./danco-logo-white.png','./joseph-whelan-eds-white.png','./danco-helper-english.png','./danco-helper-spanish.png',
