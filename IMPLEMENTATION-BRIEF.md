@@ -2,7 +2,7 @@
 
 ## Objective
 
-Apply eleven isolated app improvements and one documentation improvement without altering its assessment flow, scoring, access controls, result-code format or administration functions.
+Apply thirteen isolated app improvements and one documentation improvement without altering its assessment flow, scoring, access controls, result-code format or administration functions.
 
 ## Implemented changes
 
@@ -80,6 +80,19 @@ Apply eleven isolated app improvements and one documentation improvement without
    - Added the equivalent Samsung Internet route.
    - Clarified that the first successful visit should be completed online so the app can prepare its offline files.
 
+13. **High-quality American English male voice correction**
+   - Preserved the approved Spanish female voice scoring and delivery unchanged.
+   - Rebuilt English selection around explicit American male voice candidates, prioritising Apple Aaron/Alex, Microsoft neural male voices and clearly identified Google US English male voices.
+   - Matches the English voice provider to the selected Spanish voice provider where possible, giving the closest male equivalent available on the same device.
+   - Prevents known female, novelty and character voices from being selected for English.
+   - Allows an approved named Apple male voice even when its internal device identifier contains `compact`, which previously caused valid male voices to be rejected.
+   - Waits briefly for asynchronously loaded device voices before speaking, avoiding an early fall-through to a poor browser default.
+
+14. **Repeat audio in Help**
+   - Added a bilingual **Repeat spoken audio / Repetir audio** control inside the Help drawer.
+   - Replays the most recent instruction, question or set of answer choices in the selected language.
+   - The repeat control works on demand even when audio support was not enabled during setup.
+
 ## Preserved working behaviour
 
 The following were deliberately left unchanged:
@@ -114,3 +127,6 @@ The following were deliberately left unchanged:
 - Prototype marks use light-grey treatment on white surfaces and dark-navy treatment on blue surfaces.
 - Applicant setup can begin with a full name alone and contains no application-number field.
 - The supplied README contains complete iPhone/iPad, Android Chrome and Samsung Internet Home Screen instructions.
+- English audio selects an explicit `en-US` male voice and never selects a known female or novelty voice when a supported male voice is available.
+- Spanish female voice ranking, pacing and pitch remain unchanged.
+- The Help drawer repeats the most recent assessment audio in either supported language.

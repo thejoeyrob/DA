@@ -207,7 +207,11 @@
     <span class="eyebrow" data-i18n="helperLabel">YOUR DANCO TEAM HELPER</span>
     <h2 id="help-title" data-i18n="helpTitle">Need a hand?</h2>
     <p id="help-copy" data-i18n="helpDefault">Follow the instruction shown at the top of the current screen. During the timed assessment, review first and select one answer when the cards become active.</p>
-    <button class="button button-primary button-wide" type="button" data-action="close-help" data-i18n="gotIt">Got it</button>
+    <div class="help-audio-action">
+      <button class="button button-secondary button-wide" type="button" data-action="repeat-audio"><span aria-hidden="true">↻</span><span data-i18n="repeatAudio">Repeat spoken audio</span></button>
+      <small data-i18n="repeatAudioHint">Hear the current instruction or question again.</small>
+    </div>
+    <button class="button button-primary button-wide help-confirm" type="button" data-action="close-help" data-i18n="gotIt">Got it</button>
   </aside>
 
   <div class="modal-backdrop" id="unlock-modal" role="dialog" aria-modal="true" aria-labelledby="unlock-title">
