@@ -2,7 +2,7 @@
 
 This folder is ready to host as a static Progressive Web App on GitHub Pages. Keep every supplied file together in the repository root.
 
-This revision replaces the remaining diagram-style answer graphics with fully rendered visual options, shortens the setup button to **Begin assessment**, matches English speech to a high-quality American male voice from the same device voice family as the approved Spanish female voice where possible, preserves the Spanish voice behavior, adds **Repeat spoken audio** inside Help, removes the applicant-number requirement, keeps paired helpers side by side without overlap, prevents horizontal page movement, adds panel-aware prototype watermarking, and uses a smaller transparent-white creator credit. See `IMPLEMENTATION-BRIEF.md` for the controlled-change record.
+This revision replaces the remaining diagram-style answer graphics with fully rendered visual options, shortens the setup button to **Begin assessment**, forces English speech to an approved American male voice instead of allowing a female or novelty fallback, preserves the Spanish voice behavior, adds **Repeat spoken audio** inside Help, removes the applicant-number requirement, keeps paired helpers side by side without overlap, prevents horizontal page movement, adds panel-aware prototype watermarking, and uses a smaller transparent-white creator credit. Versioned script links force installed copies to load the revised voice logic instead of reusing an older cached file. See `IMPLEMENTATION-BRIEF.md` for the controlled-change record.
 
 ## Publish on GitHub Pages
 

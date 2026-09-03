@@ -2,7 +2,7 @@
 
 ## Objective
 
-Apply thirteen isolated app improvements and one documentation improvement without altering its assessment flow, scoring, access controls, result-code format or administration functions.
+Apply fourteen isolated app improvements and one documentation improvement without altering its assessment flow, scoring, access controls, result-code format or administration functions.
 
 ## Implemented changes
 
@@ -93,6 +93,12 @@ Apply thirteen isolated app improvements and one documentation improvement witho
    - Replays the most recent instruction, question or set of answer choices in the selected language.
    - The repeat control works on demand even when audio support was not enabled during setup.
 
+15. **Forced English voice update and strict gender safeguard**
+   - Versioned the JavaScript, CSS and service-worker URLs so an installed PWA cannot continue serving the previous English voice logic from its old cache.
+   - English speech now waits for an approved `en-US` male voice and does not silently substitute the device's female or novelty default.
+   - If a device exposes no approved American male voice, the app reports that limitation instead of playing an incorrect or disturbing substitute voice.
+   - Spanish female voice selection and delivery remain unchanged.
+
 ## Preserved working behaviour
 
 The following were deliberately left unchanged:
@@ -130,3 +136,5 @@ The following were deliberately left unchanged:
 - English audio selects an explicit `en-US` male voice and never selects a known female or novelty voice when a supported male voice is available.
 - Spanish female voice ranking, pacing and pitch remain unchanged.
 - The Help drawer repeats the most recent assessment audio in either supported language.
+- Existing installed copies request the v17 voice script directly rather than receiving a stale cached JavaScript file.
+- English never falls through to an unverified default voice.
