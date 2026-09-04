@@ -4,6 +4,7 @@
   const VERSION = 10;
   const SESSION_KEY = 'dancoAssessment_v10_session';
   const SETTINGS_KEY = 'dancoAssessment_v10_settings';
+  const APPLICATIONS_KEY = 'dancoAssessment_v10_applications';
   const OWNER_KEY = 'dancoAssessment_v10_owner';
   const TRIAL_KEY = 'dancoAssessment_v10_trial';
   const TRIAL_USAGE_KEY = 'dancoAssessment_v10_trialUsage';
@@ -18,19 +19,21 @@
 
   const TEXT = {
     en:{
-      helperLabel:'YOUR DANCO TEAM HELPER',setupHelper:'I’ll guide you through each step. You can take your time setting up before the timed questions begin.',stepOne:'STEP 1 OF 3 · SETUP',setupTitle:'Let’s get you ready',setupLead:'Enter your full name exactly as it appears on your application.',nameLabel:'Full name',audioTitle:'Would audio support help?',audioOffTitle:'Continue without audio',audioOffCopy:'You can turn audio on later from the top bar.',audioOnTitle:'Use audio support',audioOnCopy:'Questions and guidance can be read aloud in your chosen language.',beginAssessment:'Begin assessment',
+      helperLabel:'YOUR DANCO TEAM HELPER',setupHelper:'I’ll guide you through each step. You can take your time setting up before the timed questions begin.',applicationSetupHelper:'Complete as much of the application as you can. Only your full name is required during prototype testing, and the assessment will follow.',stepOne:'STEP 1 OF 3 · SETUP',setupTitle:'Let’s get you ready',setupLead:'Enter your full name exactly as it appears on your application.',applicationSetupTitle:'Start your Danco application',applicationSetupLead:'Tell us about yourself and choose the position you are applying for. Only your full name is required during prototype testing.',nameLabel:'Full name',audioTitle:'Would audio support help?',audioOffTitle:'Continue without audio',audioOffCopy:'You can turn audio on later from the top bar.',audioOnTitle:'Use audio support',audioOnCopy:'Questions and guidance can be read aloud in your chosen language.',beginAssessment:'Begin assessment',beginApplicationAssessment:'Continue to work-style questions',
+      applicationEyebrow:'JOB APPLICATION',applicationDetailsTitle:'Your application details',prototypeOptional:'Optional during prototype testing',emailLabel:'Email address',phoneLabel:'Phone number',locationLabel:'City and state',availabilityLabel:'Available start date',desiredRoleLabel:'Position applied for',chooseRole:'Choose a role',experienceLabel:'Commercial roofing experience',chooseExperience:'Choose experience',workAuthorizationLabel:'Authorized to work in the United States?',licenseLabel:'Valid driver’s license?',chooseAnswer:'Choose an answer',otherRolesLegend:'Would you consider another listed role if it better matches your assessment?',otherRolesYes:'Yes, I’m open to other roles',otherRolesNo:'No, only the role selected above',
       stepTwo:'STEP 2 OF 3 · GETTING TO KNOW YOU',profileIntroTitle:'Before we get into the assessment…',profileIntroOne:'We’re happy that you’re looking to join the Danco Roofing team. We focus on working together and helping our workforce feel comfortable when interacting with one another.',profileIntroTwo:'We’d like to take a moment to get to know how you prefer to work. The next five friendly questions have no timer, and there are no right or wrong answers.',profilePrivacy:'This optional section is used only as a gentle workplace-engagement guide for the hiring team. Your estimated result will not be shown on your applicant result screen.',startFive:'Answer 5 quick questions',skipProfile:'Skip this section',skipRecorded:'If you skip, the assessment report will simply note “not completed”.',noTimer:'NO TIMER',profileHint:'Choose the answer that feels most natural to you.',
       stepThree:'STEP 3 OF 3 · TRADE ASSESSMENT',instructionsTitle:'Ten focused questions',instructionsLead:'The assessment checks practical roofing knowledge, safe decision-making and role readiness.',featureQuestions:'Questions',featureQuestionsCopy:'Seven include visual answer choices',featureTiming:'Review then answer',featureTimingCopy:'A clear timer appears for each stage',featureChoice:'One answer',featureChoiceCopy:'Choose the single best response',featureResult:'Private result',featureResultCopy:'You receive a result code, not a score',timingNotice:'First, review the question while the answer cards are locked. When the answer timer begins, select one response. Unanswered questions are recorded as timed out.',startQuestions:'Start the 10 questions',
-      completeEyebrow:'ASSESSMENT COMPLETE',completeTitle:'Thank you for taking part',completeLead:'Your responses have been converted into the result code below.',copyCode:'Copy result code',resultInstruction:'Save this code and provide it to the Danco administrator or hiring contact. Your score and private work-style guide are not shown on this screen.',nextApplicant:'Start next applicant',help:'Help',helpTitle:'Need a hand?',helpDefault:'Follow the instruction shown at the top of the current screen. During the timed assessment, review first and select one answer when the cards become active.',repeatAudio:'Repeat spoken audio',repeatAudioHint:'Hear the current instruction or question again.',voiceLabel:'English narration voice',voiceLoading:'Finding voices on this device…',voiceHint:'A recommended American male voice is selected automatically. Test another available voice here if needed.',testVoice:'Test and save voice',voiceRecommended:'Recommended',voiceSaved:'English narration voice saved.',voiceSample:'Hello. I’m your Danco assessment guide. I’ll read each question clearly.',englishVoiceUnavailable:'Choose and test an English voice in Help.',voiceListUnavailable:'No English voices are currently available on this device.',gotIt:'Got it',helpersWithYou:'Your Danco team helpers are with you',profileUntimedReminder:'Take your time—this section is not timed.',timedReminder:'Your selected-language helper has the visual focus.',fullscreenOn:'Full-screen app view active.',fullscreenOff:'Full-screen app view closed.',fullscreenIos:'App view expanded. For a completely borderless iPhone experience, add the assessment to your Home Screen.',
+      completeEyebrow:'ASSESSMENT COMPLETE',completeTitle:'Thank you for taking part',completeLead:'Your responses have been converted into the result code below.',applicationCompleteEyebrow:'APPLICATION ASSESSMENT COMPLETE',applicationCompleteTitle:'Your application assessment is complete',applicationCompleteLead:'Your automated application number is ready below.',resultCodeLabel:'Result code',applicationNumberLabel:'Application number',copyCode:'Copy result code',copyApplicationNumber:'Copy application number',resultInstruction:'Save this code and provide it to the Danco administrator or hiring contact. Your score and private work-style guide are not shown on this screen.',applicationResultInstruction:'Keep this application number for your records. To add the application to this device’s prototype review list, ask an administrator to approve submission.',submitApplication:'Submit application for review',submitApplicationNote:'Prototype safeguard: an administrator PIN is required before this application is stored.',submitTitle:'Confirm this application',submitCopy:'Enter the administrator PIN to store this completed application in the local review list.',administratorPin:'Administrator PIN',confirmSubmit:'Store application',submissionSaved:'Application stored on this device.',submissionAlreadySaved:'This application is already stored on this device.',invalidAdminPin:'Administrator PIN not recognised.',nextApplicant:'Start next applicant',help:'Help',helpTitle:'Need a hand?',helpDefault:'Follow the instruction shown at the top of the current screen. During the timed assessment, review first and select one answer when the cards become active.',repeatAudio:'Repeat spoken audio',repeatAudioHint:'Hear the current instruction or question again.',voiceLabel:'Narration audio',standardVoiceTitle:'Danco standard voice',standardVoiceCopy:'The same clear recorded narration on iPhone, Android and desktop.',testVoice:'Test standard narration',voiceSample:'Hello. I’m your Danco assessment guide. I’ll read each question clearly.',narrationUnavailable:'This narration clip is unavailable. The written question remains on screen.',tapRepeatAudio:'Tap Repeat spoken audio to hear this again.',gotIt:'Got it',helpersWithYou:'Your Danco team helpers are with you',profileUntimedReminder:'Take your time—this section is not timed.',timedReminder:'Your selected-language helper has the visual focus.',fullscreenOn:'Full-screen app view active.',fullscreenOff:'Full-screen app view closed.',fullscreenIos:'App view expanded. For a completely borderless iPhone experience, add the assessment to your Home Screen.',
       unlockTitle:'Unlock the assessment trial',unlockCopy:'Enter the private access code supplied by Danco. A valid trial code activates up to three completed assessments on this browser or device.',unlockStepOne:'Enter the supplied code below.',unlockStepTwo:'Select “Activate trial”.',unlockStepThree:'Return to setup and begin the assessment.',accessCodeLabel:'Private access code',activateTrial:'Activate trial',unlockPrivacy:'Codes are never displayed by the app. Re-entering the same code does not restore used trial runs.',
       accessLockedTitle:'Prototype locked',accessLockedCopy:'Enter the private trial code supplied by Danco before beginning.',accessTrialTitle:'Prototype trial active',accessTrialCopy:n=>`${n} completed assessment${n===1?'':'s'} remaining on this browser or device.`,accessOwnerTitle:'Full access active',accessOwnerCopy:'Unlimited local assessments are enabled on this device.',namePlaceholder:'Your full name',codePlaceholder:'Enter code',requiredError:'Please enter your full name.',lockedError:'A valid private access code is required before the assessment can begin.',usedError:'This trial has no completed assessments remaining.',profileCounter:(n)=>`Question ${n} of 5`,knowledgeCounter:(n)=>`Question ${n} of 10`,review:'REVIEW',answer:'ANSWER',reviewHint:'Review the question. Answer choices will unlock when the timer changes to ANSWER.',answerHint:'Select the single best answer before the timer reaches zero.',timedOut:'Time expired. Moving to the next question.',copied:'Result code copied.',copyFailed:'Press and hold the code to copy it.',profileSkipped:'Optional work-style questions: not completed',profileDone:'Optional work-style questions: completed',trialRemaining:n=>`Trial assessments remaining: ${n}`,ownerActive:'Full access · unlimited assessments',unlockSuccess:n=>`Trial activated with ${n} assessments available.`,ownerSuccess:'Full access activated.',invalidCode:'Access code not recognised.',resume:'Resume assessment',
       categories:{materials:'Roof products',installation:'Installation & tools',service:'Service & diagnosis',safety:'Site & lifting safety',supervision:'Foreman control'},tiers:{foundation:'Foundation',roofer:'Roofer level',foreman:'Foreman level'}
     },
     es:{
-      helperLabel:'TU GUÍA DEL EQUIPO DANCO',setupHelper:'Te guiaré en cada paso. Puedes tomarte tu tiempo para prepararte antes de que comiencen las preguntas cronometradas.',stepOne:'PASO 1 DE 3 · PREPARACIÓN',setupTitle:'Vamos a prepararte',setupLead:'Ingresa tu nombre completo exactamente como aparece en tu solicitud.',nameLabel:'Nombre completo',audioTitle:'¿Te ayudaría el apoyo de audio?',audioOffTitle:'Continuar sin audio',audioOffCopy:'Puedes activar el audio más tarde desde la barra superior.',audioOnTitle:'Usar apoyo de audio',audioOnCopy:'Las preguntas y la guía se pueden leer en voz alta en español.',beginAssessment:'Comenzar evaluación',
+      helperLabel:'TU GUÍA DEL EQUIPO DANCO',setupHelper:'Te guiaré en cada paso. Puedes tomarte tu tiempo para prepararte antes de que comiencen las preguntas cronometradas.',applicationSetupHelper:'Completa todos los datos que puedas. Durante la prueba del prototipo solo se requiere tu nombre completo, y después seguirá la evaluación.',stepOne:'PASO 1 DE 3 · PREPARACIÓN',setupTitle:'Vamos a prepararte',setupLead:'Ingresa tu nombre completo exactamente como aparece en tu solicitud.',applicationSetupTitle:'Comienza tu solicitud para Danco',applicationSetupLead:'Cuéntanos sobre ti y elige el puesto que solicitas. Durante la prueba del prototipo solo se requiere tu nombre completo.',nameLabel:'Nombre completo',audioTitle:'¿Te ayudaría el apoyo de audio?',audioOffTitle:'Continuar sin audio',audioOffCopy:'Puedes activar el audio más tarde desde la barra superior.',audioOnTitle:'Usar apoyo de audio',audioOnCopy:'Las preguntas y la guía se pueden leer en voz alta en español.',beginAssessment:'Comenzar evaluación',beginApplicationAssessment:'Continuar a las preguntas de estilo laboral',
+      applicationEyebrow:'SOLICITUD DE EMPLEO',applicationDetailsTitle:'Datos de tu solicitud',prototypeOptional:'Opcional durante la prueba del prototipo',emailLabel:'Correo electrónico',phoneLabel:'Número de teléfono',locationLabel:'Ciudad y estado',availabilityLabel:'Fecha disponible para comenzar',desiredRoleLabel:'Puesto solicitado',chooseRole:'Elige un puesto',experienceLabel:'Experiencia en techos comerciales',chooseExperience:'Elige tu experiencia',workAuthorizationLabel:'¿Tienes autorización para trabajar en Estados Unidos?',licenseLabel:'¿Tienes licencia de conducir válida?',chooseAnswer:'Elige una respuesta',otherRolesLegend:'¿Considerarías otro puesto de la lista si se ajusta mejor a tu evaluación?',otherRolesYes:'Sí, estoy abierto a otros puestos',otherRolesNo:'No, solo el puesto seleccionado',
       stepTwo:'PASO 2 DE 3 · CONOCERTE',profileIntroTitle:'Antes de comenzar la evaluación…',profileIntroOne:'Nos alegra que estés interesado en unirte al equipo de Danco Roofing. Nos enfocamos en trabajar juntos y en ayudar a nuestro personal a sentirse cómodo al interactuar.',profileIntroTwo:'Nos gustaría conocerte un poco y saber cómo prefieres trabajar. Las siguientes cinco preguntas son sencillas, no tienen límite de tiempo y no hay respuestas correctas o incorrectas.',profilePrivacy:'Esta sección opcional se usa únicamente como una guía amable de interacción laboral para el equipo de contratación. El resultado estimado no aparecerá en tu pantalla final.',startFive:'Responder 5 preguntas rápidas',skipProfile:'Omitir esta sección',skipRecorded:'Si decides omitirla, el informe simplemente indicará “no completada”.',noTimer:'SIN LÍMITE',profileHint:'Elige la respuesta que te resulte más natural.',
       stepThree:'PASO 3 DE 3 · EVALUACIÓN TÉCNICA',instructionsTitle:'Diez preguntas enfocadas',instructionsLead:'La evaluación revisa conocimientos prácticos de techado, decisiones seguras y preparación para el puesto.',featureQuestions:'Preguntas',featureQuestionsCopy:'Siete incluyen opciones visuales',featureTiming:'Revisar y responder',featureTimingCopy:'Cada etapa muestra un cronómetro claro',featureChoice:'Una respuesta',featureChoiceCopy:'Elige la mejor respuesta',featureResult:'Resultado privado',featureResultCopy:'Recibirás un código, no una puntuación',timingNotice:'Primero revisa la pregunta mientras las opciones están bloqueadas. Cuando comience el tiempo de respuesta, selecciona una opción. Las preguntas sin responder se registran como agotadas.',startQuestions:'Comenzar las 10 preguntas',
-      completeEyebrow:'EVALUACIÓN COMPLETADA',completeTitle:'Gracias por participar',completeLead:'Tus respuestas se convirtieron en el siguiente código de resultado.',copyCode:'Copiar código',resultInstruction:'Guarda este código y entrégalo al administrador o contacto de contratación de Danco. Tu puntuación y la guía privada de estilo de trabajo no aparecen en esta pantalla.',nextApplicant:'Comenzar siguiente solicitante',help:'Ayuda',helpTitle:'¿Necesitas ayuda?',helpDefault:'Sigue la instrucción que aparece en la parte superior. Durante la evaluación cronometrada, primero revisa y luego elige una respuesta cuando se activen las opciones.',repeatAudio:'Repetir audio',repeatAudioHint:'Escucha de nuevo la instrucción o pregunta actual.',voiceLabel:'Voz de narración en español',voiceLoading:'Buscando voces en este dispositivo…',voiceHint:'La voz femenina recomendada en español se selecciona automáticamente. Puedes probar y guardar otra voz disponible si es necesario.',testVoice:'Probar y guardar voz',voiceRecommended:'Recomendada',voiceSaved:'Voz de narración en español guardada.',voiceSample:'Hola. Soy tu guía para la evaluación de Danco. Leeré cada pregunta con claridad.',voiceListUnavailable:'No hay voces en español disponibles en este dispositivo.',gotIt:'Entendido',helpersWithYou:'Tus guías del equipo Danco están contigo',profileUntimedReminder:'Tómate tu tiempo; esta sección no tiene límite.',timedReminder:'La guía de tu idioma elegido tiene el enfoque visual.',fullscreenOn:'Vista de aplicación en pantalla completa activa.',fullscreenOff:'Vista de pantalla completa cerrada.',fullscreenIos:'Vista ampliada. Para una experiencia sin bordes en iPhone, agrega la evaluación a la pantalla de inicio.',
+      completeEyebrow:'EVALUACIÓN COMPLETADA',completeTitle:'Gracias por participar',completeLead:'Tus respuestas se convirtieron en el siguiente código de resultado.',applicationCompleteEyebrow:'EVALUACIÓN DE SOLICITUD COMPLETADA',applicationCompleteTitle:'La evaluación de tu solicitud está completa',applicationCompleteLead:'Tu número de solicitud automático está listo.',resultCodeLabel:'Código de resultado',applicationNumberLabel:'Número de solicitud',copyCode:'Copiar código',copyApplicationNumber:'Copiar número de solicitud',resultInstruction:'Guarda este código y entrégalo al administrador o contacto de contratación de Danco. Tu puntuación y la guía privada de estilo de trabajo no aparecen en esta pantalla.',applicationResultInstruction:'Guarda este número de solicitud. Para añadir la solicitud a la lista de revisión de este dispositivo, pide a un administrador que apruebe el envío.',submitApplication:'Enviar solicitud para revisión',submitApplicationNote:'Protección del prototipo: se requiere el PIN de administrador antes de guardar esta solicitud.',submitTitle:'Confirmar esta solicitud',submitCopy:'Ingresa el PIN de administrador para guardar esta solicitud completada en la lista local de revisión.',administratorPin:'PIN de administrador',confirmSubmit:'Guardar solicitud',submissionSaved:'Solicitud guardada en este dispositivo.',submissionAlreadySaved:'Esta solicitud ya está guardada en este dispositivo.',invalidAdminPin:'PIN de administrador no reconocido.',nextApplicant:'Comenzar siguiente solicitante',help:'Ayuda',helpTitle:'¿Necesitas ayuda?',helpDefault:'Sigue la instrucción que aparece en la parte superior. Durante la evaluación cronometrada, primero revisa y luego elige una respuesta cuando se activen las opciones.',repeatAudio:'Repetir audio',repeatAudioHint:'Escucha de nuevo la instrucción o pregunta actual.',voiceLabel:'Audio de narración',standardVoiceTitle:'Voz estándar de Danco',standardVoiceCopy:'La misma narración clara en iPhone, Android y computadora.',testVoice:'Probar narración estándar',voiceSample:'Hola. Soy tu guía para la evaluación de Danco. Leeré cada pregunta con claridad.',narrationUnavailable:'Este fragmento de audio no está disponible. La pregunta escrita permanece en pantalla.',tapRepeatAudio:'Toca Repetir audio para escucharlo de nuevo.',gotIt:'Entendido',helpersWithYou:'Tus guías del equipo Danco están contigo',profileUntimedReminder:'Tómate tu tiempo; esta sección no tiene límite.',timedReminder:'La guía de tu idioma elegido tiene el enfoque visual.',fullscreenOn:'Vista de aplicación en pantalla completa activa.',fullscreenOff:'Vista de pantalla completa cerrada.',fullscreenIos:'Vista ampliada. Para una experiencia sin bordes en iPhone, agrega la evaluación a la pantalla de inicio.',
       unlockTitle:'Desbloquear la prueba',unlockCopy:'Ingresa el código privado proporcionado por Danco. Un código de prueba válido permite hasta tres evaluaciones completadas en este navegador o dispositivo.',unlockStepOne:'Ingresa el código proporcionado.',unlockStepTwo:'Selecciona “Activar prueba”.',unlockStepThree:'Regresa a la preparación y comienza.',accessCodeLabel:'Código de acceso privado',activateTrial:'Activar prueba',unlockPrivacy:'La aplicación nunca muestra los códigos. Volver a ingresar el mismo código no recupera usos ya consumidos.',
       accessLockedTitle:'Prototipo bloqueado',accessLockedCopy:'Ingresa el código privado de prueba proporcionado por Danco antes de comenzar.',accessTrialTitle:'Prueba de prototipo activa',accessTrialCopy:n=>`Quedan ${n} evaluación${n===1?'':'es'} completada${n===1?'':'s'} en este navegador o dispositivo.`,accessOwnerTitle:'Acceso completo activo',accessOwnerCopy:'Este dispositivo tiene evaluaciones locales ilimitadas.',namePlaceholder:'Tu nombre completo',codePlaceholder:'Ingresa el código',requiredError:'Ingresa tu nombre completo.',lockedError:'Se necesita un código de acceso privado válido antes de comenzar.',usedError:'Esta prueba ya no tiene evaluaciones disponibles.',profileCounter:(n)=>`Pregunta ${n} de 5`,knowledgeCounter:(n)=>`Pregunta ${n} de 10`,review:'REVISAR',answer:'RESPONDER',reviewHint:'Revisa la pregunta. Las opciones se activarán cuando el cronómetro cambie a RESPONDER.',answerHint:'Selecciona la mejor respuesta antes de que el cronómetro llegue a cero.',timedOut:'Tiempo agotado. Pasando a la siguiente pregunta.',copied:'Código copiado.',copyFailed:'Mantén presionado el código para copiarlo.',profileSkipped:'Preguntas opcionales de estilo de trabajo: no completadas',profileDone:'Preguntas opcionales de estilo de trabajo: completadas',trialRemaining:n=>`Evaluaciones de prueba restantes: ${n}`,ownerActive:'Acceso completo · evaluaciones ilimitadas',unlockSuccess:n=>`Prueba activada con ${n} evaluaciones disponibles.`,ownerSuccess:'Acceso completo activado.',invalidCode:'Código de acceso no reconocido.',resume:'Continuar evaluación',
       categories:{materials:'Productos para techos',installation:'Instalación y herramientas',service:'Servicio y diagnóstico',safety:'Seguridad en obra e izaje',supervision:'Control del encargado'},tiers:{foundation:'Base',roofer:'Nivel techador',foreman:'Nivel encargado'}
@@ -141,7 +144,8 @@
   const $ = id => document.getElementById(id);
   const $$ = selector => Array.from(document.querySelectorAll(selector));
   const SCREENS = ['language-screen','setup-screen','profile-intro-screen','profile-screen','instructions-screen','knowledge-screen','result-screen'];
-  let settings = loadJson(SETTINGS_KEY, {lang:'en',audio:false,supportReason:0,englishVoiceId:'',spanishVoiceId:''});
+  let settings = loadJson(SETTINGS_KEY, {lang:'en',audio:false,supportReason:0,appMode:'assessment'});
+  settings.appMode=settings.appMode==='application'?'application':'assessment';
   let session = loadJson(SESSION_KEY, null);
   let profileIndex = 0;
   let timer = null;
@@ -157,6 +161,7 @@
   function saveJson(key, value){ try{ localStorage.setItem(key, JSON.stringify(value)); }catch(_){} }
   function saveSettings(){ saveJson(SETTINGS_KEY, settings); }
   function saveSession(){ if(session) saveJson(SESSION_KEY, session); }
+  function storedApplications(){ const value=loadJson(APPLICATIONS_KEY,[]); return Array.isArray(value)?value:[]; }
   function escapeHtml(value){ return String(value ?? '').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
   function normalizeCode(value){ return String(value||'').toUpperCase().replace(/[^A-Z0-9]/g,''); }
   function accessHash(value){ let h=0x811c9dc5; for(const c of normalizeCode(value)){ h^=c.charCodeAt(0); h=Math.imul(h,0x01000193)>>>0; } return h.toString(16).toUpperCase().padStart(8,'0'); }
@@ -215,8 +220,23 @@
     $('result-helper-english').classList.toggle('secondary-language',settings.lang!=='en');
     $('result-helper-spanish').classList.toggle('secondary-language',settings.lang!=='es');
     $('help-tab').classList.toggle('right',settings.lang==='es'); $('help-drawer').classList.toggle('right',settings.lang==='es');
-    populateNarrationVoiceSelector(settings.lang);
-    renderSetupAccess();
+    renderSetupAccess(); applyProductMode();
+  }
+  function activeProductMode(){ return session?.mode==='application'?'application':session?.mode==='assessment'?'assessment':settings.appMode; }
+  function applyProductMode(){
+    const applicationMode=activeProductMode()==='application';
+    document.body.classList.toggle('application-mode',applicationMode);
+    if($('application-fields')) $('application-fields').hidden=!applicationMode;
+    if($('setup-title')) $('setup-title').textContent=t(applicationMode?'applicationSetupTitle':'setupTitle');
+    const setupLead=document.querySelector('[data-i18n="setupLead"]'); if(setupLead) setupLead.textContent=t(applicationMode?'applicationSetupLead':'setupLead');
+    const setupHelper=document.querySelector('[data-i18n="setupHelper"]'); if(setupHelper) setupHelper.textContent=t(applicationMode?'applicationSetupHelper':'setupHelper');
+    if($('begin-beginner')) $('begin-beginner').textContent=t(applicationMode?'beginApplicationAssessment':'beginAssessment');
+    $$('[data-admin-mode]').forEach(button=>{ const active=button.dataset.adminMode===settings.appMode; button.classList.toggle('active',active); button.setAttribute('aria-pressed',String(active)); });
+  }
+  function setProductMode(mode){
+    settings.appMode=mode==='application'?'application':'assessment'; saveSettings();
+    if(!session||session.status==='setup'){ if(!session) newSession(); session.mode=settings.appMode; saveSession(); }
+    applyProductMode(); toast(settings.appMode==='application'?'Application mode selected for the next applicant.':'Assessment mode selected for the next applicant.');
   }
   function showScreen(id){
     SCREENS.forEach(screen=>$(screen).classList.toggle('active',screen===id));
@@ -227,219 +247,72 @@
   function openModal(id){ $(id).classList.add('open'); }
   function closeModal(id){ $(id).classList.remove('open'); }
   function toast(message){ const el=$('toast'); el.textContent=message; el.classList.add('show'); clearTimeout(toast.timer); toast.timer=setTimeout(()=>el.classList.remove('show'),2300); }
-  const VOICE_PREFERENCES = {
-    en:{
-      target:'en-US',regional:['en-US','en-CA'],
-      preferred:['evan','aaron','nathan','siri voice 1','siri voice 3','siri male','microsoft guy','microsoft davis','microsoft christopher','microsoft andrew','microsoft eric','microsoft roger','microsoft steffan','google us english male','alex','microsoft david','microsoft mark','matthew','tom','justin','joey','kevin','jason','tony'],
-      avoid:['samantha','ava','allison','susan','zira','jenny','aria','joanna','kendra','kimberly','salli','ivy','nancy','michelle','emma','siri voice 2','siri voice 4','female'],
-      blocked:['reed','rocko','eddy','fred','grandpa','ralph','albert','bad news','bahh','bells','boing','bubbles','cellos','good news','hysterical','junior','organ','princess','superstar','trinoids','whisper','wobble','zarvox']
-    },
-    es:{
-      target:'es-US',regional:['es-US','es-MX','es-419','es-CO','es-AR','es-CL','es-PE'],
-      preferred:['paulina','monica','marisol','ximena','microsoft paloma','microsoft elena','paloma','lupe','penelope','gabriela','dalia','dahlia','sofia','lucia','maria','mia','victoria','isabella','carolina','helena','laura','female','mujer'],
-      avoid:['alonso','miguel','diego','jorge','carlos','antonio','pedro','male','hombre']
-    }
-  };
-  let availableSpeechVoices = [];
-  let lastRepeatableSpeech = '';
-  let speechRequestId = 0;
-  let speechRetryTimer = 0;
-  function normaliseLocale(value){ return String(value||'').replace('_','-').toLowerCase(); }
-  function voiceIdentity(voice){ return `${voice?.name||''} ${voice?.voiceURI||''}`.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
-  function voiceProvider(voice){
-    const identity=voiceIdentity(voice);
-    if(/microsoft|speechplatform/.test(identity)) return 'microsoft';
-    if(/com\.apple|apple|siri/.test(identity)) return 'apple';
-    if(/google|android/.test(identity)) return 'google';
-    if(/samsung/.test(identity)) return 'samsung';
-    if(/amazon|polly/.test(identity)) return 'amazon';
-    return '';
+  let lastRepeatableSpeech=[];
+  let narrationAudio=null;
+  let narrationPlayers={};
+  let narrationQueue=[];
+  let narrationQueueToken=0;
+  function initialiseNarration(){
+    narrationPlayers={
+      en:new Audio('./narration-en.mp3'),
+      es:new Audio('./narration-es.mp3')
+    };
+    Object.values(narrationPlayers).forEach(audio=>{audio.preload='auto';audio.load();});
+    narrationAudio=narrationPlayers[settings.lang];
   }
-  function refreshSpeechVoices(){
-    if(!('speechSynthesis' in window)) return [];
-    const voices=speechSynthesis.getVoices();
-    if(voices.length) availableSpeechVoices=voices;
-    return availableSpeechVoices;
+  function speechSegments(value){
+    return (Array.isArray(value)?value:[value]).map(item=>String(item||'').trim()).filter(Boolean);
   }
-  function voiceStableId(voice){ return `${voice?.name||''}::${normaliseLocale(voice?.lang)}::${voice?.voiceURI||''}`; }
-  function voiceSettingKey(language){ return language==='es'?'spanishVoiceId':'englishVoiceId'; }
-  function configuredSpeechVoice(voices,language){
-    const selectedId=String(settings[voiceSettingKey(language)]||'');
-    if(!selectedId) return null;
-    return voices.find(voice=>voiceStableId(voice)===selectedId&&normaliseLocale(voice.lang).startsWith(language))||null;
+  function narrationSource(text,language){
+    return globalThis.DANCO_NARRATION?.[language]?.[text]||'';
   }
-  function voiceScore(voice,language){
-    const profile=VOICE_PREFERENCES[language];
-    const locale=normaliseLocale(voice.lang);
-    const target=normaliseLocale(profile.target);
-    const identity=voiceIdentity(voice);
-    const hasToken=token=>token==='male'||token==='female'
-      ?new RegExp(`(^|[^a-z])${token}([^a-z]|$)`).test(identity)
-      :identity.includes(token);
-    if(!locale.startsWith(language)) return -10000;
-    if(profile.blocked?.some(hasToken)) return -10000;
-    let score=locale===target?180:45;
-    const regionalIndex=profile.regional.map(normaliseLocale).indexOf(locale);
-    if(regionalIndex>=0) score+=80-(regionalIndex*7);
-    const preferredIndex=profile.preferred.findIndex(hasToken);
-    const avoidedIndex=profile.avoid.findIndex(hasToken);
-    if(preferredIndex>=0) score+=Math.max(45,190-(preferredIndex*7));
-    if(avoidedIndex>=0) score-=150;
-    if(/natural|neural|enhanced|premium|studio/.test(identity)) score+=120;
-    if(/compact|espeak|robot|classic/.test(identity)) score-=80;
-    if(voice.localService) score+=8;
-    if(voice.default) score+=2;
-    return score;
-  }
-  function englishMaleVoiceScore(voice,preferredProvider){
-    const profile=VOICE_PREFERENCES.en;
-    const locale=normaliseLocale(voice.lang);
-    const identity=voiceIdentity(voice);
-    const hasWord=token=>new RegExp(`(^|[^a-z])${token}([^a-z]|$)`).test(identity);
-    if(locale!=='en-us') return -10000;
-    if(profile.blocked.some(token=>identity.includes(token))) return -10000;
-    if(profile.avoid.some(token=>token==='female'?hasWord(token):identity.includes(token))) return -10000;
-    const preferredIndex=profile.preferred.findIndex(token=>identity.includes(token));
-    const explicitlyMale=hasWord('male');
-    const highQuality=/natural|neural|enhanced|premium|studio|siri/.test(identity);
-    if(preferredIndex<0&&!explicitlyMale) return -10000;
-    let score=1200-(Math.max(0,preferredIndex)*24);
-    if(preferredIndex<0) score=620;
-    if(highQuality) score+=260;
-    if(preferredProvider&&voiceProvider(voice)===preferredProvider) score+=180;
-    if(/compact|classic|espeak|robot/.test(identity)) score-=preferredIndex>=0?90:500;
-    if(voice.localService) score+=12;
-    return score;
-  }
-  function bestSpanishVoice(voices){
-    const configured=configuredSpeechVoice(voices,'es');
-    if(configured) return configured;
-    return voices
-      .map((voice,index)=>({voice,index,score:voiceScore(voice,'es')}))
-      .filter(candidate=>candidate.score>-10000)
-      .sort((a,b)=>b.score-a.score||a.index-b.index)[0]?.voice||null;
-  }
-  function preferredSpeechVoice(language){
-    const voices=refreshSpeechVoices();
-    if(!voices.length) return null;
-    const configured=configuredSpeechVoice(voices,language);
-    if(configured) return configured;
-    if(language==='en'){
-      const spanishProvider=voiceProvider(bestSpanishVoice(voices));
-      return voices
-        .map((voice,index)=>({voice,index,score:englishMaleVoiceScore(voice,spanishProvider)}))
-        .filter(candidate=>candidate.score>-10000)
-        .sort((a,b)=>b.score-a.score||a.index-b.index)[0]?.voice||null;
-    }
-    return voices
-      .map((voice,index)=>({voice,index,score:voiceScore(voice,language)}))
-      .filter(candidate=>candidate.score>-10000)
-      .sort((a,b)=>b.score-a.score||a.index-b.index)[0]?.voice||null;
-  }
-  function voiceCandidateScore(voice,language){
-    if(language==='en') return englishMaleVoiceScore(voice,voiceProvider(bestSpanishVoice(refreshSpeechVoices())));
-    return voiceScore(voice,'es');
-  }
-  function voicesForSelector(language){
-    return refreshSpeechVoices()
-      .filter(voice=>language==='en'?normaliseLocale(voice.lang)==='en-us':normaliseLocale(voice.lang).startsWith('es'))
-      .sort((a,b)=>voiceCandidateScore(b,language)-voiceCandidateScore(a,language)||String(a.name).localeCompare(String(b.name)));
-  }
-  function populateNarrationVoiceSelector(language=settings.lang){
-    const select=$('narration-voice-select');
-    const button=document.querySelector('[data-action="test-narration-voice"]');
-    if(!select||!button) return;
-    const candidates=voicesForSelector(language);
-    const recommended=preferredSpeechVoice(language);
-    select.innerHTML='';
-    if(!candidates.length){
-      const option=document.createElement('option');
-      option.value=''; option.textContent=t('voiceListUnavailable'); select.appendChild(option);
-      select.disabled=true; button.disabled=true; return;
-    }
-    if(language==='en'&&!recommended){
-      const prompt=document.createElement('option');
-      prompt.value=''; prompt.textContent='Choose an available American English voice'; select.appendChild(prompt);
-    }
-    candidates.forEach(voice=>{
-      const option=document.createElement('option');
-      option.value=voiceStableId(voice);
-      const isRecommended=!!recommended&&voiceStableId(voice)===voiceStableId(recommended);
-      option.textContent=`${voice.name} · ${voice.lang}${isRecommended?` · ${t('voiceRecommended')}`:''}`;
-      select.appendChild(option);
-    });
-    select.disabled=false; button.disabled=false;
-    if(recommended){
-      select.value=voiceStableId(recommended);
-      const key=voiceSettingKey(language);
-      if(!settings[key]){ settings[key]=select.value; saveSettings(); }
-    }else select.value='';
-  }
-  function initialiseSpeechVoices(){
-    if(!('speechSynthesis' in window)) return;
-    refreshSpeechVoices();
-    const onVoicesChanged=()=>{refreshSpeechVoices();populateNarrationVoiceSelector(settings.lang);};
-    if(typeof speechSynthesis.addEventListener==='function') speechSynthesis.addEventListener('voiceschanged',onVoicesChanged);
-    else speechSynthesis.onvoiceschanged=onVoicesChanged;
-    setTimeout(()=>populateNarrationVoiceSelector(settings.lang),180);
-  }
-  function speak(text,options={}){
-    const content=String(text||'').trim();
-    if(!content) return;
-    if(options.remember!==false) lastRepeatableSpeech=content;
-    if((!settings.audio&&!options.force)||!('speechSynthesis' in window)) return;
-    const requestId=++speechRequestId;
-    clearTimeout(speechRetryTimer);
-    speakWhenVoicesReady(content,requestId,0);
-  }
-  function speakWhenVoicesReady(text,requestId,attempt){
-    if(requestId!==speechRequestId||!('speechSynthesis' in window)) return;
-    const language=settings.lang==='es'?'es':'en';
-    const voices=refreshSpeechVoices();
-    if(!voices.length&&attempt<8){
-      speechRetryTimer=setTimeout(()=>speakWhenVoicesReady(text,requestId,attempt+1),120+(attempt*70));
+  function playNarrationSegment(token,index){
+    if(token!==narrationQueueToken||index>=narrationQueue.length) return;
+    const clip=narrationSource(narrationQueue[index],settings.lang);
+    const audio=narrationPlayers[settings.lang];
+    if(!clip||!audio){
+      if(index+1<narrationQueue.length) playNarrationSegment(token,index+1);
+      else toast(t('narrationUnavailable'));
       return;
     }
-    const voice=preferredSpeechVoice(language);
-    if(!voice&&attempt<8){
-      speechRetryTimer=setTimeout(()=>speakWhenVoicesReady(text,requestId,attempt+1),120+(attempt*70));
-      return;
-    }
-    if(!voice){
-      toast(language==='en'?t('englishVoiceUnavailable'):t('voiceListUnavailable'));
-      return;
-    }
-    const utterance=new SpeechSynthesisUtterance(String(text||''));
-    utterance.lang=VOICE_PREFERENCES[language].target;
-    if(voice){utterance.voice=voice;utterance.lang=voice.lang||utterance.lang;}
-    utterance.rate=language==='es'?.9:.96;
-    utterance.pitch=language==='es'?1.03:1;
-    utterance.volume=1;
-    speechSynthesis.cancel();
-    speechSynthesis.speak(utterance);
+    if(narrationAudio&&narrationAudio!==audio) narrationAudio.pause();
+    narrationAudio=audio;
+    const finish=()=>{
+      if(token!==narrationQueueToken) return;
+      audio.pause(); audio.ontimeupdate=null; audio.onended=null;
+      playNarrationSegment(token,index+1);
+    };
+    const begin=()=>{
+      if(token!==narrationQueueToken) return;
+      audio.onloadedmetadata=null;
+      try{audio.currentTime=Number(clip.start)||0;}catch(_){setTimeout(begin,60);return;}
+      audio.ontimeupdate=()=>{if(audio.currentTime>=Number(clip.end)-.035)finish();};
+      audio.onended=finish;
+      audio.onerror=()=>playNarrationSegment(token,index+1);
+      const playback=audio.play();
+      if(playback?.catch) playback.catch(()=>toast(t('tapRepeatAudio')));
+    };
+    if(audio.readyState>=1) begin(); else{audio.onloadedmetadata=begin;audio.load();}
   }
-  function testAndSaveNarrationVoice(){
-    if(!('speechSynthesis' in window)) return;
-    const language=settings.lang==='es'?'es':'en';
-    const select=$('narration-voice-select');
-    const voice=refreshSpeechVoices().find(candidate=>voiceStableId(candidate)===select.value);
-    if(!voice){ toast(t('voiceListUnavailable')); return; }
-    settings[voiceSettingKey(language)]=voiceStableId(voice); saveSettings();
-    const utterance=new SpeechSynthesisUtterance(t('voiceSample'));
-    utterance.voice=voice; utterance.lang=voice.lang||VOICE_PREFERENCES[language].target;
-    utterance.rate=language==='es'?.9:.96; utterance.pitch=language==='es'?1.03:1; utterance.volume=1;
-    speechRequestId++; clearTimeout(speechRetryTimer); speechSynthesis.cancel();
-    setTimeout(()=>speechSynthesis.speak(utterance),80);
-    populateNarrationVoiceSelector(language); toast(t('voiceSaved'));
+  function speak(value,options={}){
+    const segments=speechSegments(value);
+    if(!segments.length) return;
+    if(options.remember!==false) lastRepeatableSpeech=[...segments];
+    if((!settings.audio&&!options.force)||!narrationPlayers[settings.lang]) return;
+    narrationQueueToken++;
+    narrationQueue=[...segments];
+    Object.values(narrationPlayers).forEach(audio=>audio.pause());
+    playNarrationSegment(narrationQueueToken,0);
   }
   function cancelSpeech(){
-    speechRequestId++;
-    clearTimeout(speechRetryTimer);
-    if('speechSynthesis' in window) speechSynthesis.cancel();
+    narrationQueueToken++;
+    narrationQueue=[];
+    Object.values(narrationPlayers).forEach(audio=>{audio.pause();audio.ontimeupdate=null;audio.onended=null;audio.onloadedmetadata=null;audio.onerror=null;});
   }
+  function testNarration(){ speak(t('voiceSample'),{remember:false,force:true}); }
   function closeHelp(){ $('help-drawer').classList.remove('open'); $('help-backdrop').classList.remove('open'); $('help-drawer').setAttribute('aria-hidden','true'); }
-  function openHelp(){ populateNarrationVoiceSelector(settings.lang); $('help-drawer').classList.add('open'); $('help-backdrop').classList.add('open'); $('help-drawer').setAttribute('aria-hidden','false'); speak(`${t('helpTitle')}. ${t('helpDefault')}`,{remember:false}); }
-  function repeatHelpAudio(){ speak(lastRepeatableSpeech||`${t('helpTitle')}. ${t('helpDefault')}`,{remember:false,force:true}); }
+  function openHelp(){ $('help-drawer').classList.add('open'); $('help-backdrop').classList.add('open'); $('help-drawer').setAttribute('aria-hidden','false'); speak([t('helpTitle'),t('helpDefault')],{remember:false}); }
+  function repeatHelpAudio(){ speak(Array.isArray(lastRepeatableSpeech)&&lastRepeatableSpeech.length?lastRepeatableSpeech:[t('helpTitle'),t('helpDefault')],{remember:false,force:true}); }
   async function toggleAppFullscreen(forceExit=false){
     const active=document.body.classList.contains('immersive-mode');
     if(active||forceExit){
@@ -456,24 +329,55 @@
     toast(!nativeWorked&&ios?t('fullscreenIos'):t('fullscreenOn'));
   }
 
+  function applicationFromForm(){
+    return {
+      email:$('candidate-email')?.value.trim()||'',
+      phone:$('candidate-phone')?.value.trim()||'',
+      location:$('candidate-location')?.value.trim()||'',
+      availability:$('candidate-availability')?.value||'',
+      role:$('candidate-role')?.value||'',
+      experience:$('candidate-experience')?.value||'',
+      authorization:$('candidate-authorization')?.value||'',
+      license:$('candidate-license')?.value||'',
+      otherRoles:document.querySelector('input[name="other-roles"]:checked')?.value||'Yes'
+    };
+  }
+  function populateApplicationForm(application={}){
+    const fields={
+      'candidate-email':application.email,
+      'candidate-phone':application.phone,
+      'candidate-location':application.location,
+      'candidate-availability':application.availability,
+      'candidate-role':application.role,
+      'candidate-experience':application.experience,
+      'candidate-authorization':application.authorization,
+      'candidate-license':application.license
+    };
+    Object.entries(fields).forEach(([id,value])=>{ if($(id)) $(id).value=value||''; });
+    const otherRoles=application.otherRoles||'Yes';
+    $$('input[name="other-roles"]').forEach(input=>{input.checked=input.value===otherRoles;});
+  }
+
   function newSession(){
-    session={status:'setup',name:'',reference:'',lang:settings.lang,audio:settings.audio,supportReason:settings.audio?1:0,profileSkipped:false,profileAnswers:[],knowledgeAnswers:Array(10).fill(0),questionOrder:shuffle(QUESTIONS.map(q=>q.id)),knowledgeIndex:0,startedAt:new Date().toISOString(),trialConsumed:false};
+    session={status:'setup',mode:settings.appMode,name:'',reference:'',application:{},applicationSubmitted:false,lang:settings.lang,audio:settings.audio,supportReason:settings.audio?1:0,profileSkipped:false,profileAnswers:[],knowledgeAnswers:Array(10).fill(0),questionOrder:shuffle(QUESTIONS.map(q=>q.id)),knowledgeIndex:0,startedAt:new Date().toISOString(),trialConsumed:false};
     saveSession();
   }
   function goToSetup(){
     if(!session || session.status==='complete') newSession();
     session.lang=settings.lang; session.audio=settings.audio;
     $('candidate-name').value=session.name||''; $('setup-error').textContent='';
+    populateApplicationForm(session.application||{}); applyProductMode();
     $$('.setup-choice').forEach(x=>x.classList.toggle('selected',(x.dataset.audio==='on')===settings.audio));
-    showScreen('setup-screen'); speak(t('setupHelper'));
+    showScreen('setup-screen'); speak(t(activeProductMode()==='application'?'applicationSetupHelper':'setupHelper'));
   }
   function beginBeginner(){
     const name=$('candidate-name').value.trim(); $('setup-error').textContent='';
     if(!name){ $('setup-error').textContent=t('requiredError'); return; }
     if(!canBegin()){ $('setup-error').textContent=trialHash()?t('usedError'):t('lockedError'); openModal('unlock-modal'); return; }
     if(!session || session.status==='complete') newSession();
-    Object.assign(session,{name,reference:'',lang:settings.lang,audio:settings.audio,supportReason:settings.audio?1:0,status:'profile-intro'}); saveSession();
-    showScreen('profile-intro-screen'); speak(`${t('profileIntroTitle')} ${t('profileIntroOne')} ${t('profileIntroTwo')}`);
+    const mode=activeProductMode();
+    Object.assign(session,{mode,name,reference:'',application:mode==='application'?applicationFromForm():{},lang:settings.lang,audio:settings.audio,supportReason:settings.audio?1:0,status:'profile-intro'}); saveSession();
+    showScreen('profile-intro-screen'); speak([t('profileIntroTitle'),t('profileIntroOne'),t('profileIntroTwo')]);
   }
 
   function startProfile(){ profileIndex=session.profileAnswers?.length||0; session.status='profile'; session.profileSkipped=false; saveSession(); renderProfile(); }
@@ -486,9 +390,9 @@
     $$('[data-profile-option]').forEach(button=>button.addEventListener('click',()=>{
       const option=q.options[Number(button.dataset.profileOption)]; session.profileAnswers[profileIndex]=option.disc; profileIndex++; saveSession(); renderProfile();
     }));
-    speak(`${q[settings.lang]}. ${q.options.map(o=>o[settings.lang]).join('. ')}`);
+    speak([q[settings.lang],...q.options.map(o=>o[settings.lang])]);
   }
-  function showInstructions(){ showScreen('instructions-screen'); speak(`${t('instructionsTitle')}. ${t('instructionsLead')} ${t('timingNotice')}`); }
+  function showInstructions(){ showScreen('instructions-screen'); speak([t('instructionsTitle'),t('instructionsLead'),t('timingNotice')]); }
 
   function shuffle(array){ const out=[...array]; for(let i=out.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [out[i],out[j]]=[out[j],out[i]]; } return out; }
   function seededOptions(q){
@@ -520,7 +424,7 @@
     if(phase==='answer'){
       $('phase-label').textContent=t('answer'); $('.phase-display'); $('timer-display').parentElement.classList.add('answer'); $('knowledge-hint').textContent=t('answerHint');
       $$('[data-answer-index]').forEach(button=>button.disabled=false);
-      const q=currentQuestion(); if(settings.audio) speak(`${q[settings.lang]}. ${currentDisplayOptions.map(({option})=>option[settings.lang]).join('. ')}`);
+      const q=currentQuestion(); if(settings.audio) speak([q[settings.lang],...currentDisplayOptions.map(({option})=>option[settings.lang])]);
     }else{
       $('phase-label').textContent=t('review'); $('timer-display').parentElement.classList.remove('answer');
     }
@@ -542,8 +446,53 @@
   }
   function renderResult(){
     if(!session?.resultCode) return;
-    $('result-code').textContent=session.resultCode; $('completion-meta').innerHTML=`<b>${escapeHtml(session.name)}</b><br>${escapeHtml(session.profileSkipped?t('profileSkipped'):t('profileDone'))}`;
-    $('next-applicant').style.display=(isOwner()||trialRemaining()>0)?'inline-flex':'none'; showScreen('result-screen'); speak(`${t('completeTitle')}. ${t('resultInstruction')}`);
+    const applicationMode=session.mode==='application';
+    const resultCard=$('result-title').closest('.result-card');
+    resultCard.querySelector('[data-i18n="completeEyebrow"]').textContent=t(applicationMode?'applicationCompleteEyebrow':'completeEyebrow');
+    $('result-title').textContent=t(applicationMode?'applicationCompleteTitle':'completeTitle');
+    resultCard.querySelector('[data-i18n="completeLead"]').textContent=t(applicationMode?'applicationCompleteLead':'completeLead');
+    $('result-code-label').textContent=t(applicationMode?'applicationNumberLabel':'resultCodeLabel');
+    $('copy-code').textContent=t(applicationMode?'copyApplicationNumber':'copyCode');
+    resultCard.querySelector('[data-i18n="resultInstruction"]').textContent=t(applicationMode?'applicationResultInstruction':'resultInstruction');
+    $('result-code').textContent=session.resultCode;
+    const role=applicationMode&&session.application?.role?` · ${session.application.role}`:'';
+    $('completion-meta').innerHTML=`<b>${escapeHtml(session.name)}</b>${escapeHtml(role)}<br>${escapeHtml(session.profileSkipped?t('profileSkipped'):t('profileDone'))}`;
+    $('submit-application').hidden=!applicationMode||!!session.applicationSubmitted;
+    $('application-submit-note').hidden=!applicationMode||!!session.applicationSubmitted;
+    $('next-applicant').style.display=(isOwner()||trialRemaining()>0)?'inline-flex':'none';
+    showScreen('result-screen'); speak([t(applicationMode?'applicationCompleteTitle':'completeTitle'),t(applicationMode?'applicationResultInstruction':'resultInstruction')]);
+  }
+
+  function findStoredApplication(code){
+    const normalized=normalizeCode(code);
+    return storedApplications().find(item=>normalizeCode(item.code)===normalized)||null;
+  }
+  function populateStoredApplicants(){
+    const select=$('stored-applicant-select'); if(!select) return;
+    const applications=storedApplications().sort((a,b)=>String(b.submittedAt).localeCompare(String(a.submittedAt)));
+    select.innerHTML=applications.length?'<option value="">Select a stored applicant</option>':'<option value="">No submitted applications</option>';
+    applications.forEach(item=>{ const option=document.createElement('option'); option.value=item.code; option.textContent=`${item.name||'Unnamed applicant'} — ${item.code}`; select.appendChild(option); });
+  }
+  function storeCurrentApplication(){
+    $('submit-error').textContent='';
+    if(accessHash($('submit-pin').value)!==ADMIN_HASH){ $('submit-error').textContent=t('invalidAdminPin'); return; }
+    if(!session||session.status!=='complete'||session.mode!=='application'||!session.resultCode){ $('submit-error').textContent='No completed application is available to store.'; return; }
+    const applications=storedApplications();
+    const record={code:session.resultCode,name:session.name,application:{...(session.application||{})},submittedAt:new Date().toISOString(),lang:session.lang,audio:session.audio};
+    const existing=applications.findIndex(item=>normalizeCode(item.code)===normalizeCode(record.code));
+    if(existing>=0) applications[existing]=record; else applications.unshift(record);
+    saveJson(APPLICATIONS_KEY,applications.slice(0,100));
+    session.applicationSubmitted=true; session.submittedAt=record.submittedAt; saveSession();
+    $('submit-pin').value=''; closeModal('submit-modal'); renderResult(); populateStoredApplicants(); toast(existing>=0?t('submissionAlreadySaved'):t('submissionSaved'));
+  }
+  function loadStoredApplicant(){
+    const record=findStoredApplication($('stored-applicant-select').value);
+    if(!record){ $('decode-error').textContent='Select a stored applicant first.'; return; }
+    try{
+      const data=decodeResult(record.code); $('decode-error').textContent='';
+      $('admin-result-code').value=record.code; $('admin-candidate-name').value=record.name||''; $('admin-candidate-reference').value=record.code;
+      renderDashboard(data,{code:record.code,name:record.name,reference:record.code,application:record.application,submittedAt:record.submittedAt});
+    }catch(error){ $('decode-error').textContent=error.message; $('dashboard-output').innerHTML=''; }
   }
 
   function pushBits(bits,value,count){ for(let i=count-1;i>=0;i--) bits.push((value>>i)&1); }
@@ -598,11 +547,17 @@
     return {short:codes.join('/'),label,guidance,color,counts};
   }
   function answerText(q,value,lang='en'){ return value? q.options[value-1]?.[lang] || 'Invalid answer' : 'Timed out / no answer'; }
-  function renderDashboard(data,{demo=false,name='',reference='',code=''}={}){
+  function renderDashboard(data,{demo=false,name='',reference='',code='',application=null,submittedAt=''}={}){
     const result=scoreAssessment(data.knowledgeAnswers),disc=personalityResult(data); const language=data.lang==='es'?'Spanish':'English'; const support=data.audio?'Audio enabled':'No audio';
     const applicantMeta=[reference,language,support,code].filter(Boolean).map(escapeHtml).join(' · ');
+    const applicationFields=application?[
+      ['Position applied for',application.role],['Open to other roles',application.otherRoles],['Email',application.email],['Phone',application.phone],
+      ['City and state',application.location],['Available start date',application.availability],['Commercial roofing experience',application.experience],
+      ['U.S. work authorization',application.authorization],['Valid driver’s license',application.license]
+    ]:[];
     $('dashboard-output').innerHTML=`
       ${demo?'<div class="dashboard-banner">Example report only — these results do not belong to an applicant.</div>':''}
+      ${application?`<section class="application-details-card"><div class="application-details-heading"><div><small>JOB APPLICANT</small><h3>${escapeHtml(name||'Applicant name not supplied')}</h3></div><span>${escapeHtml(code||reference||'')}</span></div><div class="application-details-grid">${applicationFields.map(([label,value])=>`<div><span>${escapeHtml(label)}</span><b>${escapeHtml(value||'Not supplied')}</b></div>`).join('')}</div>${submittedAt?`<p class="application-stored-at">Stored on this device: ${escapeHtml(new Intl.DateTimeFormat('en-US',{dateStyle:'medium',timeStyle:'short'}).format(new Date(submittedAt)))}</p>`:''}</section>`:''}
       <div class="dashboard-summary">
         <div class="score-ring" style="--score:${result.overall}%"><div><b>${result.overall}%</b><span>KNOWLEDGE SCORE</span></div></div>
         <div class="recommendation-card"><small>RECOMMENDED INTERVIEW PATH</small><h3>${escapeHtml(result.recommendation)}</h3><p>${escapeHtml(result.rationale)}</p></div>
@@ -627,9 +582,10 @@
     $$('[data-action="open-unlock"]').forEach(button=>button.addEventListener('click',()=>openModal('unlock-modal')));
     $$('[data-action="close-unlock"]').forEach(button=>button.addEventListener('click',()=>closeModal('unlock-modal')));
     $$('[data-action="close-admin"]').forEach(button=>button.addEventListener('click',()=>closeModal('admin-modal')));
+    $$('[data-action="close-submit"]').forEach(button=>button.addEventListener('click',()=>closeModal('submit-modal')));
     $$('[data-action="close-help"]').forEach(button=>button.addEventListener('click',closeHelp));
     document.querySelector('[data-action="repeat-audio"]').addEventListener('click',repeatHelpAudio);
-    document.querySelector('[data-action="test-narration-voice"]').addEventListener('click',testAndSaveNarrationVoice);
+    document.querySelector('[data-action="test-narration"]').addEventListener('click',testNarration);
     document.querySelector('.brand-button').addEventListener('click',()=>{if(session?.status==='complete')renderResult();else showScreen('language-screen');});
     $('help-tab').addEventListener('click',openHelp); $('help-backdrop').addEventListener('click',closeHelp);
     $('language-toggle').addEventListener('click',()=>setLanguage(settings.lang==='en'?'es':'en'));
@@ -642,28 +598,34 @@
     $('begin-beginner').addEventListener('click',beginBeginner); $('start-profile').addEventListener('click',startProfile); $('skip-profile').addEventListener('click',skipProfile); $('start-knowledge').addEventListener('click',startKnowledge);
     $('unlock-submit').addEventListener('click',()=>{ $('unlock-error').textContent=''; try{const result=activateCode($('unlock-code').value);if(result.mode==='owner')toast(t('ownerSuccess'));else{if(result.remaining<=0)throw new Error(t('usedError'));toast(t('unlockSuccess',result.remaining));} $('unlock-code').value='';closeModal('unlock-modal');}catch(error){$('unlock-error').textContent=error.message;} });
     $('copy-code').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(session.resultCode);toast(t('copied'));}catch(_){toast(t('copyFailed'));}});
+    $('submit-application').addEventListener('click',()=>{$('submit-error').textContent='';$('submit-pin').value='';openModal('submit-modal');setTimeout(()=>$('submit-pin').focus(),80);});
+    $('confirm-submit').addEventListener('click',storeCurrentApplication);
     $('next-applicant').addEventListener('click',()=>{if(!isOwner()&&trialRemaining()<=0){openModal('unlock-modal');return;}localStorage.removeItem(SESSION_KEY);session=null;newSession();goToSetup();});
     $('admin-open').addEventListener('click',()=>{openModal('admin-modal');$('admin-login').hidden=adminAuthenticated;$('admin-dashboard').hidden=!adminAuthenticated;if(!adminAuthenticated)setTimeout(()=>$('admin-pin').focus(),80);else prepareAdmin();});
     $('admin-login-button').addEventListener('click',()=>{if(accessHash($('admin-pin').value)!==ADMIN_HASH){$('admin-error').textContent='Administrator PIN not recognised.';return;}adminAuthenticated=true;$('admin-error').textContent='';$('admin-pin').value='';$('admin-login').hidden=true;$('admin-dashboard').hidden=false;prepareAdmin();});
-    $('decode-result').addEventListener('click',()=>{try{const code=$('admin-result-code').value;const data=decodeResult(code);$('decode-error').textContent='';renderDashboard(data,{code:formatResultCode(normalizeCode(code).replace(/^DRA/,'')),name:$('admin-candidate-name').value.trim(),reference:$('admin-candidate-reference').value.trim()});}catch(error){$('decode-error').textContent=error.message;$('dashboard-output').innerHTML='';}});
+    $('decode-result').addEventListener('click',()=>{try{const code=$('admin-result-code').value;const data=decodeResult(code);const stored=findStoredApplication(code);$('decode-error').textContent='';renderDashboard(data,{code:formatResultCode(normalizeCode(code).replace(/^DRA/,'')),name:$('admin-candidate-name').value.trim()||stored?.name||'',reference:$('admin-candidate-reference').value.trim()||stored?.code||'',application:stored?.application||null,submittedAt:stored?.submittedAt||''});}catch(error){$('decode-error').textContent=error.message;$('dashboard-output').innerHTML='';}});
+    $$('[data-admin-mode]').forEach(button=>button.addEventListener('click',()=>setProductMode(button.dataset.adminMode)));
+    $('load-stored-applicant').addEventListener('click',loadStoredApplicant);
     $('load-example').addEventListener('click',()=>{const demo={knowledgeAnswers:[1,1,1,1,1,1,2,1,1,1],profileSkipped:false,profileAnswers:['S','C','S','I','S'],lang:'en',audio:false};renderDashboard(demo,{demo:true,name:'Example Applicant',reference:'DEMO-001'});});
     $('print-report').addEventListener('click',()=>window.print());
     $('reset-device').addEventListener('click',()=>{if(!confirm('Reset the current applicant on this device? Access status and remaining trial runs will be preserved.'))return;clearInterval(timer);localStorage.removeItem(SESSION_KEY);session=null;$('dashboard-output').innerHTML='';closeModal('admin-modal');newSession();showScreen('language-screen');toast('Applicant reset.');});
-    [$('unlock-modal'),$('admin-modal')].forEach(modal=>modal.addEventListener('click',event=>{if(event.target===modal)modal.classList.remove('open');}));
-    document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeModal('unlock-modal');closeModal('admin-modal');closeHelp();}});
+    [$('unlock-modal'),$('admin-modal'),$('submit-modal')].forEach(modal=>modal.addEventListener('click',event=>{if(event.target===modal)modal.classList.remove('open');}));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeModal('unlock-modal');closeModal('admin-modal');closeModal('submit-modal');closeHelp();}});
   }
   function prepareAdmin(){
     $('print-date').textContent=new Intl.DateTimeFormat('en-GB',{dateStyle:'long',timeStyle:'short'}).format(new Date());
-    if(session?.status==='complete'){$('admin-result-code').value=session.resultCode||'';$('admin-candidate-name').value=session.name||'';$('admin-candidate-reference').value=session.reference||'';try{renderDashboard(decodeResult(session.resultCode),{code:session.resultCode,name:session.name,reference:session.reference});}catch(_){}}
+    populateStoredApplicants(); applyProductMode();
+    if(session?.status==='complete'){$('admin-result-code').value=session.resultCode||'';$('admin-candidate-name').value=session.name||'';$('admin-candidate-reference').value=session.mode==='application'?session.resultCode:(session.reference||'');try{renderDashboard(decodeResult(session.resultCode),{code:session.resultCode,name:session.name,reference:session.mode==='application'?session.resultCode:session.reference,application:session.mode==='application'?(session.application||{}):null,submittedAt:session.submittedAt||''});}catch(_){}}
   }
   function init(){
-    initialiseSpeechVoices(); setLanguage(settings.lang); $('audio-toggle').textContent=settings.audio?'🔊':'🔇'; applyAccessState(); initEvents();
+    if(session&&!session.mode){session.mode='assessment';saveSession();}
+    initialiseNarration(); setLanguage(settings.lang); $('audio-toggle').textContent=settings.audio?'🔊':'🔇'; applyAccessState(); initEvents(); applyProductMode();
     if(session?.status==='complete'&&session.resultCode){settings.lang=session.lang||settings.lang;setLanguage(settings.lang);renderResult();}
     else if(session?.status==='knowledge'){settings.lang=session.lang||settings.lang;setLanguage(settings.lang);showInstructions();$('start-knowledge').textContent=t('resume');}
     else if(session?.status==='profile'){settings.lang=session.lang||settings.lang;setLanguage(settings.lang);profileIndex=session.profileAnswers?.length||0;renderProfile();}
     else if(session?.status==='profile-intro'){settings.lang=session.lang||settings.lang;setLanguage(settings.lang);showScreen('profile-intro-screen');}
     else showScreen('language-screen');
-    if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=18.0.0').catch(()=>{}));
+    if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=20.0.0').catch(()=>{}));
   }
 
   document.addEventListener('DOMContentLoaded',init);

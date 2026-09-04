@@ -1,8 +1,8 @@
 {
   "name": "Danco Roofing Applicant Assessment",
   "short_name": "Danco Assessment",
-  "description": "Bilingual applicant workforce assessment prototype for Danco Roofing Services, Inc.",
-  "start_url": "./index.html",
+  "description": "Bilingual job application and workforce assessment prototype for Danco Roofing Services, Inc.",
+  "start_url": "./index.html?v=20.0.0",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",

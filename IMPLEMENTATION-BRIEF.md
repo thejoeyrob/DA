@@ -1,142 +1,124 @@
-# Danco Applicant Assessment — implemented change brief
+# Danco Applicant Assessment — v20 implementation brief
 
-## Objective
+## Outcome
 
-Apply fifteen isolated app improvements and one documentation improvement without altering its assessment flow, scoring, access controls, result-code format or administration functions.
+This release removes browser/device text-to-speech from the active app, adds an administrator-controlled Application mode, and preserves the existing work-style and trade-assessment sequence.
 
-## Implemented changes
+The app remains a static GitHub Pages Progressive Web App. No server, database or email service is introduced.
 
-1. **Setup action label**
-   - English: `Begin beginner assessment` → `Begin assessment`
-   - Spanish equivalent: `Comenzar evaluación para principiantes` → `Comenzar evaluación`
+## 1. Consistent narration on every supported device
 
-2. **Rendered answer-option imagery**
-   - Replaced all 20 remaining diagram/geometry-style assets with fully rendered, recognisable 800 × 520 PNG images.
-   - Replaced groups:
-     - roof-access ladder heights: four images
-     - TPO inspection tools: four images
-     - dirty TPO lap actions: four images
-     - lifting signal-person choices: four images
-     - wind-uplift fastening zones: four images
-   - Existing clear membrane product and mechanically attached TPO seam images were retained.
-   - Filenames and question references were preserved, so the question bank and answer mapping did not change.
+- Removed the device voice list and all active `speechSynthesis` voice-selection logic.
+- Added 180 indexed narration segments covering every English and Spanish instruction, question and answer option, contained in two root-level MP3 files for easy GitHub upload.
+- English uses one consistent offline-generated American English male neural voice.
+- Spanish uses one consistent offline-generated female Spanish neural voice.
+- The same files play on iPhone, iPad, Android, Windows and macOS; the operating system can no longer substitute a novelty, compact or robotic device voice.
+- Audio remains optional and follows the existing audio on/off setting.
+- Help retains **Repeat spoken audio** and adds **Test standard narration**.
+- The service worker precaches narration after the first successful online visit so the installed app can continue to speak offline.
+- The private question bank was rendered locally; it was not submitted to an external speech service.
 
-3. **Speech voice preference logic**
-   - English first preference: `en-US`, with known American male and natural/neural voice names ranked highest.
-   - Spanish first preference: `es-US`, with known American/Latin American Spanish female and natural/neural voice names ranked highest.
-   - Spanish fallback order favours other Latin American Spanish locales before general Spanish voices.
-   - English fallback order favours US/Canadian English before other English voices.
-   - If a matching named voice is not installed, the app uses the best available voice for the selected language; if no voice list is exposed, the browser/device default speaks with the requested language code.
-   - Voice lists are refreshed when the browser fires `voiceschanged`, covering devices that load voices asynchronously.
+## 2. Administrator-controlled start mode
 
-4. **Offline refresh**
-   - Updated the service-worker cache identifier so existing installations request the revised code and image assets after deployment.
+The administrator dashboard now provides two choices:
 
-5. **Side-by-side character placement**
-   - Replaced overlapping paired-character compositions with dedicated side-by-side columns.
-   - Applied the same non-overlap rule to the welcome view, setup and instruction guide panels, help drawer and mobile result screen.
-   - The selected-language helper retains visual emphasis without covering the second helper.
-   - The assessment flow, helper-language switching and character source files remain unchanged.
+- **Assessment mode** — the current name-only setup followed by the existing assessment.
+- **Application mode** — a lightweight job-application form followed by the same existing assessment.
 
-6. **Creator credit and supplied logo**
-   - Added the exact credit `Design & Production by` with the supplied Joseph Whelan EDS logo in the bottom-right corner.
-   - Removed the source JPEG's white background and converted the mark to a transparent, all-white PNG for placement over the app colour.
-   - Kept the credit intentionally small, low-opacity and non-interactive so it has minimal visual impact and cannot block controls.
-   - Added the new transparent logo asset to the offline service-worker cache.
+The selected mode is stored on the current browser/device and applies to the next applicant. Changing the setting does not alter an assessment already in progress or a completed result.
 
-7. **Natural voice refinement**
-   - Expanded and prioritised known higher-quality Apple, Microsoft and device voice names.
-   - Changed voice-name preference from a simple match to weighted ranking, so the strongest available candidate wins rather than whichever matching voice appears first.
-   - Increased preference for natural, neural, enhanced, premium and studio voices while penalising compact, classic, eSpeak and robotic voices.
-   - Tuned speech pacing while keeping Spanish delivery in its approved female-oriented range.
-   - Preserved graceful language and device-default fallbacks when preferred voices are unavailable.
+## 3. Prototype job-application form
 
-8. **Compact creator treatment and stable viewport**
-   - Reduced the creator mark to a 76-pixel desktop footprint and 68-pixel mobile footprint.
-   - Reflowed `Design & Production by` above the logo in a cleaner humanist sans-serif font.
-   - Locked the document, screens and main layout shells to the viewport width and suppressed horizontal overscroll.
+Application mode adds:
 
-9. **Panel-aware prototype watermark**
-   - Removed the oversized page-level watermark layer.
-   - Added a restrained light-grey watermark within white panels.
-   - Added a darker translucent navy watermark within blue panels.
-   - Watermarks remain decorative, non-interactive and disappear when owner access is active.
+- full name
+- email address
+- phone number
+- city and state
+- available start date
+- desired position: Service Helper, Roofer or Foreman
+- commercial roofing experience
+- U.S. work-authorization response
+- valid-driver’s-license response
+- yes/no choice for consideration for another listed role when the assessment suggests a different fit
 
-10. **Normal American male voice safeguard**
-   - Restricted English preference to established normal male American voices such as Microsoft Guy, Davis and Christopher, plus Apple Aaron and Alex.
-   - Explicitly excludes compact, novelty, character and robotic Apple voices from English selection.
-   - Restored English speech to neutral pitch and a normal conversational rate.
-   - If automatic matching cannot identify a suitable male voice, the app directs the reviewer to the device-voice tester instead of selecting a novelty or unidentified default.
+Only full name is required during prototype testing. All added fields may be left blank so reviewers can continue through the flow quickly.
 
-11. **Full-name-only applicant setup**
-   - Removed the application-number field from the applicant setup screen.
-   - English and Spanish guidance and validation now require only a full name.
-   - Removed the empty application-number separator from the applicant completion screen.
-   - Retained the optional administrator-side reference field for hiring staff who want to add an internal reference to a report.
+## 4. Application number and deliberate submission
 
-12. **Home Screen installation guidance**
-   - Added step-by-step instructions for saving the published PWA to an iPhone or iPad using Safari's **Add to Home Screen** action.
-   - Added Android instructions covering Chrome's **Install app** and **Add to Home screen** wording.
-   - Added the equivalent Samsung Internet route.
-   - Clarified that the first successful visit should be completed online so the app can prepare its offline files.
+- The existing encoded DRA result code also becomes the automated **Application number** in Application mode.
+- A completed application is not automatically stored.
+- **Submit application for review** opens a confirmation dialog and requires the administrator PIN.
+- Only a successful PIN-confirmed submission enters the prototype application list.
+- Re-submitting the same application number updates the existing record instead of creating a duplicate.
+- Up to 100 submitted application records are retained locally.
 
-13. **High-quality American English male voice correction**
-   - Restored the approved Spanish female preference order and its established delivery settings.
-   - Rebuilt English selection around explicit American male voice candidates, prioritising Apple Aaron/Alex, Microsoft neural male voices and clearly identified Google US English male voices.
-   - Matches the English voice provider to the selected Spanish voice provider where possible, giving the closest male equivalent available on the same device.
-   - Prevents known female, novelty and character voices from being selected for English.
-   - Allows an approved named Apple male voice even when its internal device identifier contains `compact`, which previously caused valid male voices to be rejected.
-   - Waits briefly for asynchronously loaded device voices before speaking, avoiding an early fall-through to a poor browser default.
+## 5. Local prototype application list
 
-14. **Repeat audio in Help**
-   - Added a bilingual **Repeat spoken audio / Repetir audio** control inside the Help drawer.
-   - Replays the most recent instruction, question or set of answer choices in the selected language.
-   - The repeat control works on demand even when audio support was not enabled during setup.
+The administrator dashboard now shows a simple selector containing:
 
-15. **Device-specific voice testing, selection and locking**
-   - Versioned the JavaScript, CSS and service-worker URLs so an installed PWA cannot continue serving previous voice logic from its old cache.
-   - Expanded automatic iPhone matching to include Evan, Aaron, Nathan and Apple's numbered male Siri voices while retaining strict novelty-voice exclusions.
-   - Added a bilingual **Test and save voice** control inside Help that lists the real English or Spanish voices exposed by the current device.
-   - Stores English and Spanish selections independently, preventing a later browser voice-list reorder from silently replacing either approved voice.
-   - Restored the Spanish female preference order used by the earlier good build; reviewers can test and lock the exact Spanish voice they prefer.
+- applicant name
+- application number/code
 
-## Preserved working behaviour
+Selecting an applicant and choosing **Load and decode**:
 
-The following were deliberately left unchanged:
+- decodes the existing assessment code
+- shows the job-applicant credentials in a dedicated section
+- shows role alignment, tier scores, work-style guidance and question breakdown
+- supports the existing print/save-PDF report
 
-- 3-step applicant flow and all screen transitions
-- optional 5-question work-style section
-- 10-question assessment order, wording, timers and correct-answer indexes
-- randomised answer display order
-- English/Spanish switching
-- prototype lock, owner access and all trial-code hashes/use limits
-- existing local-storage keys and remaining trial-use data
-- result-code version, encoding/decoding and administrator dashboard
-- applicant result privacy, reset behaviour and printable administrator report
-- fullscreen behaviour, PWA manifest and GitHub Pages flat-file structure
-- mascot, brand, email and existing clear roofing assets
-- all existing Danco branding and helper character artwork
+This storage is intentionally device-local browser storage. It is suitable for controlled prototype review on one device, but it is not a shared inbox, central database or email submission system. Production use requires an approved secure backend and appropriate hiring-data controls.
+
+## 6. Responsive and presentation refinements
+
+- Added responsive two-column/one-column application fields.
+- Added polished administrator mode and submission panels.
+- Added a printable job-applicant details section.
+- Maintained viewport width constraints to prevent side-to-side page movement.
+- Preserved paired-character grid placement so the male and female helpers remain side by side without overlap.
+- Preserved the small white creator mark and surface-aware prototype watermarks.
+
+## Preserved behaviour
+
+The following are unchanged:
+
+- language selection and bilingual assessment content
+- optional five-question work-style section
+- all ten knowledge questions, answer mappings and randomised display order
+- review/answer timers and timeout behaviour
+- trial codes, owner access, administrator PIN and trial-use limits
+- result-code version, encoding and decoding
+- applicant-facing score privacy
+- fullscreen behaviour and Home Screen installation
+- existing image assets, scoring thresholds and interview recommendations
+- flat-file GitHub Pages deployment structure
+
+## Changed and added deployment files
+
+- `index.html`
+- `app.css`
+- `app.js`
+- `manifest.webmanifest`
+- `service-worker.js`
+- `narration-manifest.js` (new)
+- `narration-en.mp3` (new)
+- `narration-es.mp3` (new)
+- `README-GITHUB.md`
+- `IMPLEMENTATION-BRIEF.md`
 
 ## Acceptance checks
 
-- No visible occurrence of `Begin beginner assessment` remains.
-- Every referenced answer image exists, decodes as a valid PNG and uses the expected aspect ratio.
-- Every visual question still has four options and the same correct answer index.
-- English voice ranking selects a natural American male candidate when one is available.
-- English voice ranking rejects compact and known novelty/character voices.
-- Spanish voice ranking selects the established preferred female candidate when one is available.
-- English and Spanish voice choices can be auditioned and saved independently inside Help.
-- A saved voice is reused by stable device identifier on future sessions.
-- Static PWA files remain root-relative and suitable for direct GitHub Pages hosting.
-- Every paired full-character presentation uses separate grid columns with no negative offsets or shared absolute positioning.
-- The creator credit reads `Design & Production by`, uses the supplied logo as a transparent white PNG and remains below interactive UI layers.
-- The creator treatment is vertically stacked and cannot increase the document's horizontal layout width.
-- The root document and every primary screen shell remain constrained to the viewport with no horizontal scrolling.
-- Prototype marks use light-grey treatment on white surfaces and dark-navy treatment on blue surfaces.
-- Applicant setup can begin with a full name alone and contains no application-number field.
-- The supplied README contains complete iPhone/iPad, Android Chrome and Samsung Internet Home Screen instructions.
-- English audio selects an explicit `en-US` male voice and never selects a known female or novelty voice when a supported male voice is available.
-- Spanish female voice ranking, pacing and pitch remain unchanged.
-- The Help drawer repeats the most recent assessment audio in either supported language.
-- Existing installed copies request the v18 voice script directly rather than receiving a stale cached JavaScript file.
-- English never falls through to an unverified default voice.
+- No active browser/device speech-synthesis call remains.
+- The narration manifest contains 90 English and 90 Spanish timed segments.
+- Both root-level narration MP3 files are valid and non-empty.
+- English narration uses the bundled American English male voice.
+- Spanish narration uses the bundled female Spanish voice.
+- Help can replay the most recent spoken instruction, question and answer sequence.
+- Assessment mode requests a full name only.
+- Application mode shows the optional credentials and three-role selector.
+- The existing assessment starts after either setup mode without question, timer or scoring changes.
+- Application mode labels the DRA code as the application number.
+- Submission requires the administrator PIN and is not automatic.
+- Stored applicants can be selected by name/code and decoded.
+- The administrator report includes submitted application credentials.
+- Existing installations request the v20 files and narration cache rather than stale voice logic.

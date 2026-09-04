@@ -2,7 +2,7 @@
 
 This folder is ready to host as a static Progressive Web App on GitHub Pages. Keep every supplied file together in the repository root.
 
-This revision replaces the remaining diagram-style answer graphics with fully rendered visual options, shortens the setup button to **Begin assessment**, adds separate test-and-save voice selection for English and Spanish inside Help, adds **Repeat spoken audio**, removes the applicant-number requirement, keeps paired helpers side by side without overlap, prevents horizontal page movement, adds panel-aware prototype watermarking, and uses a smaller transparent-white creator credit. The English default prioritises recognised natural American male voices; the Spanish default restores the established American Spanish female preference order. Each confirmed choice is stored independently so it cannot silently change between sessions. Versioned script links force installed copies to load the revised voice controls instead of reusing an older cached file. See `IMPLEMENTATION-BRIEF.md` for the controlled-change record.
+This revision replaces unreliable device text-to-speech with bundled English and Spanish neural narration, keeps **Repeat spoken audio**, and adds an administrator-controlled **Application mode** ahead of the existing assessment. Application mode provides optional applicant credentials, a three-role selector, an automated application number, PIN-gated submission and a local name/code review list. Assessment mode retains the current name-only setup. The existing work-style questions, trade questions, timing, scoring and result-code logic remain intact. See `IMPLEMENTATION-BRIEF.md` for the controlled-change record.
 
 ## Publish on GitHub Pages
 
@@ -13,7 +13,7 @@ This revision replaces the remaining diagram-style answer graphics with fully re
 5. Select the `main` branch and `/ (root)`, then save.
 6. GitHub will provide the public link after deployment finishes.
 
-`index.html` is the launch file. `manifest.webmanifest` and `service-worker.js` provide installable/offline PWA behavior after the first successful visit.
+`index.html` is the launch file. `manifest.webmanifest` and `service-worker.js` provide installable/offline PWA behavior after the first successful visit. The update package is fully flat: upload `narration-en.mp3`, `narration-es.mp3` and `narration-manifest.js` beside the other root-level app files. No folders are required.
 
 The full-screen control uses the browser Fullscreen API where supported. On iPhone browser tabs it switches to an expanded in-app view; installing the PWA with **Add to Home Screen** removes Safari's browser bars entirely.
 
@@ -48,6 +48,9 @@ Use `email-applicant-assessment-banner.png` as the image in an applicant email. 
 - The trial-code register is intentionally not included in this public hosting package.
 - Applicant scores and the optional work-style estimate are not shown to the applicant; only the encoded result code is displayed.
 - The administrator dashboard decodes the result code locally in the browser.
+- Administrators can choose Assessment mode or Application mode for the next applicant.
+- In Application mode, only PIN-confirmed submissions are added to the review list.
+- Submitted application details are held only in browser storage on the device used; they do not sync to another phone or computer and are not emailed.
 - Printing from the administrator dashboard produces a dedicated A4 report; the applicant completion screen is excluded.
 
 This prototype is a static, device-local application. For production recruitment use requiring central records, globally enforced code usage, identity management or audit logs, connect the interface to an approved secure backend before collecting live applicant data.
