@@ -108,7 +108,7 @@ body.immersive-mode .app-header{display:none}body.immersive-mode .immersive-exit
   body > *:not(#admin-modal){display:none!important}
   #admin-modal{display:block!important;position:static!important;inset:auto!important;width:100%!important;height:auto!important;max-height:none!important;margin:0!important;padding:0!important;background:#fff!important;backdrop-filter:none!important}
   #admin-modal .modal-card{display:block!important;width:100%!important;max-width:none!important;max-height:none!important;overflow:visible!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important}
-  #admin-login,.modal-close,.decode-grid,.admin-actions,.dashboard-status,.prototype-watermark,.help-tab,.admin-mode-card,.stored-applications-card{display:none!important}
+  #admin-login,.modal-close,.decode-grid,.manual-code-decoder,.admin-actions,.dashboard-status,.prototype-watermark,.help-tab,.admin-mode-card,.stored-applications-card,.submission-status-actions{display:none!important}
   #admin-dashboard{display:block!important}
   .print-report-header{display:flex!important;align-items:center;justify-content:space-between;gap:16px;margin:0 0 8mm;padding:5mm 6mm;border-radius:4mm;background:#071f44;color:#fff}
   .print-brand{display:flex;align-items:center;gap:5mm}.print-brand img{width:38mm;height:18mm;object-fit:contain}.print-brand span{display:flex;flex-direction:column}.print-brand b{font-size:16pt;line-height:1.1}.print-brand small{margin-top:1.5mm;color:#b9d5f3;font-size:8pt;letter-spacing:.12em;text-transform:uppercase}.print-date{font-size:8.5pt;color:#d6e6f7;text-align:right}
@@ -330,7 +330,7 @@ body:not(.owner-access) .inline-helper-duo{
 /* v14: the applicant setup requires only one full-width name field. */
 .field-grid{grid-template-columns:minmax(0,1fr)}
 
-/* v21: application mode, deterministic narration, deliberate answer confirmation and device-safe layout. */
+/* v23: shared submissions, organised administrator queues and restored accessibility support. */
 .form-panel{min-width:0}
 .application-fields{margin:24px 0;padding:20px;border:1px solid #cfe0f1;border-radius:20px;background:linear-gradient(145deg,rgba(242,248,255,.97),rgba(255,255,255,.97));box-shadow:inset 0 1px 0 #fff}
 .application-fields[hidden]{display:none}
@@ -346,6 +346,20 @@ body:not(.owner-access) .inline-helper-duo{
 .other-role-fieldset input{width:18px;height:18px;accent-color:var(--blue);flex:0 0 auto}
 .application-submit-button{margin:16px 0 6px}
 .application-submit-note{max-width:520px;margin:4px auto 14px!important}
+.support-reason-fieldset{margin:14px 0 20px;padding:16px;border:1px solid #bcd5ed;border-radius:18px;background:linear-gradient(145deg,#edf6ff,#fff)}
+.support-reason-fieldset[hidden]{display:none}
+.support-reason-fieldset legend{padding:0 7px;color:#183a60;font-size:15px;font-weight:900}
+.support-reason-fieldset>p{margin:0 0 12px;color:#546d86;font-size:14px;line-height:1.45}
+.support-reason-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.support-reason-choice{display:grid;grid-template-columns:38px 1fr;align-items:center;gap:10px;min-width:0;min-height:78px;padding:11px;border:1px solid #ccdae8;border-radius:13px;background:#fff;color:#24415f;text-align:left}
+.support-reason-choice>span:first-child{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:#e8f3ff;color:#0b61bd;font-size:14px;font-weight:950}
+.support-reason-choice b,.support-reason-choice small{display:block}.support-reason-choice b{font-size:14px}.support-reason-choice small{margin-top:3px;color:#60748a;font-size:12px;line-height:1.35}
+.support-reason-choice.selected{border-color:var(--blue);background:#eaf4ff;box-shadow:0 0 0 3px rgba(20,120,237,.13)}
+.support-reason-choice.selected>span:first-child{background:var(--blue);color:#fff}
+.accessibility-notice{border-color:#9bd3bd;background:#edf9f4;color:#285c49}.accessibility-notice>span{background:#16865e}.accessibility-notice[hidden]{display:none}
+.question-repeat{display:inline-flex;align-items:center;gap:8px;min-height:42px;margin:10px 0 2px;padding:9px 14px}.question-repeat[hidden]{display:none}.question-repeat>span:first-child{font-size:19px}
+.accessibility-report-card{display:grid;gap:4px;margin:12px 0 18px;padding:16px 18px;border:1px solid #9fcfbd;border-radius:16px;background:#eef9f5}
+.accessibility-report-card>span{color:#277057;font-size:10px;font-weight:950;letter-spacing:.09em}.accessibility-report-card>b{color:#174d3a;font-size:18px}.accessibility-report-card>p{margin:1px 0 0;color:#45675b;font-size:13px;line-height:1.45}
 .application-result-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0;text-align:left}
 .application-result-summary[hidden]{display:none}
 .application-result-summary>div{min-width:0;padding:13px 14px;border:1px solid #d5e3f0;border-radius:13px;background:#f6faff}
@@ -369,6 +383,21 @@ body:not(.owner-access) .inline-helper-duo{
 
 .admin-mode-card,.stored-applications-card{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);align-items:center;gap:22px;margin:20px 0;padding:19px;border:1px solid #d5e2ef;border-radius:19px;background:linear-gradient(145deg,#f7fbff,#fff);box-shadow:0 9px 28px rgba(7,45,91,.06)}
 .admin-mode-card h3,.stored-applications-card h3{margin:4px 0 5px;font-size:19px}.admin-mode-card p,.stored-applications-card p{margin:0;color:#60738a;font-size:12px;line-height:1.5}
+.stored-applications-card{grid-template-columns:1fr;align-items:start}
+.shared-submission-browser{display:grid;gap:14px;min-width:0}
+.submission-queue-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.submission-queue-tabs button{border:1px solid #cbd9e7;border-radius:12px;background:#fff;color:#38516e;padding:10px 8px;font:800 11px/1.2 inherit;cursor:pointer}
+.submission-queue-tabs button span{display:inline-grid;min-width:22px;height:22px;margin-left:4px;padding:0 5px;place-items:center;border-radius:999px;background:#edf4fb;color:#0a65b8}
+.submission-queue-tabs button.active{border-color:#1673cc;background:#0b5dad;color:#fff;box-shadow:0 7px 15px rgba(8,83,157,.18)}
+.submission-queue-tabs button.active span{background:#fff;color:#07549c}
+.shared-submission-browser .stored-applicant-controls{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:end}
+.shared-submission-browser select{width:100%}
+.manual-code-decoder{margin:18px 0;border:1px solid #d8e3ee;border-radius:14px;background:#f8fbfe}
+.manual-code-decoder summary{padding:14px 16px;color:#31516f;font-size:12px;font-weight:850;cursor:pointer}
+.manual-code-decoder .decode-grid{margin:0;padding:0 16px 16px}
+.submission-status-actions{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin:14px 0;padding:13px;border-radius:14px;background:#eef6ff;border:1px solid #cfe1f2}
+.submission-status-actions>span{font-size:12px;font-weight:850;color:#294a69}
+.submission-status-actions .button{min-height:38px;padding:9px 13px;font-size:11px}
 .mode-toggle{display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:14px;background:#e8f0f8}
 .mode-toggle button{min-height:48px;padding:8px;border:0;border-radius:10px;background:transparent;color:#4e647d;font-size:12px;font-weight:850}
 .mode-toggle button.active{background:#0a4f9f;color:#fff;box-shadow:0 5px 14px rgba(9,70,143,.2)}
@@ -379,11 +408,13 @@ body:not(.owner-access) .inline-helper-duo{
 
 @media(max-width:980px){
   .admin-mode-card,.stored-applications-card{grid-template-columns:1fr}
+  .shared-submission-browser .stored-applicant-controls{grid-template-columns:1fr}
   .application-details-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:760px){
+  .submission-queue-tabs{grid-template-columns:1fr}
   .application-fields{margin:20px -4px;padding:16px 13px}.application-section-heading{display:grid;gap:8px}.prototype-optional{justify-self:start}
-  .application-field-grid,.other-role-fieldset,.application-result-summary{grid-template-columns:1fr}
+  .application-field-grid,.other-role-fieldset,.application-result-summary,.support-reason-grid{grid-template-columns:1fr}
   .other-role-fieldset legend{grid-column:1}
   .admin-modal-card{width:calc(100vw - 16px);padding:22px 14px}.dashboard-heading h2{font-size:29px}
   .admin-mode-card,.stored-applications-card{padding:15px}.application-details-grid{grid-template-columns:1fr}.application-details-heading{display:grid}.application-details-heading>span{justify-self:start}

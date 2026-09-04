@@ -10,10 +10,10 @@
   <meta property="og:image" content="social-preview.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="manifest" href="manifest.webmanifest?v=21.0.0">
+  <link rel="manifest" href="manifest.webmanifest?v=23.0.0">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="icon-192.png">
-  <link rel="stylesheet" href="app.css?v=21.0.0">
+  <link rel="stylesheet" href="app.css?v=23.0.0">
   <title>Danco Roofing Applicant Assessment</title>
 </head>
 <body class="prototype-locked">
@@ -101,6 +101,15 @@
             <button class="setup-choice selected" type="button" data-audio="off"><span class="choice-dot"></span><span><b data-i18n="audioOffTitle">Continue without audio</b><small data-i18n="audioOffCopy">You can turn audio on later from the top bar.</small></span></button>
             <button class="setup-choice" type="button" data-audio="on"><span class="choice-dot"></span><span><b data-i18n="audioOnTitle">Use audio support</b><small data-i18n="audioOnCopy">Questions and guidance can be read aloud in your chosen language.</small></span></button>
           </fieldset>
+          <fieldset class="support-reason-fieldset" id="support-reason-fieldset" hidden>
+            <legend data-i18n="audioReasonTitle">What would the audio support help with?</legend>
+            <p data-i18n="audioReasonLead">This helps us apply the right support and record it accurately for the hiring team.</p>
+            <div class="support-reason-grid">
+              <button class="support-reason-choice" type="button" data-support-reason="2" aria-pressed="false"><span aria-hidden="true">Aa</span><span><b data-i18n="readingSupportTitle">Reading support</b><small data-i18n="readingSupportCopy">Reading written questions is difficult.</small></span></button>
+              <button class="support-reason-choice" type="button" data-support-reason="3" aria-pressed="false"><span aria-hidden="true">◉</span><span><b data-i18n="sightSupportTitle">Sight support</b><small data-i18n="sightSupportCopy">Seeing written content clearly is difficult.</small></span></button>
+              <button class="support-reason-choice" type="button" data-support-reason="1" aria-pressed="false"><span aria-hidden="true">♪</span><span><b data-i18n="audioPreferenceTitle">Spoken-guidance preference</b><small data-i18n="audioPreferenceCopy">I prefer to hear the questions read aloud.</small></span></button>
+            </div>
+          </fieldset>
           <div class="access-card" id="setup-access-card"></div>
           <p class="form-error" id="setup-error" role="alert"></p>
           <button class="button button-primary button-wide" id="begin-beginner" type="button" data-i18n="beginAssessment">Begin assessment</button>
@@ -168,6 +177,7 @@
             <article><span>✓</span><b data-i18n="featureResult">Private result</b><small data-i18n="featureResultCopy">You receive a result code, not a score</small></article>
           </div>
           <div class="notice-card"><span>!</span><p data-i18n="timingNotice">First, review the question while the answer cards are locked. When the answer timer begins, select one response. Unanswered questions are recorded as timed out.</p></div>
+          <div class="notice-card accessibility-notice" id="accessibility-notice" hidden><span>+</span><p><b data-i18n="supportActiveTitle">Accessibility support is active.</b> <span data-i18n="supportActiveCopy">Extra answer time and the Repeat question control are enabled.</span></p></div>
           <button class="button button-primary button-wide" id="start-knowledge" type="button" data-i18n="startQuestions">Start the 10 questions</button>
         </div>
       </div>
@@ -189,6 +199,7 @@
           <p class="question-category" id="knowledge-category">Roof products</p>
           <h2 id="knowledge-question"></h2>
           <p class="question-hint" id="knowledge-hint"></p>
+          <button class="button button-secondary question-repeat" id="knowledge-repeat" type="button" hidden><span aria-hidden="true">↻</span><span data-i18n="repeatQuestion">Repeat question</span></button>
           <div class="knowledge-options" id="knowledge-options"></div>
           <div class="answer-confirm-bar timed-confirm-bar"><span data-i18n="confirmAnswerHint">Select an option, then confirm it.</span><button class="button button-primary" id="knowledge-confirm" type="button" disabled data-i18n="confirmFinalAnswer">Confirm final answer</button></div>
         </div>
@@ -263,7 +274,7 @@
       <section id="admin-login">
         <span class="eyebrow">DANCO ADMINISTRATOR</span>
         <h2 id="admin-title">Results dashboard</h2>
-        <p>Enter the administrator PIN to decode an applicant result. Access and trial codes are not displayed here.</p>
+        <p>Enter the administrator PIN to view shared applications and assessment-only results from any device.</p>
         <label class="field"><span>Administrator PIN</span><input id="admin-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="••••"></label>
         <p class="form-error" id="admin-error" role="alert"></p>
         <button class="button button-primary button-wide" id="admin-login-button" type="button">Open dashboard</button>
@@ -279,17 +290,30 @@
           <div class="mode-toggle" role="group" aria-label="Prototype start mode"><button type="button" data-admin-mode="assessment">Assessment mode</button><button type="button" data-admin-mode="application">Application mode</button></div>
         </section>
         <section class="stored-applications-card" aria-labelledby="stored-applications-title">
-          <div><span class="eyebrow">PROTOTYPE SUBMISSION BOX</span><h3 id="stored-applications-title">Stored applications on this device</h3><p>Only applications deliberately submitted with the administrator PIN appear here.</p></div>
-          <div class="stored-applicant-controls"><label class="field"><span>Select applicant</span><select id="stored-applicant-select"><option value="">No submitted applications</option></select></label><button class="button button-secondary" id="load-stored-applicant" type="button">Load and decode</button></div>
+          <div><span class="eyebrow">SHARED SUBMISSION DATABASE</span><h3 id="stored-applications-title">Applications and assessment results</h3><p id="shared-service-status">Submitted records are shared across authorised phones, tablets and computers.</p></div>
+          <div class="shared-submission-browser">
+            <div class="submission-queue-tabs" role="tablist" aria-label="Submission status">
+              <button class="active" type="button" data-queue-status="pending">Yet to process <span data-queue-count>0</span></button>
+              <button type="button" data-queue-status="actioned">Actioned <span data-queue-count>0</span></button>
+              <button type="button" data-queue-status="archived">Archived <span data-queue-count>0</span></button>
+            </div>
+            <div class="stored-applicant-controls"><label class="field"><span>Select applicant or assessment</span><select id="stored-applicant-select"><option value="">Open the dashboard to load submissions</option></select></label><button class="button button-secondary" id="load-stored-applicant" type="button">Open full result</button></div>
+          </div>
         </section>
-        <div class="decode-grid">
+        <details class="manual-code-decoder"><summary>Manual prototype result-code decoder</summary><div class="decode-grid">
           <label class="field"><span>Applicant result code</span><input id="admin-result-code" autocomplete="off" autocapitalize="characters" placeholder="DRA-XXXX-XXXX-XXXX"></label>
           <label class="field"><span>Applicant name (optional)</span><input id="admin-candidate-name" maxlength="80" placeholder="For this report"></label>
-          <label class="field"><span>Application number (optional)</span><input id="admin-candidate-reference" maxlength="30" placeholder="Reference"></label>
+          <label class="field"><span>Reference (optional)</span><input id="admin-candidate-reference" maxlength="30" placeholder="Reference"></label>
           <button class="button button-primary" id="decode-result" type="button">Decode result</button>
-        </div>
+        </div></details>
         <p class="form-error" id="decode-error" role="alert"></p>
         <div id="dashboard-output" class="dashboard-output"></div>
+        <div class="submission-status-actions" id="submission-status-actions" hidden>
+          <span>Move this shared record to:</span>
+          <button class="button button-secondary" type="button" data-set-submission-status="pending">Yet to process</button>
+          <button class="button button-secondary" type="button" data-set-submission-status="actioned">Actioned</button>
+          <button class="button button-secondary" type="button" data-set-submission-status="archived">Archived</button>
+        </div>
         <div class="admin-actions">
           <button class="button button-secondary" id="load-example" type="button">Load example report</button>
           <button class="button button-secondary" id="print-report" type="button">Print / save PDF</button>
@@ -304,11 +328,11 @@
       <button class="modal-close" type="button" data-action="close-submit" aria-label="Close">×</button>
       <div class="modal-icon">✓</div>
       <span class="eyebrow">PROTOTYPE SUBMISSION</span>
-      <h2 id="submit-title" data-i18n="submitTitle">Confirm this application</h2>
-      <p data-i18n="submitCopy">Enter the administrator PIN to store this completed application in the local review list.</p>
+      <h2 id="submit-title" data-i18n="submitTitle">Confirm secure submission</h2>
+      <p data-i18n="submitCopy">Enter the administrator PIN to add this completed result to the shared Danco review list.</p>
       <label class="field"><span data-i18n="administratorPin">Administrator PIN</span><input id="submit-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="••••"></label>
       <p class="form-error" id="submit-error" role="alert"></p>
-      <button class="button button-primary button-wide" id="confirm-submit" type="button" data-i18n="confirmSubmit">Store application</button>
+      <button class="button button-primary button-wide" id="confirm-submit" type="button" data-i18n="confirmSubmit">Submit securely</button>
     </div>
   </div>
 
@@ -319,7 +343,7 @@
     <img src="joseph-whelan-eds-white.png" alt="" aria-hidden="true">
   </aside>
 
-  <script src="narration-manifest.js?v=21.0.0" defer></script>
-  <script src="app.js?v=21.0.0" defer></script>
+  <script src="narration-manifest.js?v=23.0.0" defer></script>
+  <script src="app.js?v=23.0.0" defer></script>
 </body>
 </html>

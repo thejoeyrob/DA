@@ -2,7 +2,7 @@
 
 This folder is ready to host as a static Progressive Web App on GitHub Pages. Keep every supplied file together in the repository root.
 
-This revision replaces unreliable device text-to-speech with bundled English and Spanish neural narration, keeps **Repeat spoken audio**, and adds an administrator-controlled **Application mode** ahead of the existing assessment. Application mode provides optional applicant credentials, a three-role selector, an automated application number, PIN-gated submission and a local name/code review list. Assessment mode retains the current name-only setup. The existing work-style questions, trade questions, timing, scoring and result-code logic remain intact. See `IMPLEMENTATION-BRIEF.md` for the controlled-change record.
+This revision uses bundled English and Spanish neural narration, keeps **Repeat spoken audio**, and provides an administrator-controlled **Application mode** ahead of the existing assessment. Application mode provides optional applicant credentials, a three-role selector, a normal reference and PIN-gated submission to a live shared review list. Assessment-only results can be submitted to the same list. The existing work-style questions, trade questions, timing, scoring and internal result-code logic remain intact. See `IMPLEMENTATION-BRIEF.md` for the controlled-change record.
 
 ## Publish on GitHub Pages
 
@@ -17,7 +17,7 @@ This revision replaces unreliable device text-to-speech with bundled English and
 
 The full-screen control uses the browser Fullscreen API where supported. On iPhone browser tabs it switches to an expanded in-app view; installing the PWA with **Add to Home Screen** removes Safari's browser bars entirely.
 
-Version 21 adds safer recorded-audio cue margins, shows each application’s selected position and alternate-position preference on the completion panel, and requires applicants to select an option and then choose **Confirm final answer**. Image-only recognition questions do not narrate descriptive option labels, preventing the audio from giving away the visual answer.
+Version 23 retains the restored audio-support reason: reading support, sight support or a general spoken-guidance preference. Reading and sight support provide 15 seconds of additional answer time and a direct **Repeat question** control. Submitted applications and assessment-only results are now shared across devices in **Yet to process**, **Actioned** and **Archived** administrator queues. It retains the safe audio margins, application-choice summary and **Confirm final answer** protection.
 
 ## Save the app to an iPhone or iPad Home Screen
 
@@ -48,11 +48,14 @@ Use `email-applicant-assessment-banner.png` as the image in an applicant email. 
 - The app starts in locked prototype mode.
 - A valid private trial code enables three completed assessments on the browser/device where it is entered.
 - The trial-code register is intentionally not included in this public hosting package.
-- Applicant scores and the optional work-style estimate are not shown to the applicant; only the encoded result code is displayed.
-- The administrator dashboard decodes the result code locally in the browser.
+- Applicant scores and the optional work-style estimate are not shown to the applicant.
+- Application mode displays only a normal reference after successful submission; its internal result code is not exposed.
+- Assessment-only prototype mode retains the encoded result code for manual testing and fallback.
+- The administrator dashboard loads deliberately submitted records from a protected shared service.
 - Administrators can choose Assessment mode or Application mode for the next applicant.
-- In Application mode, only PIN-confirmed submissions are added to the review list.
-- Submitted application details are held only in browser storage on the device used; they do not sync to another phone or computer and are not emailed.
+- Only PIN-confirmed submissions are added to the shared review list.
+- Submitted application and assessment-only details sync to the administrator list on another connected device.
+- Administrators can move records from **Yet to process** to **Actioned** or **Archived**, and can return them to the working queue if needed.
 - Printing from the administrator dashboard produces a dedicated A4 report; the applicant completion screen is excluded.
 
-This prototype is a static, device-local application. For production recruitment use requiring central records, globally enforced code usage, identity management or audit logs, connect the interface to an approved secure backend before collecting live applicant data.
+The GitHub Pages interface remains static, but its deliberately submitted review records use a live backend. Before collecting real production applicant data, Danco should complete its organisational privacy, retention, identity-management and audit-log review.

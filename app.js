@@ -9,6 +9,7 @@
   const TRIAL_KEY = 'dancoAssessment_v10_trial';
   const TRIAL_USAGE_KEY = 'dancoAssessment_v10_trialUsage';
   const ADMIN_HASH = '9793703E';
+  const SHARED_SERVICE_URL = 'https://danco-assessment-service.josephrwhelan.chatgpt.site';
   const OWNER_HASH = '5986B210';
   const TRIAL_RUNS = 3;
   const TRIAL_HASHES = new Set(['F083233F','AE44D52A','8CBCD409','AB6BB9D6','C0BA6D81','26399FF4','E2556F1A','9988758A','E61E252E','C495C2E8']);
@@ -19,21 +20,21 @@
 
   const TEXT = {
     en:{
-      helperLabel:'YOUR DANCO TEAM HELPER',setupHelper:'I’ll guide you through each step. You can take your time setting up before the timed questions begin.',applicationSetupHelper:'Complete as much of the application as you can. Only your full name is required during prototype testing, and the assessment will follow.',stepOne:'STEP 1 OF 3 · SETUP',setupTitle:'Let’s get you ready',setupLead:'Enter your full name exactly as it appears on your application.',applicationSetupTitle:'Start your Danco application',applicationSetupLead:'Tell us about yourself and choose the position you are applying for. Only your full name is required during prototype testing.',nameLabel:'Full name',audioTitle:'Would audio support help?',audioOffTitle:'Continue without audio',audioOffCopy:'You can turn audio on later from the top bar.',audioOnTitle:'Use audio support',audioOnCopy:'Questions and guidance can be read aloud in your chosen language.',beginAssessment:'Begin assessment',beginApplicationAssessment:'Continue to work-style questions',
+      helperLabel:'YOUR DANCO TEAM HELPER',setupHelper:'I’ll guide you through each step. You can take your time setting up before the timed questions begin.',applicationSetupHelper:'Complete as much of the application as you can. Only your full name is required during prototype testing, and the assessment will follow.',stepOne:'STEP 1 OF 3 · SETUP',setupTitle:'Let’s get you ready',setupLead:'Enter your full name exactly as it appears on your application.',applicationSetupTitle:'Start your Danco application',applicationSetupLead:'Tell us about yourself and choose the position you are applying for. Only your full name is required during prototype testing.',nameLabel:'Full name',audioTitle:'Would audio support help?',audioOffTitle:'Continue without audio',audioOffCopy:'You can turn audio on later from the top bar.',audioOnTitle:'Use audio support',audioOnCopy:'Questions and guidance can be read aloud in your chosen language.',audioReasonTitle:'What would the audio support help with?',audioReasonLead:'This helps us apply the right support and record it accurately for the hiring team.',readingSupportTitle:'Reading support',readingSupportCopy:'Reading written questions is difficult.',sightSupportTitle:'Sight support',sightSupportCopy:'Seeing written content clearly is difficult.',audioPreferenceTitle:'Spoken-guidance preference',audioPreferenceCopy:'I prefer to hear the questions read aloud.',supportReasonError:'Please choose what the audio support will help with.',beginAssessment:'Begin assessment',beginApplicationAssessment:'Continue to work-style questions',
       applicationEyebrow:'JOB APPLICATION',applicationDetailsTitle:'Your application details',prototypeOptional:'Optional during prototype testing',emailLabel:'Email address',phoneLabel:'Phone number',locationLabel:'City and state',availabilityLabel:'Available start date',desiredRoleLabel:'Position applied for',chooseRole:'Choose a role',experienceLabel:'Commercial roofing experience',chooseExperience:'Choose experience',workAuthorizationLabel:'Authorized to work in the United States?',licenseLabel:'Valid driver’s license?',chooseAnswer:'Choose an answer',otherRolesLegend:'Would you consider another listed role if it better matches your assessment?',otherRolesYes:'Yes, I’m open to other roles',otherRolesNo:'No, only the role selected above',
       stepTwo:'STEP 2 OF 3 · GETTING TO KNOW YOU',profileIntroTitle:'Before we get into the assessment…',profileIntroOne:'We’re happy that you’re looking to join the Danco Roofing team. We focus on working together and helping our workforce feel comfortable when interacting with one another.',profileIntroTwo:'We’d like to take a moment to get to know how you prefer to work. The next five friendly questions have no timer, and there are no right or wrong answers.',profilePrivacy:'This optional section is used only as a gentle workplace-engagement guide for the hiring team. Your estimated result will not be shown on your applicant result screen.',startFive:'Answer 5 quick questions',skipProfile:'Skip this section',skipRecorded:'If you skip, the assessment report will simply note “not completed”.',noTimer:'NO TIMER',profileHint:'Choose the answer that feels most natural to you.',confirmAnswerHint:'Select an option, then confirm it.',confirmFinalAnswer:'Confirm final answer',answerSelectedHint:'Your choice is selected. Confirm it or choose another option.',
-      stepThree:'STEP 3 OF 3 · TRADE ASSESSMENT',instructionsTitle:'Ten focused questions',instructionsLead:'The assessment checks practical roofing knowledge, safe decision-making and role readiness.',featureQuestions:'Questions',featureQuestionsCopy:'Seven include visual answer choices',featureTiming:'Review then answer',featureTimingCopy:'A clear timer appears for each stage',featureChoice:'One answer',featureChoiceCopy:'Choose the single best response',featureResult:'Private result',featureResultCopy:'You receive a result code, not a score',timingNotice:'First, review the question while the answer cards are locked. When the answer timer begins, select one response. Unanswered questions are recorded as timed out.',startQuestions:'Start the 10 questions',
-      completeEyebrow:'ASSESSMENT COMPLETE',completeTitle:'Thank you for taking part',completeLead:'Your responses have been converted into the result code below.',applicationCompleteEyebrow:'APPLICATION ASSESSMENT COMPLETE',applicationCompleteTitle:'Your application assessment is complete',applicationCompleteLead:'Your automated application number is ready below.',resultCodeLabel:'Result code',applicationNumberLabel:'Application number',appliedPositionLabel:'Position applied for',otherPositionsLabel:'Open to other listed positions',notSpecified:'Not specified',yesLabel:'Yes',noLabel:'No',copyCode:'Copy result code',copyApplicationNumber:'Copy application number',resultInstruction:'Save this code and provide it to the Danco administrator or hiring contact. Your score and private work-style guide are not shown on this screen.',applicationResultInstruction:'Keep this application number for your records. To add the application to this device’s prototype review list, ask an administrator to approve submission.',submitApplication:'Submit application for review',submitApplicationNote:'Prototype safeguard: an administrator PIN is required before this application is stored.',submitTitle:'Confirm this application',submitCopy:'Enter the administrator PIN to store this completed application in the local review list.',administratorPin:'Administrator PIN',confirmSubmit:'Store application',submissionSaved:'Application stored on this device.',submissionAlreadySaved:'This application is already stored on this device.',invalidAdminPin:'Administrator PIN not recognised.',nextApplicant:'Start next applicant',help:'Help',helpTitle:'Need a hand?',helpDefault:'Follow the instruction shown at the top of the current screen. During the timed assessment, review first and select one answer when the cards become active.',repeatAudio:'Repeat spoken audio',repeatAudioHint:'Hear the current instruction or question again.',voiceLabel:'Narration audio',standardVoiceTitle:'Danco standard voice',standardVoiceCopy:'The same clear recorded narration on iPhone, Android and desktop.',testVoice:'Test standard narration',voiceSample:'Hello. I’m your Danco assessment guide. I’ll read each question clearly.',narrationUnavailable:'This narration clip is unavailable. The written question remains on screen.',tapRepeatAudio:'Tap Repeat spoken audio to hear this again.',gotIt:'Got it',helpersWithYou:'Your Danco team helpers are with you',profileUntimedReminder:'Take your time—this section is not timed.',timedReminder:'Your selected-language helper has the visual focus.',fullscreenOn:'Full-screen app view active.',fullscreenOff:'Full-screen app view closed.',fullscreenIos:'App view expanded. For a completely borderless iPhone experience, add the assessment to your Home Screen.',
+      stepThree:'STEP 3 OF 3 · TRADE ASSESSMENT',instructionsTitle:'Ten focused questions',instructionsLead:'The assessment checks practical roofing knowledge, safe decision-making and role readiness.',featureQuestions:'Questions',featureQuestionsCopy:'Seven include visual answer choices',featureTiming:'Review then answer',featureTimingCopy:'A clear timer appears for each stage',featureChoice:'One answer',featureChoiceCopy:'Choose the single best response',featureResult:'Private result',featureResultCopy:'You receive a result code, not a score',timingNotice:'First, review the question while the answer cards are locked. When the answer timer begins, select one response. Unanswered questions are recorded as timed out.',supportActiveTitle:'Accessibility support is active.',supportActiveCopy:'Extra answer time and the Repeat question control are enabled.',repeatQuestion:'Repeat question',startQuestions:'Start the 10 questions',
+      completeEyebrow:'ASSESSMENT COMPLETE',completeTitle:'Thank you for taking part',completeLead:'Your responses have been converted into the result code below.',applicationCompleteEyebrow:'APPLICATION ASSESSMENT COMPLETE',applicationCompleteTitle:'Your application assessment is complete',applicationCompleteLead:'Ask an administrator to approve secure submission when you are ready.',applicationSubmittedTitle:'Thank you for your application',applicationSubmittedLead:'Your application has been received. Danco will contact you after it has been reviewed.',resultCodeLabel:'Result code',applicationNumberLabel:'Application reference',applicationReferencePending:'Pending secure submission',appliedPositionLabel:'Position applied for',otherPositionsLabel:'Open to other listed positions',notSpecified:'Not specified',yesLabel:'Yes',noLabel:'No',copyCode:'Copy result code',copyApplicationNumber:'Copy application reference',resultInstruction:'Save this code and provide it to the Danco administrator or hiring contact. Your score and private work-style guide are not shown on this screen.',applicationResultInstruction:'Your score and private work-style guide are not displayed. Ask an administrator to approve secure submission.',applicationSubmittedInstruction:'Keep this reference for your records. Your full result is available only in the protected Danco administrator dashboard.',submitApplication:'Submit application for review',submitAssessment:'Submit assessment for review',submitApplicationNote:'Prototype safeguard: an administrator PIN is required before this result is added to the shared review list.',submitTitle:'Confirm secure submission',submitCopy:'Enter the administrator PIN to add this completed result to the shared Danco review list.',administratorPin:'Administrator PIN',confirmSubmit:'Submit securely',submissionSaved:'Submission saved to the shared Danco review list.',submissionAlreadySaved:'This submission is already in the shared review list.',submissionFailed:'The shared service could not save this result. Check the connection and try again.',invalidAdminPin:'Administrator PIN not recognised.',nextApplicant:'Start next applicant',help:'Help',helpTitle:'Need a hand?',helpDefault:'Follow the instruction shown at the top of the current screen. During the timed assessment, review first and select one answer when the cards become active.',repeatAudio:'Repeat spoken audio',repeatAudioHint:'Hear the current instruction or question again.',voiceLabel:'Narration audio',standardVoiceTitle:'Danco standard voice',standardVoiceCopy:'The same clear recorded narration on iPhone, Android and desktop.',testVoice:'Test standard narration',voiceSample:'Hello. I’m your Danco assessment guide. I’ll read each question clearly.',narrationUnavailable:'This narration clip is unavailable. The written question remains on screen.',tapRepeatAudio:'Tap Repeat spoken audio to hear this again.',gotIt:'Got it',helpersWithYou:'Your Danco team helpers are with you',profileUntimedReminder:'Take your time—this section is not timed.',timedReminder:'Your selected-language helper has the visual focus.',fullscreenOn:'Full-screen app view active.',fullscreenOff:'Full-screen app view closed.',fullscreenIos:'App view expanded. For a completely borderless iPhone experience, add the assessment to your Home Screen.',
       unlockTitle:'Unlock the assessment trial',unlockCopy:'Enter the private access code supplied by Danco. A valid trial code activates up to three completed assessments on this browser or device.',unlockStepOne:'Enter the supplied code below.',unlockStepTwo:'Select “Activate trial”.',unlockStepThree:'Return to setup and begin the assessment.',accessCodeLabel:'Private access code',activateTrial:'Activate trial',unlockPrivacy:'Codes are never displayed by the app. Re-entering the same code does not restore used trial runs.',
       accessLockedTitle:'Prototype locked',accessLockedCopy:'Enter the private trial code supplied by Danco before beginning.',accessTrialTitle:'Prototype trial active',accessTrialCopy:n=>`${n} completed assessment${n===1?'':'s'} remaining on this browser or device.`,accessOwnerTitle:'Full access active',accessOwnerCopy:'Unlimited local assessments are enabled on this device.',namePlaceholder:'Your full name',codePlaceholder:'Enter code',requiredError:'Please enter your full name.',lockedError:'A valid private access code is required before the assessment can begin.',usedError:'This trial has no completed assessments remaining.',profileCounter:(n)=>`Question ${n} of 5`,knowledgeCounter:(n)=>`Question ${n} of 10`,review:'REVIEW',answer:'ANSWER',reviewHint:'Review the question. Answer choices will unlock when the timer changes to ANSWER.',answerHint:'Select the single best answer and confirm it before the timer reaches zero.',timedOut:'Time expired. Moving to the next question.',copied:'Result code copied.',copyFailed:'Press and hold the code to copy it.',profileSkipped:'Optional work-style questions: not completed',profileDone:'Optional work-style questions: completed',trialRemaining:n=>`Trial assessments remaining: ${n}`,ownerActive:'Full access · unlimited assessments',unlockSuccess:n=>`Trial activated with ${n} assessments available.`,ownerSuccess:'Full access activated.',invalidCode:'Access code not recognised.',resume:'Resume assessment',
       categories:{materials:'Roof products',installation:'Installation & tools',service:'Service & diagnosis',safety:'Site & lifting safety',supervision:'Foreman control'},tiers:{foundation:'Foundation',roofer:'Roofer level',foreman:'Foreman level'}
     },
     es:{
-      helperLabel:'TU GUÍA DEL EQUIPO DANCO',setupHelper:'Te guiaré en cada paso. Puedes tomarte tu tiempo para prepararte antes de que comiencen las preguntas cronometradas.',applicationSetupHelper:'Completa todos los datos que puedas. Durante la prueba del prototipo solo se requiere tu nombre completo, y después seguirá la evaluación.',stepOne:'PASO 1 DE 3 · PREPARACIÓN',setupTitle:'Vamos a prepararte',setupLead:'Ingresa tu nombre completo exactamente como aparece en tu solicitud.',applicationSetupTitle:'Comienza tu solicitud para Danco',applicationSetupLead:'Cuéntanos sobre ti y elige el puesto que solicitas. Durante la prueba del prototipo solo se requiere tu nombre completo.',nameLabel:'Nombre completo',audioTitle:'¿Te ayudaría el apoyo de audio?',audioOffTitle:'Continuar sin audio',audioOffCopy:'Puedes activar el audio más tarde desde la barra superior.',audioOnTitle:'Usar apoyo de audio',audioOnCopy:'Las preguntas y la guía se pueden leer en voz alta en español.',beginAssessment:'Comenzar evaluación',beginApplicationAssessment:'Continuar a las preguntas de estilo laboral',
+      helperLabel:'TU GUÍA DEL EQUIPO DANCO',setupHelper:'Te guiaré en cada paso. Puedes tomarte tu tiempo para prepararte antes de que comiencen las preguntas cronometradas.',applicationSetupHelper:'Completa todos los datos que puedas. Durante la prueba del prototipo solo se requiere tu nombre completo, y después seguirá la evaluación.',stepOne:'PASO 1 DE 3 · PREPARACIÓN',setupTitle:'Vamos a prepararte',setupLead:'Ingresa tu nombre completo exactamente como aparece en tu solicitud.',applicationSetupTitle:'Comienza tu solicitud para Danco',applicationSetupLead:'Cuéntanos sobre ti y elige el puesto que solicitas. Durante la prueba del prototipo solo se requiere tu nombre completo.',nameLabel:'Nombre completo',audioTitle:'¿Te ayudaría el apoyo de audio?',audioOffTitle:'Continuar sin audio',audioOffCopy:'Puedes activar el audio más tarde desde la barra superior.',audioOnTitle:'Usar apoyo de audio',audioOnCopy:'Las preguntas y la guía se pueden leer en voz alta en español.',audioReasonTitle:'¿Con qué te ayudaría el apoyo de audio?',audioReasonLead:'Esto nos permite aplicar el apoyo adecuado y registrarlo correctamente para el equipo de contratación.',readingSupportTitle:'Apoyo para la lectura',readingSupportCopy:'Me resulta difícil leer las preguntas escritas.',sightSupportTitle:'Apoyo para la vista',sightSupportCopy:'Me resulta difícil ver claramente el contenido escrito.',audioPreferenceTitle:'Preferencia por la guía hablada',audioPreferenceCopy:'Prefiero escuchar las preguntas en voz alta.',supportReasonError:'Elige con qué te ayudará el apoyo de audio.',beginAssessment:'Comenzar evaluación',beginApplicationAssessment:'Continuar a las preguntas de estilo laboral',
       applicationEyebrow:'SOLICITUD DE EMPLEO',applicationDetailsTitle:'Datos de tu solicitud',prototypeOptional:'Opcional durante la prueba del prototipo',emailLabel:'Correo electrónico',phoneLabel:'Número de teléfono',locationLabel:'Ciudad y estado',availabilityLabel:'Fecha disponible para comenzar',desiredRoleLabel:'Puesto solicitado',chooseRole:'Elige un puesto',experienceLabel:'Experiencia en techos comerciales',chooseExperience:'Elige tu experiencia',workAuthorizationLabel:'¿Tienes autorización para trabajar en Estados Unidos?',licenseLabel:'¿Tienes licencia de conducir válida?',chooseAnswer:'Elige una respuesta',otherRolesLegend:'¿Considerarías otro puesto de la lista si se ajusta mejor a tu evaluación?',otherRolesYes:'Sí, estoy abierto a otros puestos',otherRolesNo:'No, solo el puesto seleccionado',
       stepTwo:'PASO 2 DE 3 · CONOCERTE',profileIntroTitle:'Antes de comenzar la evaluación…',profileIntroOne:'Nos alegra que estés interesado en unirte al equipo de Danco Roofing. Nos enfocamos en trabajar juntos y en ayudar a nuestro personal a sentirse cómodo al interactuar.',profileIntroTwo:'Nos gustaría conocerte un poco y saber cómo prefieres trabajar. Las siguientes cinco preguntas son sencillas, no tienen límite de tiempo y no hay respuestas correctas o incorrectas.',profilePrivacy:'Esta sección opcional se usa únicamente como una guía amable de interacción laboral para el equipo de contratación. El resultado estimado no aparecerá en tu pantalla final.',startFive:'Responder 5 preguntas rápidas',skipProfile:'Omitir esta sección',skipRecorded:'Si decides omitirla, el informe simplemente indicará “no completada”.',noTimer:'SIN LÍMITE',profileHint:'Elige la respuesta que te resulte más natural.',confirmAnswerHint:'Selecciona una opción y después confírmala.',confirmFinalAnswer:'Confirmar respuesta final',answerSelectedHint:'Tu opción está seleccionada. Confírmala o elige otra.',
-      stepThree:'PASO 3 DE 3 · EVALUACIÓN TÉCNICA',instructionsTitle:'Diez preguntas enfocadas',instructionsLead:'La evaluación revisa conocimientos prácticos de techado, decisiones seguras y preparación para el puesto.',featureQuestions:'Preguntas',featureQuestionsCopy:'Siete incluyen opciones visuales',featureTiming:'Revisar y responder',featureTimingCopy:'Cada etapa muestra un cronómetro claro',featureChoice:'Una respuesta',featureChoiceCopy:'Elige la mejor respuesta',featureResult:'Resultado privado',featureResultCopy:'Recibirás un código, no una puntuación',timingNotice:'Primero revisa la pregunta mientras las opciones están bloqueadas. Cuando comience el tiempo de respuesta, selecciona una opción. Las preguntas sin responder se registran como agotadas.',startQuestions:'Comenzar las 10 preguntas',
-      completeEyebrow:'EVALUACIÓN COMPLETADA',completeTitle:'Gracias por participar',completeLead:'Tus respuestas se convirtieron en el siguiente código de resultado.',applicationCompleteEyebrow:'EVALUACIÓN DE SOLICITUD COMPLETADA',applicationCompleteTitle:'La evaluación de tu solicitud está completa',applicationCompleteLead:'Tu número de solicitud automático está listo.',resultCodeLabel:'Código de resultado',applicationNumberLabel:'Número de solicitud',appliedPositionLabel:'Puesto solicitado',otherPositionsLabel:'Abierto a otros puestos de la lista',notSpecified:'No especificado',yesLabel:'Sí',noLabel:'No',copyCode:'Copiar código',copyApplicationNumber:'Copiar número de solicitud',resultInstruction:'Guarda este código y entrégalo al administrador o contacto de contratación de Danco. Tu puntuación y la guía privada de estilo de trabajo no aparecen en esta pantalla.',applicationResultInstruction:'Guarda este número de solicitud. Para añadir la solicitud a la lista de revisión de este dispositivo, pide a un administrador que apruebe el envío.',submitApplication:'Enviar solicitud para revisión',submitApplicationNote:'Protección del prototipo: se requiere el PIN de administrador antes de guardar esta solicitud.',submitTitle:'Confirmar esta solicitud',submitCopy:'Ingresa el PIN de administrador para guardar esta solicitud completada en la lista local de revisión.',administratorPin:'PIN de administrador',confirmSubmit:'Guardar solicitud',submissionSaved:'Solicitud guardada en este dispositivo.',submissionAlreadySaved:'Esta solicitud ya está guardada en este dispositivo.',invalidAdminPin:'PIN de administrador no reconocido.',nextApplicant:'Comenzar siguiente solicitante',help:'Ayuda',helpTitle:'¿Necesitas ayuda?',helpDefault:'Sigue la instrucción que aparece en la parte superior. Durante la evaluación cronometrada, primero revisa y luego elige una respuesta cuando se activen las opciones.',repeatAudio:'Repetir audio',repeatAudioHint:'Escucha de nuevo la instrucción o pregunta actual.',voiceLabel:'Audio de narración',standardVoiceTitle:'Voz estándar de Danco',standardVoiceCopy:'La misma narración clara en iPhone, Android y computadora.',testVoice:'Probar narración estándar',voiceSample:'Hola. Soy tu guía para la evaluación de Danco. Leeré cada pregunta con claridad.',narrationUnavailable:'Este fragmento de audio no está disponible. La pregunta escrita permanece en pantalla.',tapRepeatAudio:'Toca Repetir audio para escucharlo de nuevo.',gotIt:'Entendido',helpersWithYou:'Tus guías del equipo Danco están contigo',profileUntimedReminder:'Tómate tu tiempo; esta sección no tiene límite.',timedReminder:'La guía de tu idioma elegido tiene el enfoque visual.',fullscreenOn:'Vista de aplicación en pantalla completa activa.',fullscreenOff:'Vista de pantalla completa cerrada.',fullscreenIos:'Vista ampliada. Para una experiencia sin bordes en iPhone, agrega la evaluación a la pantalla de inicio.',
+      stepThree:'PASO 3 DE 3 · EVALUACIÓN TÉCNICA',instructionsTitle:'Diez preguntas enfocadas',instructionsLead:'La evaluación revisa conocimientos prácticos de techado, decisiones seguras y preparación para el puesto.',featureQuestions:'Preguntas',featureQuestionsCopy:'Siete incluyen opciones visuales',featureTiming:'Revisar y responder',featureTimingCopy:'Cada etapa muestra un cronómetro claro',featureChoice:'Una respuesta',featureChoiceCopy:'Elige la mejor respuesta',featureResult:'Resultado privado',featureResultCopy:'Recibirás un código, no una puntuación',timingNotice:'Primero revisa la pregunta mientras las opciones están bloqueadas. Cuando comience el tiempo de respuesta, selecciona una opción. Las preguntas sin responder se registran como agotadas.',supportActiveTitle:'El apoyo de accesibilidad está activo.',supportActiveCopy:'Se habilitaron tiempo adicional y el control Repetir pregunta.',repeatQuestion:'Repetir pregunta',startQuestions:'Comenzar las 10 preguntas',
+      completeEyebrow:'EVALUACIÓN COMPLETADA',completeTitle:'Gracias por participar',completeLead:'Tus respuestas se convirtieron en el siguiente código de resultado.',applicationCompleteEyebrow:'EVALUACIÓN DE SOLICITUD COMPLETADA',applicationCompleteTitle:'La evaluación de tu solicitud está completa',applicationCompleteLead:'Cuando estés listo, pide a un administrador que autorice el envío seguro.',applicationSubmittedTitle:'Gracias por tu solicitud',applicationSubmittedLead:'Hemos recibido tu solicitud. Danco se pondrá en contacto contigo después de revisarla.',resultCodeLabel:'Código de resultado',applicationNumberLabel:'Referencia de solicitud',applicationReferencePending:'Envío seguro pendiente',appliedPositionLabel:'Puesto solicitado',otherPositionsLabel:'Abierto a otros puestos de la lista',notSpecified:'No especificado',yesLabel:'Sí',noLabel:'No',copyCode:'Copiar código',copyApplicationNumber:'Copiar referencia de solicitud',resultInstruction:'Guarda este código y entrégalo al administrador o contacto de contratación de Danco. Tu puntuación y la guía privada de estilo de trabajo no aparecen en esta pantalla.',applicationResultInstruction:'Tu puntuación y la guía privada de estilo de trabajo no se muestran. Pide a un administrador que autorice el envío seguro.',applicationSubmittedInstruction:'Guarda esta referencia. Tu resultado completo solo está disponible en el panel protegido del administrador de Danco.',submitApplication:'Enviar solicitud para revisión',submitAssessment:'Enviar evaluación para revisión',submitApplicationNote:'Protección del prototipo: se requiere el PIN de administrador antes de añadir el resultado a la lista compartida.',submitTitle:'Confirmar envío seguro',submitCopy:'Ingresa el PIN de administrador para añadir este resultado completo a la lista compartida de Danco.',administratorPin:'PIN de administrador',confirmSubmit:'Enviar de forma segura',submissionSaved:'Resultado guardado en la lista compartida de Danco.',submissionAlreadySaved:'Este resultado ya está en la lista compartida.',submissionFailed:'El servicio compartido no pudo guardar el resultado. Comprueba la conexión e inténtalo de nuevo.',invalidAdminPin:'PIN de administrador no reconocido.',nextApplicant:'Comenzar siguiente solicitante',help:'Ayuda',helpTitle:'¿Necesitas ayuda?',helpDefault:'Sigue la instrucción que aparece en la parte superior. Durante la evaluación cronometrada, primero revisa y luego elige una respuesta cuando se activen las opciones.',repeatAudio:'Repetir audio',repeatAudioHint:'Escucha de nuevo la instrucción o pregunta actual.',voiceLabel:'Audio de narración',standardVoiceTitle:'Voz estándar de Danco',standardVoiceCopy:'La misma narración clara en iPhone, Android y computadora.',testVoice:'Probar narración estándar',voiceSample:'Hola. Soy tu guía para la evaluación de Danco. Leeré cada pregunta con claridad.',narrationUnavailable:'Este fragmento de audio no está disponible. La pregunta escrita permanece en pantalla.',tapRepeatAudio:'Toca Repetir audio para escucharlo de nuevo.',gotIt:'Entendido',helpersWithYou:'Tus guías del equipo Danco están contigo',profileUntimedReminder:'Tómate tu tiempo; esta sección no tiene límite.',timedReminder:'La guía de tu idioma elegido tiene el enfoque visual.',fullscreenOn:'Vista de aplicación en pantalla completa activa.',fullscreenOff:'Vista de pantalla completa cerrada.',fullscreenIos:'Vista ampliada. Para una experiencia sin bordes en iPhone, agrega la evaluación a la pantalla de inicio.',
       unlockTitle:'Desbloquear la prueba',unlockCopy:'Ingresa el código privado proporcionado por Danco. Un código de prueba válido permite hasta tres evaluaciones completadas en este navegador o dispositivo.',unlockStepOne:'Ingresa el código proporcionado.',unlockStepTwo:'Selecciona “Activar prueba”.',unlockStepThree:'Regresa a la preparación y comienza.',accessCodeLabel:'Código de acceso privado',activateTrial:'Activar prueba',unlockPrivacy:'La aplicación nunca muestra los códigos. Volver a ingresar el mismo código no recupera usos ya consumidos.',
       accessLockedTitle:'Prototipo bloqueado',accessLockedCopy:'Ingresa el código privado de prueba proporcionado por Danco antes de comenzar.',accessTrialTitle:'Prueba de prototipo activa',accessTrialCopy:n=>`Quedan ${n} evaluación${n===1?'':'es'} completada${n===1?'':'s'} en este navegador o dispositivo.`,accessOwnerTitle:'Acceso completo activo',accessOwnerCopy:'Este dispositivo tiene evaluaciones locales ilimitadas.',namePlaceholder:'Tu nombre completo',codePlaceholder:'Ingresa el código',requiredError:'Ingresa tu nombre completo.',lockedError:'Se necesita un código de acceso privado válido antes de comenzar.',usedError:'Esta prueba ya no tiene evaluaciones disponibles.',profileCounter:(n)=>`Pregunta ${n} de 5`,knowledgeCounter:(n)=>`Pregunta ${n} de 10`,review:'REVISAR',answer:'RESPONDER',reviewHint:'Revisa la pregunta. Las opciones se activarán cuando el cronómetro cambie a RESPONDER.',answerHint:'Selecciona la mejor respuesta y confírmala antes de que el cronómetro llegue a cero.',timedOut:'Tiempo agotado. Pasando a la siguiente pregunta.',copied:'Código copiado.',copyFailed:'Mantén presionado el código para copiarlo.',profileSkipped:'Preguntas opcionales de estilo de trabajo: no completadas',profileDone:'Preguntas opcionales de estilo de trabajo: completadas',trialRemaining:n=>`Evaluaciones de prueba restantes: ${n}`,ownerActive:'Acceso completo · evaluaciones ilimitadas',unlockSuccess:n=>`Prueba activada con ${n} evaluaciones disponibles.`,ownerSuccess:'Acceso completo activado.',invalidCode:'Código de acceso no reconocido.',resume:'Continuar evaluación',
       categories:{materials:'Productos para techos',installation:'Instalación y herramientas',service:'Servicio y diagnóstico',safety:'Seguridad en obra e izaje',supervision:'Control del encargado'},tiers:{foundation:'Base',roofer:'Nivel techador',foreman:'Nivel encargado'}
@@ -156,6 +157,10 @@
   let knowledgeSelectedIndex = null;
   let currentDisplayOptions = [];
   let adminAuthenticated = false;
+  let adminAccessPin = '';
+  let currentSharedReference = '';
+  let currentQueueStatus = 'pending';
+  let sharedQueueRecords = [];
   let nativeFullscreenActive = false;
 
   function t(key, ...args){ const value = TEXT[settings.lang]?.[key] ?? TEXT.en[key] ?? key; return typeof value === 'function' ? value(...args) : value; }
@@ -164,6 +169,12 @@
   function saveSettings(){ saveJson(SETTINGS_KEY, settings); }
   function saveSession(){ if(session) saveJson(SESSION_KEY, session); }
   function storedApplications(){ const value=loadJson(APPLICATIONS_KEY,[]); return Array.isArray(value)?value:[]; }
+  async function sharedRequest(path,payload){
+    const response=await fetch(`${SHARED_SERVICE_URL}${path}`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    let data={}; try{data=await response.json();}catch(_){}
+    if(!response.ok) throw new Error(data.error||'The shared submission service is unavailable.');
+    return data;
+  }
   function escapeHtml(value){ return String(value ?? '').replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
   function normalizeCode(value){ return String(value||'').toUpperCase().replace(/[^A-Z0-9]/g,''); }
   function accessHash(value){ let h=0x811c9dc5; for(const c of normalizeCode(value)){ h^=c.charCodeAt(0); h=Math.imul(h,0x01000193)>>>0; } return h.toString(16).toUpperCase().padStart(8,'0'); }
@@ -222,9 +233,48 @@
     $('result-helper-english').classList.toggle('secondary-language',settings.lang!=='en');
     $('result-helper-spanish').classList.toggle('secondary-language',settings.lang!=='es');
     $('help-tab').classList.toggle('right',settings.lang==='es'); $('help-drawer').classList.toggle('right',settings.lang==='es');
-    renderSetupAccess(); applyProductMode();
+    renderSetupAccess(); applyProductMode(); renderAudioSupportControls();
   }
   function activeProductMode(){ return session?.mode==='application'?'application':session?.mode==='assessment'?'assessment':settings.appMode; }
+  function normaliseSupportReason(value){ const reason=Number(value||0); return reason>=1&&reason<=3?reason:0; }
+  function currentSupportReason(){
+    const source=session&&session.status!=='setup'?session:settings;
+    return source?.audio?normaliseSupportReason(source.supportReason):0;
+  }
+  function accessibilitySupportActive(){ const reason=currentSupportReason(); return reason===2||reason===3; }
+  function supportReportInfo(data){
+    if(!data?.audio) return {label:'No audio support',detail:''};
+    const reason=normaliseSupportReason(data.supportReason);
+    if(reason===2) return {label:'Reading support requested',detail:'Recorded narration, 15 seconds of additional answer time and Repeat question were enabled.'};
+    if(reason===3) return {label:'Sight support requested',detail:'Recorded narration, 15 seconds of additional answer time and Repeat question were enabled.'};
+    return {label:'Spoken-guidance preference',detail:'Recorded narration was enabled without additional accessibility time.'};
+  }
+  function renderAudioSupportControls(){
+    const reason=normaliseSupportReason(settings.supportReason);
+    $$('.setup-choice').forEach(button=>button.classList.toggle('selected',(button.dataset.audio==='on')===settings.audio));
+    const reasonFieldset=$('support-reason-fieldset'); if(reasonFieldset) reasonFieldset.hidden=!settings.audio;
+    $$('[data-support-reason]').forEach(button=>{const selected=Number(button.dataset.supportReason)===reason;button.classList.toggle('selected',selected);button.setAttribute('aria-pressed',String(selected));});
+    if($('audio-toggle')) $('audio-toggle').textContent=settings.audio?'🔊':'🔇';
+    if($('accessibility-notice')) $('accessibility-notice').hidden=!accessibilitySupportActive();
+  }
+  function setAudioSupport(enabled,{askReason=false}={}){
+    settings.audio=!!enabled;
+    if(!settings.audio) settings.supportReason=0;
+    else if(!normaliseSupportReason(settings.supportReason)&&!askReason) settings.supportReason=1;
+    saveSettings();
+    if(session&&session.status!=='complete'){
+      session.audio=settings.audio;
+      session.supportReason=settings.audio?normaliseSupportReason(settings.supportReason):0;
+      saveSession();
+    }
+    renderAudioSupportControls();
+    if(!settings.audio) cancelSpeech();
+  }
+  function selectAudioSupportReason(value){
+    settings.audio=true; settings.supportReason=normaliseSupportReason(value); saveSettings();
+    if(session&&session.status!=='complete'){session.audio=true;session.supportReason=settings.supportReason;saveSession();}
+    renderAudioSupportControls(); $('setup-error').textContent='';
+  }
   function applyProductMode(){
     const applicationMode=activeProductMode()==='application';
     document.body.classList.toggle('application-mode',applicationMode);
@@ -256,8 +306,8 @@
   let narrationQueueToken=0;
   function initialiseNarration(){
     narrationPlayers={
-      en:new Audio('./narration-en.mp3?v=21.0.0'),
-      es:new Audio('./narration-es.mp3?v=21.0.0')
+      en:new Audio('./narration-en.mp3?v=23.0.0'),
+      es:new Audio('./narration-es.mp3?v=23.0.0')
     };
     Object.values(narrationPlayers).forEach(audio=>{audio.preload='auto';audio.load();});
     narrationAudio=narrationPlayers[settings.lang];
@@ -361,24 +411,24 @@
   }
 
   function newSession(){
-    session={status:'setup',mode:settings.appMode,name:'',reference:'',application:{},applicationSubmitted:false,lang:settings.lang,audio:settings.audio,supportReason:settings.audio?1:0,profileSkipped:false,profileAnswers:[],knowledgeAnswers:Array(10).fill(0),questionOrder:shuffle(QUESTIONS.map(q=>q.id)),knowledgeIndex:0,startedAt:new Date().toISOString(),trialConsumed:false};
+    session={status:'setup',mode:settings.appMode,name:'',reference:'',application:{},applicationSubmitted:false,lang:settings.lang,audio:settings.audio,supportReason:settings.audio?normaliseSupportReason(settings.supportReason):0,profileSkipped:false,profileAnswers:[],knowledgeAnswers:Array(10).fill(0),questionOrder:shuffle(QUESTIONS.map(q=>q.id)),knowledgeIndex:0,startedAt:new Date().toISOString(),trialConsumed:false};
     saveSession();
   }
   function goToSetup(){
     if(!session || session.status==='complete') newSession();
     session.lang=settings.lang; session.audio=settings.audio;
     $('candidate-name').value=session.name||''; $('setup-error').textContent='';
-    populateApplicationForm(session.application||{}); applyProductMode();
-    $$('.setup-choice').forEach(x=>x.classList.toggle('selected',(x.dataset.audio==='on')===settings.audio));
+    populateApplicationForm(session.application||{}); applyProductMode(); renderAudioSupportControls();
     showScreen('setup-screen'); speak(t(activeProductMode()==='application'?'applicationSetupHelper':'setupHelper'));
   }
   function beginBeginner(){
     const name=$('candidate-name').value.trim(); $('setup-error').textContent='';
     if(!name){ $('setup-error').textContent=t('requiredError'); return; }
+    if(settings.audio&&!normaliseSupportReason(settings.supportReason)){ $('setup-error').textContent=t('supportReasonError'); $('support-reason-fieldset').scrollIntoView({behavior:'smooth',block:'center'}); return; }
     if(!canBegin()){ $('setup-error').textContent=trialHash()?t('usedError'):t('lockedError'); openModal('unlock-modal'); return; }
     if(!session || session.status==='complete') newSession();
     const mode=activeProductMode();
-    Object.assign(session,{mode,name,reference:'',application:mode==='application'?applicationFromForm():{},lang:settings.lang,audio:settings.audio,supportReason:settings.audio?1:0,status:'profile-intro'}); saveSession();
+    Object.assign(session,{mode,name,reference:'',application:mode==='application'?applicationFromForm():{},lang:settings.lang,audio:settings.audio,supportReason:settings.audio?normaliseSupportReason(settings.supportReason):0,status:'profile-intro'}); saveSession();
     showScreen('profile-intro-screen'); speak([t('profileIntroTitle'),t('profileIntroOne'),t('profileIntroTwo')]);
   }
 
@@ -404,7 +454,7 @@
     $('profile-confirm').disabled=true; $$('[data-profile-option]').forEach(button=>button.disabled=true);
     session.profileAnswers[profileIndex]=option.disc; profileIndex++; saveSession(); setTimeout(renderProfile,350);
   }
-  function showInstructions(){ showScreen('instructions-screen'); speak([t('instructionsTitle'),t('instructionsLead'),t('timingNotice')]); }
+  function showInstructions(){ if($('accessibility-notice')) $('accessibility-notice').hidden=!accessibilitySupportActive(); showScreen('instructions-screen'); speak([t('instructionsTitle'),t('instructionsLead'),t('timingNotice')]); }
 
   function shuffle(array){ const out=[...array]; for(let i=out.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [out[i],out[j]]=[out[j],out[i]]; } return out; }
   function seededOptions(q){
@@ -414,6 +464,8 @@
     return base;
   }
   function currentQuestion(){ const id=session.questionOrder[session.knowledgeIndex]; return QUESTIONS.find(q=>q.id===id); }
+  function questionReviewSeconds(q){ return q.read+(settings.audio?4:0)+(accessibilitySupportActive()?4:0); }
+  function questionAnswerSeconds(q){ return q.answer+(settings.audio?12:0)+(accessibilitySupportActive()?15:0); }
   function startKnowledge(){
     if(!canBegin() && !session?.trialConsumed){ openModal('unlock-modal'); return; }
     session.status='knowledge'; session.knowledgeIndex=Number(session.knowledgeIndex||0); session.knowledgeAnswers=session.knowledgeAnswers||Array(10).fill(0); saveSession(); renderKnowledgeQuestion();
@@ -429,9 +481,10 @@
       const accessibleLabel=q.hideText?`${settings.lang==='es'?'Opción':'Option'} ${String.fromCharCode(65+displayIndex)}`:option[settings.lang];
       return `<button class="knowledge-option ${visual?'visual':'text-only'}" type="button" data-answer-index="${index}" aria-label="${escapeHtml(accessibleLabel)}" aria-pressed="false" disabled>${visual?`<img src="${option.img}" alt="" draggable="false">`:''}${copy||`<span class="answer-copy"><span class="option-letter">${String.fromCharCode(65+displayIndex)}</span></span>`}</button>`;
     }).join('');
+    $('knowledge-repeat').hidden=!accessibilitySupportActive();
     $('knowledge-confirm').disabled=true;
     $$('[data-answer-index]').forEach(button=>button.addEventListener('click',()=>selectKnowledgeAnswer(button)));
-    startPhase('review',q.read+(settings.audio?4:0)); speak(q[settings.lang]);
+    startPhase('review',questionReviewSeconds(q)); speak(q[settings.lang]);
   }
   function startPhase(nextPhase, seconds){
     clearInterval(timer); phase=nextPhase; phaseRemaining=seconds; updateTimer();
@@ -443,9 +496,13 @@
     }else{
       $('phase-label').textContent=t('review'); $('timer-display').parentElement.classList.remove('answer');
     }
-    timer=setInterval(()=>{ phaseRemaining--; updateTimer(); if(phaseRemaining<=0){ clearInterval(timer); if(phase==='review') startPhase('answer',currentQuestion().answer+(settings.audio?12:0)); else timeOutQuestion(); } },1000);
+    timer=setInterval(()=>{ phaseRemaining--; updateTimer(); if(phaseRemaining<=0){ clearInterval(timer); if(phase==='review') startPhase('answer',questionAnswerSeconds(currentQuestion())); else timeOutQuestion(); } },1000);
   }
   function updateTimer(){ $('timer-display').textContent=String(Math.max(0,phaseRemaining)).padStart(2,'0'); }
+  function repeatCurrentQuestion(){
+    const q=currentQuestion(); if(!q) return;
+    speak(q.hideText?q[settings.lang]:[q[settings.lang],...currentDisplayOptions.map(({option})=>option[settings.lang])],{force:true});
+  }
   function selectKnowledgeAnswer(button){
     if(optionLocked || phase!=='answer') return;
     knowledgeSelectedIndex=Number(button.dataset.answerIndex);
@@ -462,61 +519,101 @@
 
   function completeAssessment(){
     clearInterval(timer); if(session.status!=='complete'){
-      session.status='complete'; session.completedAt=new Date().toISOString(); session.lang=settings.lang; session.audio=settings.audio; consumeTrialCompletion(); session.resultCode=encodeResult(session); saveSession(); applyAccessState();
+      session.status='complete'; session.completedAt=new Date().toISOString(); session.lang=settings.lang; session.audio=settings.audio; session.supportReason=settings.audio?normaliseSupportReason(settings.supportReason):0; consumeTrialCompletion(); session.resultCode=encodeResult(session); saveSession(); applyAccessState();
     }
     renderResult();
   }
   function renderResult(){
     if(!session?.resultCode) return;
     const applicationMode=session.mode==='application';
+    const submitted=!!session.applicationSubmitted;
     const resultCard=$('result-title').closest('.result-card');
     resultCard.querySelector('[data-i18n="completeEyebrow"]').textContent=t(applicationMode?'applicationCompleteEyebrow':'completeEyebrow');
-    $('result-title').textContent=t(applicationMode?'applicationCompleteTitle':'completeTitle');
-    resultCard.querySelector('[data-i18n="completeLead"]').textContent=t(applicationMode?'applicationCompleteLead':'completeLead');
+    $('result-title').textContent=t(applicationMode?(submitted?'applicationSubmittedTitle':'applicationCompleteTitle'):'completeTitle');
+    resultCard.querySelector('[data-i18n="completeLead"]').textContent=t(applicationMode?(submitted?'applicationSubmittedLead':'applicationCompleteLead'):'completeLead');
     $('result-code-label').textContent=t(applicationMode?'applicationNumberLabel':'resultCodeLabel');
     $('copy-code').textContent=t(applicationMode?'copyApplicationNumber':'copyCode');
-    resultCard.querySelector('[data-i18n="resultInstruction"]').textContent=t(applicationMode?'applicationResultInstruction':'resultInstruction');
-    $('result-code').textContent=session.resultCode;
-    $('completion-meta').innerHTML=`<b>${escapeHtml(session.name)}</b><br>${escapeHtml(session.profileSkipped?t('profileSkipped'):t('profileDone'))}`;
+    resultCard.querySelector('[data-i18n="resultInstruction"]').textContent=t(applicationMode?(submitted?'applicationSubmittedInstruction':'applicationResultInstruction'):'resultInstruction');
+    $('result-code').textContent=applicationMode?(session.submissionReference||t('applicationReferencePending')):session.resultCode;
+    $('copy-code').hidden=applicationMode&&!session.submissionReference;
+    $('completion-meta').innerHTML=`<b>${escapeHtml(session.name)}</b><br>${escapeHtml(session.profileSkipped?t('profileSkipped'):t('profileDone'))}${session.submissionReference?`<br>${escapeHtml(session.submissionReference)}`:''}`;
     const applicationSummary=$('application-result-summary');
     applicationSummary.hidden=!applicationMode;
     applicationSummary.innerHTML=applicationMode?`<div><span>${escapeHtml(t('appliedPositionLabel'))}</span><b>${escapeHtml(session.application?.role||t('notSpecified'))}</b></div><div><span>${escapeHtml(t('otherPositionsLabel'))}</span><b>${escapeHtml(session.application?.otherRoles==='Yes'?t('yesLabel'):session.application?.otherRoles==='No'?t('noLabel'):t('notSpecified'))}</b></div>`:'';
-    $('submit-application').hidden=!applicationMode||!!session.applicationSubmitted;
-    $('application-submit-note').hidden=!applicationMode||!!session.applicationSubmitted;
+    $('submit-application').textContent=t(applicationMode?'submitApplication':'submitAssessment');
+    $('submit-application').hidden=submitted;
+    $('application-submit-note').hidden=submitted;
     $('next-applicant').style.display=(isOwner()||trialRemaining()>0)?'inline-flex':'none';
-    showScreen('result-screen'); speak([t(applicationMode?'applicationCompleteTitle':'completeTitle'),t(applicationMode?'applicationResultInstruction':'resultInstruction')]);
+    showScreen('result-screen'); speak([t(applicationMode?(submitted?'applicationSubmittedTitle':'applicationCompleteTitle'):'completeTitle'),t(applicationMode?(submitted?'applicationSubmittedInstruction':'applicationResultInstruction'):'resultInstruction')]);
   }
 
   function findStoredApplication(code){
     const normalized=normalizeCode(code);
     return storedApplications().find(item=>normalizeCode(item.code)===normalized)||null;
   }
-  function populateStoredApplicants(){
+  async function populateStoredApplicants(){
     const select=$('stored-applicant-select'); if(!select) return;
-    const applications=storedApplications().sort((a,b)=>String(b.submittedAt).localeCompare(String(a.submittedAt)));
-    select.innerHTML=applications.length?'<option value="">Select a stored applicant</option>':'<option value="">No submitted applications</option>';
-    applications.forEach(item=>{ const option=document.createElement('option'); option.value=item.code; option.textContent=`${item.name||'Unnamed applicant'} — ${item.code}`; select.appendChild(option); });
-  }
-  function storeCurrentApplication(){
-    $('submit-error').textContent='';
-    if(accessHash($('submit-pin').value)!==ADMIN_HASH){ $('submit-error').textContent=t('invalidAdminPin'); return; }
-    if(!session||session.status!=='complete'||session.mode!=='application'||!session.resultCode){ $('submit-error').textContent='No completed application is available to store.'; return; }
-    const applications=storedApplications();
-    const record={code:session.resultCode,name:session.name,application:{...(session.application||{})},submittedAt:new Date().toISOString(),lang:session.lang,audio:session.audio};
-    const existing=applications.findIndex(item=>normalizeCode(item.code)===normalizeCode(record.code));
-    if(existing>=0) applications[existing]=record; else applications.unshift(record);
-    saveJson(APPLICATIONS_KEY,applications.slice(0,100));
-    session.applicationSubmitted=true; session.submittedAt=record.submittedAt; saveSession();
-    $('submit-pin').value=''; closeModal('submit-modal'); renderResult(); populateStoredApplicants(); toast(existing>=0?t('submissionAlreadySaved'):t('submissionSaved'));
-  }
-  function loadStoredApplicant(){
-    const record=findStoredApplication($('stored-applicant-select').value);
-    if(!record){ $('decode-error').textContent='Select a stored applicant first.'; return; }
+    select.disabled=true; select.innerHTML='<option value="">Loading shared submissions…</option>';
+    if(!adminAccessPin){ select.innerHTML='<option value="">Administrator access required</option>'; return; }
     try{
-      const data=decodeResult(record.code); $('decode-error').textContent='';
-      $('admin-result-code').value=record.code; $('admin-candidate-name').value=record.name||''; $('admin-candidate-reference').value=record.code;
-      renderDashboard(data,{code:record.code,name:record.name,reference:record.code,application:record.application,submittedAt:record.submittedAt});
+      const statuses=['pending','actioned','archived'];
+      const responses=await Promise.all(statuses.map(status=>sharedRequest('/api/admin',{action:'list',status,adminPin:adminAccessPin})));
+      const grouped=Object.fromEntries(statuses.map((status,index)=>[status,Array.isArray(responses[index].submissions)?responses[index].submissions:[]]));
+      $$('[data-queue-status]').forEach(button=>{const status=button.dataset.queueStatus;button.classList.toggle('active',status===currentQueueStatus);const count=button.querySelector('[data-queue-count]');if(count)count.textContent=String(grouped[status]?.length||0);});
+      sharedQueueRecords=grouped[currentQueueStatus]||[];
+      select.innerHTML=sharedQueueRecords.length?'<option value="">Select a shared submission</option>':'<option value="">No submissions in this queue</option>';
+      sharedQueueRecords.forEach(item=>{const option=document.createElement('option');option.value=`remote:${item.reference}`;const kind=item.recordType==='application'?'Application':'Assessment';const role=item.role?` · ${item.role}`:'';option.textContent=`${item.name||'Unnamed applicant'} — ${item.reference} · ${kind}${role}`;select.appendChild(option);});
+      $('shared-service-status').textContent='Live shared list · available on every authorised device';
+      select.disabled=false;
+    }catch(error){
+      const local=storedApplications().filter(item=>(item.queueStatus||'pending')===currentQueueStatus).sort((a,b)=>String(b.submittedAt).localeCompare(String(a.submittedAt)));
+      select.innerHTML=local.length?'<option value="">Shared service unavailable — local copies</option>':'<option value="">Shared service unavailable</option>';
+      local.forEach(item=>{const option=document.createElement('option');option.value=`local:${item.code}`;option.textContent=`${item.name||'Unnamed applicant'} — local copy`;select.appendChild(option);});
+      $('shared-service-status').textContent=error.message;
+      select.disabled=false;
+    }
+  }
+  async function storeCurrentApplication(){
+    $('submit-error').textContent='';
+    const pin=$('submit-pin').value.trim();
+    if(accessHash(pin)!==ADMIN_HASH){ $('submit-error').textContent=t('invalidAdminPin'); return; }
+    if(!session||session.status!=='complete'||!session.resultCode){ $('submit-error').textContent='No completed result is available to submit.'; return; }
+    const button=$('confirm-submit'); button.disabled=true; button.textContent=settings.lang==='es'?'Enviando…':'Submitting…';
+    const assessment={knowledgeAnswers:[...(session.knowledgeAnswers||[])],profileSkipped:!!session.profileSkipped,profileAnswers:[...(session.profileAnswers||[])],lang:session.lang,audio:!!session.audio,supportReason:normaliseSupportReason(session.supportReason)};
+    const record={recordType:session.mode==='application'?'application':'assessment',resultCode:session.resultCode,name:session.name,application:session.mode==='application'?{...(session.application||{})}:{},assessment};
+    try{
+      const response=await sharedRequest('/api/submissions',{adminPin:pin,record});
+      const saved=response.submission||{}; if(!saved.reference)throw new Error(t('submissionFailed'));
+      const submittedAt=saved.submittedAt||new Date().toISOString();
+      const applications=storedApplications();
+      const localRecord={code:session.resultCode,reference:saved.reference,recordType:record.recordType,queueStatus:'pending',name:session.name,application:record.application,assessment,submittedAt};
+      const existing=applications.findIndex(item=>normalizeCode(item.code)===normalizeCode(localRecord.code));
+      if(existing>=0)applications[existing]=localRecord;else applications.unshift(localRecord);
+      saveJson(APPLICATIONS_KEY,applications.slice(0,100));
+      session.applicationSubmitted=true; session.submissionReference=saved.reference; session.submittedAt=submittedAt; saveSession();
+      $('submit-pin').value=''; closeModal('submit-modal'); renderResult(); if(adminAuthenticated)populateStoredApplicants(); toast(existing>=0?t('submissionAlreadySaved'):t('submissionSaved'));
+    }catch(error){ $('submit-error').textContent=error.message||t('submissionFailed'); }
+    finally{button.disabled=false;button.textContent=t('confirmSubmit');}
+  }
+  async function loadStoredApplicant(){
+    const selected=$('stored-applicant-select').value;
+    if(!selected){ $('decode-error').textContent='Select a submission first.'; return; }
+    try{
+      let record;
+      if(selected.startsWith('remote:')){const reference=selected.slice(7);const response=await sharedRequest('/api/admin',{action:'get',reference,adminPin:adminAccessPin});record=response.submission;currentSharedReference=reference;$('submission-status-actions').hidden=false;}
+      else{record=findStoredApplication(selected.slice(6));currentSharedReference='';$('submission-status-actions').hidden=true;}
+      if(!record)throw new Error('Submission was not found.');
+      const data=record.assessment?.knowledgeAnswers?record.assessment:decodeResult(record.resultCode||record.code); $('decode-error').textContent='';
+      $('admin-result-code').value=''; $('admin-candidate-name').value=record.name||''; $('admin-candidate-reference').value=record.reference||'';
+      renderDashboard(data,{code:'',name:record.name,reference:record.reference||record.code,application:record.recordType==='assessment'?null:(record.application||null),submittedAt:record.submittedAt});
     }catch(error){ $('decode-error').textContent=error.message; $('dashboard-output').innerHTML=''; }
+  }
+  async function updateSharedStatus(status){
+    if(!currentSharedReference)return;
+    try{
+      await sharedRequest('/api/admin',{action:'status',reference:currentSharedReference,status,adminPin:adminAccessPin});
+      currentSharedReference='';$('submission-status-actions').hidden=true;$('dashboard-output').innerHTML='';await populateStoredApplicants();toast(`Submission moved to ${status}.`);
+    }catch(error){$('decode-error').textContent=error.message;}
   }
 
   function pushBits(bits,value,count){ for(let i=count-1;i>=0;i--) bits.push((value>>i)&1); }
@@ -572,8 +669,8 @@
   }
   function answerText(q,value,lang='en'){ return value? q.options[value-1]?.[lang] || 'Invalid answer' : 'Timed out / no answer'; }
   function renderDashboard(data,{demo=false,name='',reference='',code='',application=null,submittedAt=''}={}){
-    const result=scoreAssessment(data.knowledgeAnswers),disc=personalityResult(data); const language=data.lang==='es'?'Spanish':'English'; const support=data.audio?'Audio enabled':'No audio';
-    const applicantMeta=[reference,language,support,code].filter(Boolean).map(escapeHtml).join(' · ');
+    const result=scoreAssessment(data.knowledgeAnswers),disc=personalityResult(data); const language=data.lang==='es'?'Spanish':'English'; const supportInfo=supportReportInfo(data);
+    const applicantMeta=[reference,language,supportInfo.label,code].filter(Boolean).map(escapeHtml).join(' · ');
     const applicationFields=application?[
       ['Position applied for',application.role],['Open to other roles',application.otherRoles],['Email',application.email],['Phone',application.phone],
       ['City and state',application.location],['Available start date',application.availability],['Commercial roofing experience',application.experience],
@@ -581,7 +678,7 @@
     ]:[];
     $('dashboard-output').innerHTML=`
       ${demo?'<div class="dashboard-banner">Example report only — these results do not belong to an applicant.</div>':''}
-      ${application?`<section class="application-details-card"><div class="application-details-heading"><div><small>JOB APPLICANT</small><h3>${escapeHtml(name||'Applicant name not supplied')}</h3></div><span>${escapeHtml(code||reference||'')}</span></div><div class="application-details-grid">${applicationFields.map(([label,value])=>`<div><span>${escapeHtml(label)}</span><b>${escapeHtml(value||'Not supplied')}</b></div>`).join('')}</div>${submittedAt?`<p class="application-stored-at">Stored on this device: ${escapeHtml(new Intl.DateTimeFormat('en-US',{dateStyle:'medium',timeStyle:'short'}).format(new Date(submittedAt)))}</p>`:''}</section>`:''}
+      ${application?`<section class="application-details-card"><div class="application-details-heading"><div><small>JOB APPLICANT</small><h3>${escapeHtml(name||'Applicant name not supplied')}</h3></div><span>${escapeHtml(reference||'')}</span></div><div class="application-details-grid">${applicationFields.map(([label,value])=>`<div><span>${escapeHtml(label)}</span><b>${escapeHtml(value||'Not supplied')}</b></div>`).join('')}</div>${submittedAt?`<p class="application-stored-at">Submitted to shared review: ${escapeHtml(new Intl.DateTimeFormat('en-US',{dateStyle:'medium',timeStyle:'short'}).format(new Date(submittedAt)))}</p>`:''}</section>`:''}
       <div class="dashboard-summary">
         <div class="score-ring" style="--score:${result.overall}%"><div><b>${result.overall}%</b><span>KNOWLEDGE SCORE</span></div></div>
         <div class="recommendation-card"><small>RECOMMENDED INTERVIEW PATH</small><h3>${escapeHtml(result.recommendation)}</h3><p>${escapeHtml(result.rationale)}</p></div>
@@ -592,6 +689,7 @@
         <div class="metric-card"><b>${result.timeouts}</b><span>Timed out / unanswered</span></div>
       </div>
       <div class="metric-card"><b>${escapeHtml(name||'Applicant name not supplied')}</b><span>${applicantMeta}</span></div>
+      ${data.audio?`<div class="accessibility-report-card"><span>ACCESSIBILITY &amp; AUDIO SUPPORT</span><b>${escapeHtml(supportInfo.label)}</b><p>${escapeHtml(supportInfo.detail)}</p></div>`:''}
       <h3>Role-alignment indicators</h3>
       <div class="bar-list">${Object.entries(result.roles).map(([label,value])=>`<div class="bar-row"><span>${label}</span><div class="bar"><i style="width:${value}%"></i></div><b>${value}%</b></div>`).join('')}</div>
       <h3>Progressive assessment tiers</h3>
@@ -613,22 +711,25 @@
     document.querySelector('.brand-button').addEventListener('click',()=>{if(session?.status==='complete')renderResult();else showScreen('language-screen');});
     $('help-tab').addEventListener('click',openHelp); $('help-backdrop').addEventListener('click',closeHelp);
     $('language-toggle').addEventListener('click',()=>setLanguage(settings.lang==='en'?'es':'en'));
-    $('audio-toggle').addEventListener('click',()=>{settings.audio=!settings.audio;settings.supportReason=settings.audio?1:0;saveSettings();$('audio-toggle').textContent=settings.audio?'🔊':'🔇';$$('.setup-choice').forEach(x=>x.classList.toggle('selected',(x.dataset.audio==='on')===settings.audio));if(!settings.audio)cancelSpeech();});
+    $('audio-toggle').addEventListener('click',()=>setAudioSupport(!settings.audio));
     $('fullscreen-toggle').addEventListener('click',()=>toggleAppFullscreen());
     $('immersive-exit').addEventListener('click',()=>toggleAppFullscreen(true));
     document.addEventListener('fullscreenchange',()=>{if(nativeFullscreenActive&&!document.fullscreenElement){nativeFullscreenActive=false;document.body.classList.remove('immersive-mode');}});
     document.addEventListener('webkitfullscreenchange',()=>{if(nativeFullscreenActive&&!document.webkitFullscreenElement){nativeFullscreenActive=false;document.body.classList.remove('immersive-mode');}});
-    $$('.setup-choice').forEach(button=>button.addEventListener('click',()=>{settings.audio=button.dataset.audio==='on';settings.supportReason=settings.audio?1:0;saveSettings();$$('.setup-choice').forEach(x=>x.classList.toggle('selected',x===button));$('audio-toggle').textContent=settings.audio?'🔊':'🔇';if(!settings.audio)cancelSpeech();}));
-    $('begin-beginner').addEventListener('click',beginBeginner); $('start-profile').addEventListener('click',startProfile); $('skip-profile').addEventListener('click',skipProfile); $('profile-confirm').addEventListener('click',confirmProfileAnswer); $('start-knowledge').addEventListener('click',startKnowledge); $('knowledge-confirm').addEventListener('click',confirmKnowledgeAnswer);
+    $$('.setup-choice').forEach(button=>button.addEventListener('click',()=>setAudioSupport(button.dataset.audio==='on',{askReason:button.dataset.audio==='on'})));
+    $$('[data-support-reason]').forEach(button=>button.addEventListener('click',()=>selectAudioSupportReason(button.dataset.supportReason)));
+    $('begin-beginner').addEventListener('click',beginBeginner); $('start-profile').addEventListener('click',startProfile); $('skip-profile').addEventListener('click',skipProfile); $('profile-confirm').addEventListener('click',confirmProfileAnswer); $('start-knowledge').addEventListener('click',startKnowledge); $('knowledge-repeat').addEventListener('click',repeatCurrentQuestion); $('knowledge-confirm').addEventListener('click',confirmKnowledgeAnswer);
     $('unlock-submit').addEventListener('click',()=>{ $('unlock-error').textContent=''; try{const result=activateCode($('unlock-code').value);if(result.mode==='owner')toast(t('ownerSuccess'));else{if(result.remaining<=0)throw new Error(t('usedError'));toast(t('unlockSuccess',result.remaining));} $('unlock-code').value='';closeModal('unlock-modal');}catch(error){$('unlock-error').textContent=error.message;} });
-    $('copy-code').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(session.resultCode);toast(t('copied'));}catch(_){toast(t('copyFailed'));}});
+    $('copy-code').addEventListener('click',async()=>{try{const value=session.mode==='application'?(session.submissionReference||''):session.resultCode;if(!value)return;await navigator.clipboard.writeText(value);toast(t('copied'));}catch(_){toast(t('copyFailed'));}});
     $('submit-application').addEventListener('click',()=>{$('submit-error').textContent='';$('submit-pin').value='';openModal('submit-modal');setTimeout(()=>$('submit-pin').focus(),80);});
     $('confirm-submit').addEventListener('click',storeCurrentApplication);
     $('next-applicant').addEventListener('click',()=>{if(!isOwner()&&trialRemaining()<=0){openModal('unlock-modal');return;}localStorage.removeItem(SESSION_KEY);session=null;newSession();goToSetup();});
     $('admin-open').addEventListener('click',()=>{openModal('admin-modal');$('admin-login').hidden=adminAuthenticated;$('admin-dashboard').hidden=!adminAuthenticated;if(!adminAuthenticated)setTimeout(()=>$('admin-pin').focus(),80);else prepareAdmin();});
-    $('admin-login-button').addEventListener('click',()=>{if(accessHash($('admin-pin').value)!==ADMIN_HASH){$('admin-error').textContent='Administrator PIN not recognised.';return;}adminAuthenticated=true;$('admin-error').textContent='';$('admin-pin').value='';$('admin-login').hidden=true;$('admin-dashboard').hidden=false;prepareAdmin();});
+    $('admin-login-button').addEventListener('click',()=>{const pin=$('admin-pin').value.trim();if(accessHash(pin)!==ADMIN_HASH){$('admin-error').textContent='Administrator PIN not recognised.';return;}adminAuthenticated=true;adminAccessPin=pin;$('admin-error').textContent='';$('admin-pin').value='';$('admin-login').hidden=true;$('admin-dashboard').hidden=false;prepareAdmin();});
     $('decode-result').addEventListener('click',()=>{try{const code=$('admin-result-code').value;const data=decodeResult(code);const stored=findStoredApplication(code);$('decode-error').textContent='';renderDashboard(data,{code:formatResultCode(normalizeCode(code).replace(/^DRA/,'')),name:$('admin-candidate-name').value.trim()||stored?.name||'',reference:$('admin-candidate-reference').value.trim()||stored?.code||'',application:stored?.application||null,submittedAt:stored?.submittedAt||''});}catch(error){$('decode-error').textContent=error.message;$('dashboard-output').innerHTML='';}});
     $$('[data-admin-mode]').forEach(button=>button.addEventListener('click',()=>setProductMode(button.dataset.adminMode)));
+    $$('[data-queue-status]').forEach(button=>button.addEventListener('click',()=>{currentQueueStatus=button.dataset.queueStatus;currentSharedReference='';$('submission-status-actions').hidden=true;$('dashboard-output').innerHTML='';populateStoredApplicants();}));
+    $$('[data-set-submission-status]').forEach(button=>button.addEventListener('click',()=>updateSharedStatus(button.dataset.setSubmissionStatus)));
     $('load-stored-applicant').addEventListener('click',loadStoredApplicant);
     $('load-example').addEventListener('click',()=>{const demo={knowledgeAnswers:[1,1,1,1,1,1,2,1,1,1],profileSkipped:false,profileAnswers:['S','C','S','I','S'],lang:'en',audio:false};renderDashboard(demo,{demo:true,name:'Example Applicant',reference:'DEMO-001'});});
     $('print-report').addEventListener('click',()=>window.print());
@@ -639,7 +740,7 @@
   function prepareAdmin(){
     $('print-date').textContent=new Intl.DateTimeFormat('en-GB',{dateStyle:'long',timeStyle:'short'}).format(new Date());
     populateStoredApplicants(); applyProductMode();
-    if(session?.status==='complete'){$('admin-result-code').value=session.resultCode||'';$('admin-candidate-name').value=session.name||'';$('admin-candidate-reference').value=session.mode==='application'?session.resultCode:(session.reference||'');try{renderDashboard(decodeResult(session.resultCode),{code:session.resultCode,name:session.name,reference:session.mode==='application'?session.resultCode:session.reference,application:session.mode==='application'?(session.application||{}):null,submittedAt:session.submittedAt||''});}catch(_){}}
+    if(session?.status==='complete'){$('admin-result-code').value=session.resultCode||'';$('admin-candidate-name').value=session.name||'';$('admin-candidate-reference').value=session.submissionReference||session.reference||'';try{renderDashboard(decodeResult(session.resultCode),{code:session.mode==='application'?'':session.resultCode,name:session.name,reference:session.submissionReference||session.reference,application:session.mode==='application'?(session.application||{}):null,submittedAt:session.submittedAt||''});}catch(_){}}
   }
   function init(){
     if(session&&!session.mode){session.mode='assessment';saveSession();}
@@ -649,7 +750,7 @@
     else if(session?.status==='profile'){settings.lang=session.lang||settings.lang;setLanguage(settings.lang);profileIndex=session.profileAnswers?.length||0;renderProfile();}
     else if(session?.status==='profile-intro'){settings.lang=session.lang||settings.lang;setLanguage(settings.lang);showScreen('profile-intro-screen');}
     else showScreen('language-screen');
-    if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=21.0.0').catch(()=>{}));
+    if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js?v=23.0.0').catch(()=>{}));
   }
 
   document.addEventListener('DOMContentLoaded',init);
