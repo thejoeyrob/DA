@@ -10,10 +10,10 @@
   <meta property="og:image" content="social-preview.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="manifest" href="manifest.webmanifest?v=20.0.0">
+  <link rel="manifest" href="manifest.webmanifest?v=21.0.0">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="icon" href="icon-192.png">
-  <link rel="stylesheet" href="app.css?v=20.0.0">
+  <link rel="stylesheet" href="app.css?v=21.0.0">
   <title>Danco Roofing Applicant Assessment</title>
 </head>
 <body class="prototype-locked">
@@ -144,6 +144,7 @@
           <h2 id="profile-question"></h2>
           <p class="question-hint" data-i18n="profileHint">Choose the answer that feels most natural to you.</p>
           <div class="profile-options" id="profile-options"></div>
+          <div class="answer-confirm-bar"><span data-i18n="confirmAnswerHint">Select an option, then confirm it.</span><button class="button button-primary" id="profile-confirm" type="button" disabled data-i18n="confirmFinalAnswer">Confirm final answer</button></div>
         </div>
       </div>
     </section>
@@ -189,6 +190,7 @@
           <h2 id="knowledge-question"></h2>
           <p class="question-hint" id="knowledge-hint"></p>
           <div class="knowledge-options" id="knowledge-options"></div>
+          <div class="answer-confirm-bar timed-confirm-bar"><span data-i18n="confirmAnswerHint">Select an option, then confirm it.</span><button class="button button-primary" id="knowledge-confirm" type="button" disabled data-i18n="confirmFinalAnswer">Confirm final answer</button></div>
         </div>
       </div>
     </section>
@@ -201,6 +203,7 @@
           <span class="eyebrow" data-i18n="completeEyebrow">ASSESSMENT COMPLETE</span>
           <h2 id="result-title" data-i18n="completeTitle">Thank you for taking part</h2>
           <p class="lead small" data-i18n="completeLead">Your responses have been converted into the result code below.</p>
+          <div class="application-result-summary" id="application-result-summary" hidden aria-label="Application choices"></div>
           <span class="result-code-label" id="result-code-label" data-i18n="resultCodeLabel">Result code</span>
           <div class="result-code" id="result-code">DRA-••••-••••-••••</div>
           <button class="button button-secondary" id="copy-code" type="button" data-i18n="copyCode">Copy result code</button>
@@ -316,7 +319,7 @@
     <img src="joseph-whelan-eds-white.png" alt="" aria-hidden="true">
   </aside>
 
-  <script src="narration-manifest.js?v=20.0.0" defer></script>
-  <script src="app.js?v=20.0.0" defer></script>
+  <script src="narration-manifest.js?v=21.0.0" defer></script>
+  <script src="app.js?v=21.0.0" defer></script>
 </body>
 </html>

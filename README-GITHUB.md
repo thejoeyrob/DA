@@ -17,6 +17,8 @@ This revision replaces unreliable device text-to-speech with bundled English and
 
 The full-screen control uses the browser Fullscreen API where supported. On iPhone browser tabs it switches to an expanded in-app view; installing the PWA with **Add to Home Screen** removes Safari's browser bars entirely.
 
+Version 21 adds safer recorded-audio cue margins, shows each application’s selected position and alternate-position preference on the completion panel, and requires applicants to select an option and then choose **Confirm final answer**. Image-only recognition questions do not narrate descriptive option labels, preventing the audio from giving away the visual answer.
+
 ## Save the app to an iPhone or iPad Home Screen
 
 1. Open the published assessment link in **Safari**. If the link opens inside Mail, Outlook, Teams or another app, use its menu to choose **Open in Safari** first.

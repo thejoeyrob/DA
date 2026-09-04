@@ -330,7 +330,7 @@ body:not(.owner-access) .inline-helper-duo{
 /* v14: the applicant setup requires only one full-width name field. */
 .field-grid{grid-template-columns:minmax(0,1fr)}
 
-/* v20: application mode, deterministic narration controls and device-safe layout. */
+/* v21: application mode, deterministic narration, deliberate answer confirmation and device-safe layout. */
 .form-panel{min-width:0}
 .application-fields{margin:24px 0;padding:20px;border:1px solid #cfe0f1;border-radius:20px;background:linear-gradient(145deg,rgba(242,248,255,.97),rgba(255,255,255,.97));box-shadow:inset 0 1px 0 #fff}
 .application-fields[hidden]{display:none}
@@ -346,6 +346,21 @@ body:not(.owner-access) .inline-helper-duo{
 .other-role-fieldset input{width:18px;height:18px;accent-color:var(--blue);flex:0 0 auto}
 .application-submit-button{margin:16px 0 6px}
 .application-submit-note{max-width:520px;margin:4px auto 14px!important}
+.application-result-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0;text-align:left}
+.application-result-summary[hidden]{display:none}
+.application-result-summary>div{min-width:0;padding:13px 14px;border:1px solid #d5e3f0;border-radius:13px;background:#f6faff}
+.application-result-summary span{display:block;color:#61768d;font-size:10px;font-weight:850;letter-spacing:.045em;text-transform:uppercase}
+.application-result-summary b{display:block;margin-top:5px;color:#173657;font-size:14px;overflow-wrap:anywhere}
+
+.profile-option.selected{border-color:var(--blue);background:#eaf4ff;box-shadow:0 0 0 4px rgba(20,120,237,.15);transform:none}
+.profile-option.selected .option-letter{background:var(--blue);color:#fff}
+.answer-confirm-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;padding:13px 15px;border:1px solid #cbddec;border-radius:16px;background:#f3f8fe}
+.answer-confirm-bar span{color:#506982;font-size:12px;font-weight:750;line-height:1.4}
+.answer-confirm-bar .button{flex:0 0 auto;min-width:205px}
+.answer-confirm-bar .button:disabled{cursor:not-allowed;opacity:.46;box-shadow:none;transform:none}
+.timed-confirm-bar{position:sticky;bottom:10px;z-index:5;box-shadow:0 12px 28px rgba(7,45,91,.12)}
+@media(hover:hover) and (pointer:fine){.profile-option:hover{border-color:#6baaf0;background:#f2f8ff;transform:translateX(3px)}}
+@media(hover:none){.profile-option:hover:not(.selected){border-color:#d2deeb;background:#fff;transform:none}}
 
 .standard-voice-badge{display:flex;align-items:center;gap:10px;padding:12px;border:1px solid #bdd8ee;border-radius:13px;background:linear-gradient(145deg,#f1f8ff,#fff)}
 .standard-voice-badge>span{width:28px;height:28px;display:grid;place-items:center;flex:0 0 auto;border-radius:50%;background:#16865e;color:#fff;font-weight:900}
@@ -368,10 +383,11 @@ body:not(.owner-access) .inline-helper-duo{
 }
 @media(max-width:760px){
   .application-fields{margin:20px -4px;padding:16px 13px}.application-section-heading{display:grid;gap:8px}.prototype-optional{justify-self:start}
-  .application-field-grid,.other-role-fieldset{grid-template-columns:1fr}
+  .application-field-grid,.other-role-fieldset,.application-result-summary{grid-template-columns:1fr}
   .other-role-fieldset legend{grid-column:1}
   .admin-modal-card{width:calc(100vw - 16px);padding:22px 14px}.dashboard-heading h2{font-size:29px}
   .admin-mode-card,.stored-applications-card{padding:15px}.application-details-grid{grid-template-columns:1fr}.application-details-heading{display:grid}.application-details-heading>span{justify-self:start}
+  .answer-confirm-bar{align-items:stretch;flex-direction:column}.answer-confirm-bar .button{width:100%;min-width:0}
 }
 @media(max-width:420px){
   .header-actions{gap:5px}.icon-button{width:36px;height:36px}.brand-button{gap:7px}.brand-button img{width:84px;height:43px}.brand-button b{font-size:12px}

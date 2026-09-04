@@ -1,8 +1,8 @@
-# Danco Applicant Assessment — v20 implementation brief
+# Danco Applicant Assessment — v21 implementation brief
 
 ## Outcome
 
-This release removes browser/device text-to-speech from the active app, adds an administrator-controlled Application mode, and preserves the existing work-style and trade-assessment sequence.
+This release retains the device-independent recorded narration and administrator-controlled Application mode, while adding safer audio cue margins, explicit application choices on the applicant result and deliberate answer confirmation.
 
 The app remains a static GitHub Pages Progressive Web App. No server, database or email service is introduced.
 
@@ -17,6 +17,8 @@ The app remains a static GitHub Pages Progressive Web App. No server, database o
 - Help retains **Repeat spoken audio** and adds **Test standard narration**.
 - The service worker precaches narration after the first successful online visit so the installed app can continue to speak offline.
 - The private question bank was rendered locally; it was not submitted to an external speech service.
+- Every narration cue now contains approximately 300 ms of leading silence and 350 ms of trailing silence. This gives mobile browsers a safe seek margin and prevents the opening or closing syllable being clipped.
+- Image-only recognition questions narrate the question without reading descriptive option labels. The recording therefore cannot reveal which image is correct.
 
 ## 2. Administrator-controlled start mode
 
@@ -52,6 +54,7 @@ Only full name is required during prototype testing. All added fields may be lef
 - Only a successful PIN-confirmed submission enters the prototype application list.
 - Re-submitting the same application number updates the existing record instead of creating a duplicate.
 - Up to 100 submitted application records are retained locally.
+- The applicant completion panel explicitly displays the selected position and whether the applicant is open to another listed position.
 
 ## 5. Local prototype application list
 
@@ -69,7 +72,16 @@ Selecting an applicant and choosing **Load and decode**:
 
 This storage is intentionally device-local browser storage. It is suitable for controlled prototype review on one device, but it is not a shared inbox, central database or email submission system. Production use requires an approved secure backend and appropriate hiring-data controls.
 
-## 6. Responsive and presentation refinements
+## 6. Deliberate answer confirmation
+
+- Both the optional work-style section and the timed trade assessment now use a two-step interaction: select an option, then choose **Confirm final answer**.
+- A selection may be changed freely until it is confirmed.
+- The confirmation control remains disabled until an option is selected.
+- Timed questions still time out at zero if the selected answer has not been confirmed.
+- Every new work-style question clears the prior selection, highlight, focus state and confirmation state.
+- Scoring, answer mappings, question order and timers remain unchanged.
+
+## 7. Responsive and presentation refinements
 
 - Added responsive two-column/one-column application fields.
 - Added polished administrator mode and submission panels.
@@ -118,7 +130,12 @@ The following are unchanged:
 - Application mode shows the optional credentials and three-role selector.
 - The existing assessment starts after either setup mode without question, timer or scoring changes.
 - Application mode labels the DRA code as the application number.
+- The applicant result shows the chosen position and alternate-position preference.
 - Submission requires the administrator PIN and is not automatic.
 - Stored applicants can be selected by name/code and decoded.
 - The administrator report includes submitted application credentials.
-- Existing installations request the v20 files and narration cache rather than stale voice logic.
+- Selecting an answer does not save or advance until **Confirm final answer** is used.
+- Each new work-style question has no preselected or highlighted answer.
+- Image-only answer descriptions are not spoken and cannot reveal the answer.
+- Each narration cue has a safe leading and trailing margin and remains within its audio file.
+- Existing installations request the v21 files and narration cache rather than stale cue or interaction logic.

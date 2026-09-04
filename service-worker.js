@@ -1,8 +1,8 @@
-importScripts('./narration-manifest.js?v=20.0.0');
+importScripts('./narration-manifest.js?v=21.0.0');
 
-const CACHE_NAME = 'danco-assessment-v20-flat-narration-application-mode-20260904';
+const CACHE_NAME = 'danco-assessment-v21-cue-margins-confirmation-20260904';
 const CORE_ASSETS = [
-  './','./index.html?v=20.0.0','./app.css?v=20.0.0','./app.js?v=20.0.0','./narration-manifest.js?v=20.0.0','./manifest.webmanifest?v=20.0.0',
+  './','./index.html?v=21.0.0','./app.css?v=21.0.0','./app.js?v=21.0.0','./narration-manifest.js?v=21.0.0','./manifest.webmanifest?v=21.0.0',
   './danco-logo.webp','./danco-logo-white.png','./joseph-whelan-eds-white.png','./danco-helper-english.png','./danco-helper-spanish.png',
   './icon-192.png','./icon-512.png','./apple-touch-icon.png','./social-preview.png',
   './visual-epdm.png','./visual-tpo.png','./visual-pvc.png','./visual-metal.png',
@@ -13,7 +13,7 @@ const CORE_ASSETS = [
   './visual-signal-qualified.png','./visual-signal-roofer.png','./visual-signal-driver.png','./visual-signal-none.png',
   './visual-zone-perimeter.png','./visual-zone-center.png','./visual-zone-drain.png','./visual-zone-equal.png'
 ];
-const NARRATION_ASSETS=['./narration-en.mp3','./narration-es.mp3'];
+const NARRATION_ASSETS=['./narration-en.mp3?v=21.0.0','./narration-es.mp3?v=21.0.0'];
 self.addEventListener('install',event=>event.waitUntil(
   caches.open(CACHE_NAME)
     .then(cache=>cache.addAll(CORE_ASSETS).then(()=>Promise.allSettled(NARRATION_ASSETS.map(asset=>cache.add(asset)))))
@@ -23,7 +23,7 @@ self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=
 self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET')return;
   if(event.request.mode==='navigate'){
-    event.respondWith(fetch(event.request).then(response=>{const copy=response.clone();caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));return response;}).catch(()=>caches.match('./index.html?v=20.0.0')));
+    event.respondWith(fetch(event.request).then(response=>{const copy=response.clone();caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));return response;}).catch(()=>caches.match('./index.html?v=21.0.0')));
     return;
   }
   event.respondWith(caches.match(event.request).then(cached=>cached||fetch(event.request).then(response=>{if(response.ok){const copy=response.clone();caches.open(CACHE_NAME).then(cache=>cache.put(event.request,copy));}return response;})));
