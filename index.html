@@ -1,203 +1,349 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
-  <meta name="theme-color" content="#043323">
-  <meta name="description" content="A game-show recap of Trakway lifting and installation training for teams or solo play.">
-  <meta name="app-version" content="2.8.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b3f89">
+  <meta name="description" content="Danco Roofing applicant workforce assessment prototype.">
+  <meta property="og:title" content="Danco Roofing Applicant Assessment">
+  <meta property="og:description" content="A fair, accessible and bilingual operational workforce assessment.">
+  <meta property="og:image" content="social-preview.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Trakway Trivia">
-  <title>Ellerby’s Trakway Trivia</title>
-  <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
-  <link rel="stylesheet" href="./styles-v28.css">
-  <script src="./jw-eds-brand-tab.js" defer></script>
+  <link rel="manifest" href="manifest.webmanifest?v=23.0.0">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="icon-192.png">
+  <link rel="stylesheet" href="app.css?v=23.0.0">
+  <title>Danco Roofing Applicant Assessment</title>
 </head>
-<body>
-  <section id="installWelcome" class="install-welcome" hidden aria-labelledby="installWelcomeTitle">
-    <div class="install-welcome-card">
-      <img src="./game-show-badge.png" alt="Ellerby’s Trakway Trivia" class="install-welcome-logo">
-      <p class="eyebrow">Trakway Trivia · Quick install</p>
-      <h1 id="installWelcomeTitle">Put the game on your Home Screen</h1>
-      <p id="installWelcomeIntro" class="install-welcome-intro">Install once, then open it like any other app.</p>
-      <div id="iosInstallSteps" class="install-steps" hidden>
-        <div><b>1</b><span>Tap <strong>Share</strong> <span class="share-symbol">↑</span></span></div>
-        <div><b>2</b><span>Tap <strong>Add to Home Screen</strong></span></div>
-        <div><b>3</b><span>Tap <strong>Add</strong></span></div>
-      </div>
-      <button id="nativeInstallButton" class="primary-button install-big-button" type="button" hidden>Install Trakway Trivia</button>
-      <p id="installBrowserHint" class="install-browser-hint" hidden>For the easiest install, open this link in <strong>Safari</strong>, then follow the three steps above.</p>
-      <button id="continueBrowserButton" class="continue-browser-button" type="button">Continue without installing</button>
-      <small>Once installed, this screen is skipped automatically.</small>
-    </div>
-  </section>
-  <div id="app" class="app-shell">
-    <header class="topbar">
-      <button id="homeButton" class="brand-button" type="button" aria-label="Return to game setup">
-        <img src="./game-show-badge.png" alt="" aria-hidden="true">
-        <span><strong>Ellerby’s</strong><b>Trakway Trivia</b></span>
-      </button>
-      <div class="topbar-actions">
-        <button id="installButton" class="icon-button install-button" type="button" hidden aria-label="Install app">
-          <span aria-hidden="true">↓</span><span class="action-label">Install</span>
-        </button>
-        <button id="soundButton" class="icon-button" type="button" aria-pressed="false" aria-label="Turn sound off">
-          <span id="soundIcon" aria-hidden="true">◖))</span><span class="action-label">Sound</span>
-        </button>
-        <button id="fullscreenButton" class="icon-button" type="button" aria-label="Enter full screen">
-          <span aria-hidden="true">⛶</span><span class="action-label">Full screen</span>
-        </button>
-        <button id="helpButton" class="icon-button" type="button" aria-label="How to play">
-          <span aria-hidden="true">?</span><span class="action-label">Help</span>
-        </button>
-      </div>
-    </header>
+<body class="prototype-locked">
+  <div class="prototype-watermark" aria-hidden="true"><span>PROTOTYPE</span><span>PROTOTYPE</span><span>PROTOTYPE</span></div>
 
-    <main id="screenRoot" class="screen-root" tabindex="-1">
-      <section id="setupScreen" class="screen setup-screen" aria-labelledby="setupTitle">
-        <div class="setup-hero">
-          <div class="badge-wrap">
-            <span class="badge-glow" aria-hidden="true"></span>
-            <img src="./game-show-badge.png" alt="Ellerby’s Trakway Trivia">
-          </div>
-          <div class="setup-copy">
-            <p class="eyebrow">Sunbelt Rentals Trakway · Training recap</p>
-            <h1 id="setupTitle">Turn method knowledge into an installation challenge.</h1>
-            <p>Race head-to-head or take the challenge solo. Recall the safe system of work, make the call and explain the reason behind every answer.</p>
-            <div class="feature-row" aria-label="Game features">
-              <span>128 questions</span><span>2 training packs</span><span>Offline ready</span>
-            </div>
-          </div>
-        </div>
-
-        <form id="setupForm" class="setup-panel">
-          <div class="setup-group format-group">
-            <div class="group-heading"><span class="step-number">1</span><div><h2>Game format</h2><p>Race head-to-head or take the panel challenge solo.</p></div></div>
-            <div class="segmented format-segmented" role="radiogroup" aria-label="Game format">
-              <label><input type="radio" name="playType" value="teams" checked><span>Two teams<small>Team Lion vs Team Sabre-X</small></span></label>
-              <label><input type="radio" name="playType" value="solo"><span>Single player<small>Install the full run yourself</small></span></label>
-            </div>
-          </div>
-
-          <div class="setup-group pack-group">
-            <div class="group-heading"><span class="step-number">2</span><div><h2>Choose the training pack</h2><p>Only questions from the selected material will be used.</p></div></div>
-            <div class="choice-grid choice-grid-three" role="radiogroup" aria-label="Training pack">
-              <label class="setup-choice selected"><input type="radio" name="pack" value="all" checked><span><b>Full showdown</b><small>Lift Plan + overhead lines · 128</small></span><i aria-hidden="true">✓</i></label>
-              <label class="setup-choice"><input type="radio" name="pack" value="lift"><span><b>Lift Plan</b><small>Roles, set-up and installation · 94</small></span><i aria-hidden="true">✓</i></label>
-              <label class="setup-choice"><input type="radio" name="pack" value="gs6"><span><b>Overhead lines</b><small>Clearances and GS6 procedure · 34</small></span><i aria-hidden="true">✓</i></label>
-            </div>
-          </div>
-
-          <div class="setup-row">
-            <div class="setup-group">
-              <div class="group-heading compact"><span class="step-number">3</span><div><h2>Who is playing?</h2><p>Includes shared “All crew” questions.</p></div></div>
-              <label class="select-wrap">
-                <span class="sr-only">Audience</span>
-                <select id="audienceSelect" name="audience">
-                  <option value="all">Mixed crew — all roles</option>
-                  <option value="Operator">Operators</option>
-                  <option value="Supervisor">Supervisors</option>
-                  <option value="Assistant">Installation assistants</option>
-                </select>
-              </label>
-            </div>
-
-            <div class="setup-group">
-              <div class="group-heading compact"><span class="step-number">4</span><div><h2>Race length</h2><p>Complete the selected installation target.</p></div></div>
-              <div class="segmented" role="radiogroup" aria-label="Race length">
-                <label><input type="radio" name="target" value="5"><span>5 panels<small>Quick round</small></span></label>
-                <label><input type="radio" name="target" value="10" checked><span>10 panels<small>Full game</small></span></label>
-              </div>
-            </div>
-          </div>
-
-          <div class="setup-row">
-            <div class="setup-group">
-              <div class="group-heading compact"><span class="step-number">5</span><div><h2>Question style</h2><p>Recall mode rewards answers from memory.</p></div></div>
-              <div class="segmented" role="radiogroup" aria-label="Question style">
-                <label><input type="radio" name="mode" value="recall" checked><span>Recall first<small>Choices cost ½ panel</small></span></label>
-                <label><input type="radio" name="mode" value="choices"><span>Multiple choice<small>Options always visible</small></span></label>
-              </div>
-            </div>
-
-            <div class="start-box">
-              <p id="startModeCopy"><b>Ready?</b> A fair coin toss chooses the first team.</p>
-              <button class="primary-button" type="submit"><span id="startModeLabel">Start the showdown</span><span aria-hidden="true">→</span></button>
-            </div>
-          </div>
-
-          <p class="safety-note"><b>Training recap:</b> This game supports a facilitated briefing. The current approved lift plan, method statement, site-specific job pack and Dynamic Risk Assessment always control the work.</p>
-        </form>
-      </section>
-
-      <section id="tossScreen" class="screen toss-screen" hidden aria-labelledby="tossTitle">
-        <div class="toss-card">
-          <p class="eyebrow">The installation race begins</p>
-          <h1 id="tossTitle">Who takes the first question?</h1>
-          <div class="versus-row">
-            <div class="versus-team lion"><img src="./team-lion.png" alt="Team Lion"><b>Team Lion</b></div>
-            <div class="coin-stage" aria-live="polite">
-              <div id="coin" class="coin"><div class="coin-face coin-front"><img id="coinFront" src="./game-show-badge.png" alt=""></div><div class="coin-face coin-back"><img id="coinBack" src="./game-show-badge.png" alt=""></div></div>
-              <p id="coinResult">Fair toss · one tap</p>
-            </div>
-            <div class="versus-team sabre"><img src="./team-sabre-x.png" alt="Team Sabre-X"><b>Team Sabre-X</b></div>
-          </div>
-          <button id="tossButton" class="primary-button toss-button" type="button"><span>Flip the game-show badge</span><span aria-hidden="true">↻</span></button>
-        </div>
-      </section>
-
-      <section id="gameScreen" class="screen game-screen" hidden aria-label="Trakway Trivia game">
-        <div class="game-layout">
-          <aside id="lionLane" class="race-lane lion-lane" aria-label="Team Lion progress"></aside>
-          <section id="questionStage" class="question-stage" aria-live="off"></section>
-          <aside id="sabreLane" class="race-lane sabre-lane" aria-label="Team Sabre-X progress"></aside>
-          <div id="soloProgress" class="solo-progress" hidden aria-label="Single player installation progress"></div>
-        </div>
-      </section>
-
-      <section id="winnerScreen" class="screen winner-screen" hidden aria-labelledby="winnerTitle"></section>
-    </main>
-
-    <footer class="app-footer"><span>Created by Joseph Whelan</span><span id="offlineStatus">Ready offline after first load</span></footer>
-  </div>
-
-  <dialog id="helpDialog" class="modal">
-    <form method="dialog" class="modal-card">
-      <div class="modal-head"><div><p class="eyebrow">Quick guide</p><h2>How to play</h2></div><button class="close-button" value="close" aria-label="Close help">×</button></div>
-      <ol class="rules-list">
-        <li><span>1</span><div><b>Choose team race or solo</b><p>Team mode uses a fair badge toss for first turn. Solo mode starts immediately.</p></div></li>
-        <li><span>2</span><div><b>Discuss before answering</b><p>In Recall mode, answer aloud. Showing four choices reduces the reward to half a panel.</p></div></li>
-        <li><span>3</span><div><b>Reveal and explain</b><p>The facilitator marks the response, then reads the explanation and document reference with the group.</p></div></li>
-        <li><span>4</span><div><b>Install to finish</b><p>Complete the selected panel target. In team mode the first crew there wins; solo mode tracks your own run.</p></div></li>
-      </ol>
-      <div class="shortcut-card"><b>Facilitator shortcuts</b><p><kbd>1</kbd>–<kbd>4</kbd> choose · <kbd>Enter</kbd> lock/continue · <kbd>C</kbd> correct · <kbd>X</kbd> no panel</p></div>
-      <p class="modal-note">On iPhone or iPad, use Safari → Share → Add to Home Screen. On Android, use the Install button or browser menu.</p>
-      <button class="primary-button" value="close">Got it</button>
-    </form>
-  </dialog>
-
-  <dialog id="reviewDialog" class="modal review-modal">
-    <form method="dialog" class="modal-card review-card">
-      <div class="modal-head"><div><p class="eyebrow">Learning review</p><h2>Questions to revisit</h2></div><button class="close-button" value="close" aria-label="Close review">×</button></div>
-      <div id="reviewList" class="review-list"></div>
-      <button class="primary-button" value="close">Close review</button>
-    </form>
-  </dialog>
-
-  <aside id="hostPop" class="host-pop" hidden aria-live="polite" aria-label="Jon Ellerby banter">
-    <button id="hostDismiss" class="host-dismiss" type="button" aria-label="Dismiss Jon Ellerby">
-      <img id="hostImage" src="./host-welcome.png" alt="Jon Ellerby game host">
-      <span class="host-bubble"><b>JON ELLERBY</b><span id="hostLine"></span><small>Tap to dismiss</small></span>
+  <header class="app-header">
+    <button class="brand-button" type="button" data-action="home" aria-label="Danco assessment home">
+      <img src="danco-logo-white.png" alt="Danco Roofing Services, Inc.">
+      <span><b>Applicant Assessment</b><small>Workforce assessment</small></span>
     </button>
+    <div class="header-actions">
+      <span class="status-pill" id="access-status">PROTOTYPE</span>
+      <button class="icon-button" id="language-toggle" type="button" aria-label="Change language">ES</button>
+      <button class="icon-button" id="audio-toggle" type="button" aria-label="Toggle audio support">🔊</button>
+      <button class="icon-button" id="fullscreen-toggle" type="button" aria-label="Toggle full screen">⛶</button>
+      <button class="icon-button" id="admin-open" type="button" aria-label="Administrator access">⚙</button>
+    </div>
+  </header>
+  <button class="immersive-exit" id="immersive-exit" type="button" aria-label="Exit full-screen app view">⛶ <span>Exit full screen</span></button>
+
+  <main id="app" tabindex="-1">
+    <section class="screen active" id="language-screen" aria-labelledby="language-title">
+      <div class="hero-shell">
+        <img class="hero-helper hero-helper-left slide-left" src="danco-helper-english.png" alt="Friendly Danco team helper holding a clipboard">
+        <div class="hero-copy">
+          <span class="eyebrow">DANCO ROOFING SERVICES, INC.</span>
+          <h1 id="language-title">Welcome to your applicant assessment</h1>
+          <p class="lead">Meet two friendly members of the Danco team. They are here to guide you through a short, fair and straightforward assessment.</p>
+          <div class="language-grid" role="group" aria-label="Choose language">
+            <button class="language-card" type="button" data-language="en">
+              <span class="language-icon">EN</span><span><b>Continue in English</b><small>English language assessment</small></span><span class="arrow">→</span>
+            </button>
+            <button class="language-card" type="button" data-language="es">
+              <span class="language-icon">ES</span><span><b>Continuar en español</b><small>Evaluación en español</small></span><span class="arrow">→</span>
+            </button>
+          </div>
+          <div class="locked-callout" id="locked-callout">
+            <div><b>Prototype access is currently locked</b><span>Use the private access code supplied by Danco to activate a three-assessment trial on this browser or device.</span></div>
+            <button class="button button-gold" type="button" data-action="open-unlock">Unlock trial</button>
+          </div>
+          <p class="privacy-line">Fair &amp; inclusive · Secure &amp; confidential · Built for the Danco team</p>
+        </div>
+        <img class="hero-helper hero-helper-right slide-right" src="danco-helper-spanish.png" alt="Friendly Danco team helper holding a tablet">
+      </div>
+    </section>
+
+    <section class="screen" id="setup-screen" aria-labelledby="setup-title">
+      <div class="content-shell split-shell">
+        <aside class="guide-panel">
+          <div class="guide-duo" aria-hidden="true">
+            <img class="guide-primary" id="setup-helper" src="danco-helper-english.png" alt="Danco assessment helper">
+            <img class="guide-secondary" id="setup-helper-secondary" src="danco-helper-spanish.png" alt="Second Danco assessment helper">
+          </div>
+          <div class="speech-card">
+            <span class="eyebrow" data-i18n="helperLabel">YOUR DANCO TEAM HELPER</span>
+            <p data-i18n="setupHelper">I’ll guide you through each step. You can take your time setting up before the timed questions begin.</p>
+          </div>
+        </aside>
+        <div class="panel form-panel">
+          <span class="step-label" data-i18n="stepOne">STEP 1 OF 3 · SETUP</span>
+          <h2 id="setup-title" data-i18n="setupTitle">Let’s get you ready</h2>
+          <p class="lead small" data-i18n="setupLead">Enter your full name exactly as it appears on your application.</p>
+          <div class="field-grid">
+            <label class="field"><span data-i18n="nameLabel">Full name</span><input id="candidate-name" autocomplete="name" maxlength="80" placeholder="Your full name"></label>
+          </div>
+          <section class="application-fields" id="application-fields" hidden aria-labelledby="application-fields-title">
+            <div class="application-section-heading">
+              <div><span class="eyebrow" data-i18n="applicationEyebrow">JOB APPLICATION</span><h3 id="application-fields-title" data-i18n="applicationDetailsTitle">Your application details</h3></div>
+              <span class="prototype-optional" data-i18n="prototypeOptional">Optional during prototype testing</span>
+            </div>
+            <div class="application-field-grid">
+              <label class="field"><span data-i18n="emailLabel">Email address</span><input id="candidate-email" type="email" autocomplete="email" maxlength="120" placeholder="name@example.com"></label>
+              <label class="field"><span data-i18n="phoneLabel">Phone number</span><input id="candidate-phone" type="tel" autocomplete="tel" maxlength="40" placeholder="Phone number"></label>
+              <label class="field"><span data-i18n="locationLabel">City and state</span><input id="candidate-location" autocomplete="address-level2" maxlength="100" placeholder="City, State"></label>
+              <label class="field"><span data-i18n="availabilityLabel">Available start date</span><input id="candidate-availability" type="date"></label>
+              <label class="field"><span data-i18n="desiredRoleLabel">Position applied for</span><select id="candidate-role"><option value="" data-i18n="chooseRole">Choose a role</option><option value="Service Helper">Service Helper</option><option value="Roofer">Roofer</option><option value="Foreman">Foreman</option></select></label>
+              <label class="field"><span data-i18n="experienceLabel">Commercial roofing experience</span><select id="candidate-experience"><option value="" data-i18n="chooseExperience">Choose experience</option><option value="None">None</option><option value="Under 1 year">Under 1 year</option><option value="1–3 years">1–3 years</option><option value="3–5 years">3–5 years</option><option value="5+ years">5+ years</option></select></label>
+              <label class="field"><span data-i18n="workAuthorizationLabel">Authorized to work in the United States?</span><select id="candidate-authorization"><option value="" data-i18n="chooseAnswer">Choose an answer</option><option value="Yes">Yes</option><option value="No">No</option><option value="Prefer to discuss">Prefer to discuss</option></select></label>
+              <label class="field"><span data-i18n="licenseLabel">Valid driver’s license?</span><select id="candidate-license"><option value="" data-i18n="chooseAnswer">Choose an answer</option><option value="Yes">Yes</option><option value="No">No</option><option value="Prefer to discuss">Prefer to discuss</option></select></label>
+            </div>
+            <fieldset class="other-role-fieldset"><legend data-i18n="otherRolesLegend">Would you consider another listed role if it better matches your assessment?</legend><label><input type="radio" name="other-roles" value="Yes" checked><span data-i18n="otherRolesYes">Yes, I’m open to other roles</span></label><label><input type="radio" name="other-roles" value="No"><span data-i18n="otherRolesNo">No, only the role selected above</span></label></fieldset>
+          </section>
+          <fieldset class="option-fieldset">
+            <legend data-i18n="audioTitle">Would audio support help?</legend>
+            <button class="setup-choice selected" type="button" data-audio="off"><span class="choice-dot"></span><span><b data-i18n="audioOffTitle">Continue without audio</b><small data-i18n="audioOffCopy">You can turn audio on later from the top bar.</small></span></button>
+            <button class="setup-choice" type="button" data-audio="on"><span class="choice-dot"></span><span><b data-i18n="audioOnTitle">Use audio support</b><small data-i18n="audioOnCopy">Questions and guidance can be read aloud in your chosen language.</small></span></button>
+          </fieldset>
+          <fieldset class="support-reason-fieldset" id="support-reason-fieldset" hidden>
+            <legend data-i18n="audioReasonTitle">What would the audio support help with?</legend>
+            <p data-i18n="audioReasonLead">This helps us apply the right support and record it accurately for the hiring team.</p>
+            <div class="support-reason-grid">
+              <button class="support-reason-choice" type="button" data-support-reason="2" aria-pressed="false"><span aria-hidden="true">Aa</span><span><b data-i18n="readingSupportTitle">Reading support</b><small data-i18n="readingSupportCopy">Reading written questions is difficult.</small></span></button>
+              <button class="support-reason-choice" type="button" data-support-reason="3" aria-pressed="false"><span aria-hidden="true">◉</span><span><b data-i18n="sightSupportTitle">Sight support</b><small data-i18n="sightSupportCopy">Seeing written content clearly is difficult.</small></span></button>
+              <button class="support-reason-choice" type="button" data-support-reason="1" aria-pressed="false"><span aria-hidden="true">♪</span><span><b data-i18n="audioPreferenceTitle">Spoken-guidance preference</b><small data-i18n="audioPreferenceCopy">I prefer to hear the questions read aloud.</small></span></button>
+            </div>
+          </fieldset>
+          <div class="access-card" id="setup-access-card"></div>
+          <p class="form-error" id="setup-error" role="alert"></p>
+          <button class="button button-primary button-wide" id="begin-beginner" type="button" data-i18n="beginAssessment">Begin assessment</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="profile-intro-screen" aria-labelledby="profile-intro-title">
+      <div class="content-shell split-shell">
+        <aside class="guide-panel compact-guide">
+          <div class="guide-duo" aria-hidden="true">
+            <img class="guide-primary" id="profile-intro-helper" src="danco-helper-english.png" alt="Danco assessment helper">
+            <img class="guide-secondary" id="profile-intro-helper-secondary" src="danco-helper-spanish.png" alt="Second Danco assessment helper">
+          </div>
+        </aside>
+        <div class="panel intro-panel">
+          <span class="step-label" data-i18n="stepTwo">STEP 2 OF 3 · GETTING TO KNOW YOU</span>
+          <h2 id="profile-intro-title" data-i18n="profileIntroTitle">Before we get into the assessment…</h2>
+          <p class="lead small" data-i18n="profileIntroOne">We’re happy that you’re looking to join the Danco Roofing team. We focus on working together and helping our workforce feel comfortable when interacting with one another.</p>
+          <p data-i18n="profileIntroTwo">We’d like to take a moment to get to know how you prefer to work. The next five friendly questions have no timer, and there are no right or wrong answers.</p>
+          <div class="notice-card"><span>ⓘ</span><p data-i18n="profilePrivacy">This optional section is used only as a gentle workplace-engagement guide for the hiring team. Your estimated result will not be shown on your applicant result screen.</p></div>
+          <div class="button-row">
+            <button class="button button-primary" id="start-profile" type="button" data-i18n="startFive">Answer 5 quick questions</button>
+            <button class="button button-secondary" id="skip-profile" type="button" data-i18n="skipProfile">Skip this section</button>
+          </div>
+          <p class="fine" data-i18n="skipRecorded">If you skip, the assessment report will simply note “not completed”.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="profile-screen" aria-labelledby="profile-question">
+      <div class="content-shell narrow-shell">
+        <div class="inline-helper-duo" data-helper-duo>
+          <span class="helper-portrait"><img src="danco-helper-english.png" alt="English Danco helper"></span>
+          <div><b data-i18n="helpersWithYou">Your Danco team helpers are with you</b><small data-i18n="profileUntimedReminder">Take your time—this section is not timed.</small></div>
+          <span class="helper-portrait"><img src="danco-helper-spanish.png" alt="Spanish Danco helper"></span>
+        </div>
+        <div class="panel question-panel untimed-panel">
+          <div class="question-topline"><span class="step-label" id="profile-counter">Question 1 of 5</span><span class="untimed-pill" data-i18n="noTimer">NO TIMER</span></div>
+          <div class="progress-track"><span id="profile-progress"></span></div>
+          <h2 id="profile-question"></h2>
+          <p class="question-hint" data-i18n="profileHint">Choose the answer that feels most natural to you.</p>
+          <div class="profile-options" id="profile-options"></div>
+          <div class="answer-confirm-bar"><span data-i18n="confirmAnswerHint">Select an option, then confirm it.</span><button class="button button-primary" id="profile-confirm" type="button" disabled data-i18n="confirmFinalAnswer">Confirm final answer</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="instructions-screen" aria-labelledby="instructions-title">
+      <div class="content-shell split-shell">
+        <aside class="guide-panel compact-guide">
+          <div class="guide-duo" aria-hidden="true">
+            <img class="guide-primary" id="instructions-helper" src="danco-helper-english.png" alt="Danco assessment helper">
+            <img class="guide-secondary" id="instructions-helper-secondary" src="danco-helper-spanish.png" alt="Second Danco assessment helper">
+          </div>
+        </aside>
+        <div class="panel intro-panel">
+          <span class="step-label" data-i18n="stepThree">STEP 3 OF 3 · TRADE ASSESSMENT</span>
+          <h2 id="instructions-title" data-i18n="instructionsTitle">Ten focused questions</h2>
+          <p class="lead small" data-i18n="instructionsLead">The assessment checks practical roofing knowledge, safe decision-making and role readiness.</p>
+          <div class="feature-grid">
+            <article><span>10</span><b data-i18n="featureQuestions">Questions</b><small data-i18n="featureQuestionsCopy">Seven include visual answer choices</small></article>
+            <article><span>⏱</span><b data-i18n="featureTiming">Review then answer</b><small data-i18n="featureTimingCopy">A clear timer appears for each stage</small></article>
+            <article><span>1</span><b data-i18n="featureChoice">One answer</b><small data-i18n="featureChoiceCopy">Choose the single best response</small></article>
+            <article><span>✓</span><b data-i18n="featureResult">Private result</b><small data-i18n="featureResultCopy">You receive a result code, not a score</small></article>
+          </div>
+          <div class="notice-card"><span>!</span><p data-i18n="timingNotice">First, review the question while the answer cards are locked. When the answer timer begins, select one response. Unanswered questions are recorded as timed out.</p></div>
+          <div class="notice-card accessibility-notice" id="accessibility-notice" hidden><span>+</span><p><b data-i18n="supportActiveTitle">Accessibility support is active.</b> <span data-i18n="supportActiveCopy">Extra answer time and the Repeat question control are enabled.</span></p></div>
+          <button class="button button-primary button-wide" id="start-knowledge" type="button" data-i18n="startQuestions">Start the 10 questions</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="knowledge-screen" aria-labelledby="knowledge-question">
+      <div class="assessment-shell">
+        <div class="inline-helper-duo assessment-helper-duo" data-helper-duo>
+          <span class="helper-portrait"><img src="danco-helper-english.png" alt="English Danco helper"></span>
+          <div><b data-i18n="helpersWithYou">Your Danco team helpers are with you</b><small data-i18n="timedReminder">Your selected-language helper has the visual focus.</small></div>
+          <span class="helper-portrait"><img src="danco-helper-spanish.png" alt="Spanish Danco helper"></span>
+        </div>
+        <div class="assessment-topbar">
+          <div><span id="knowledge-counter">Question 1 of 10</span><small id="knowledge-tier">Foundation</small></div>
+          <div class="phase-display"><span id="phase-label">REVIEW</span><b id="timer-display">08</b></div>
+        </div>
+        <div class="progress-track knowledge-progress"><span id="knowledge-progress"></span></div>
+        <div class="question-stage" id="question-stage">
+          <p class="question-category" id="knowledge-category">Roof products</p>
+          <h2 id="knowledge-question"></h2>
+          <p class="question-hint" id="knowledge-hint"></p>
+          <button class="button button-secondary question-repeat" id="knowledge-repeat" type="button" hidden><span aria-hidden="true">↻</span><span data-i18n="repeatQuestion">Repeat question</span></button>
+          <div class="knowledge-options" id="knowledge-options"></div>
+          <div class="answer-confirm-bar timed-confirm-bar"><span data-i18n="confirmAnswerHint">Select an option, then confirm it.</span><button class="button button-primary" id="knowledge-confirm" type="button" disabled data-i18n="confirmFinalAnswer">Confirm final answer</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" id="result-screen" aria-labelledby="result-title">
+      <div class="result-shell">
+        <img class="result-helper left" id="result-helper-english" src="danco-helper-english.png" alt="Danco team helper">
+        <div class="result-card panel">
+          <div class="success-mark">✓</div>
+          <span class="eyebrow" data-i18n="completeEyebrow">ASSESSMENT COMPLETE</span>
+          <h2 id="result-title" data-i18n="completeTitle">Thank you for taking part</h2>
+          <p class="lead small" data-i18n="completeLead">Your responses have been converted into the result code below.</p>
+          <div class="application-result-summary" id="application-result-summary" hidden aria-label="Application choices"></div>
+          <span class="result-code-label" id="result-code-label" data-i18n="resultCodeLabel">Result code</span>
+          <div class="result-code" id="result-code">DRA-••••-••••-••••</div>
+          <button class="button button-secondary" id="copy-code" type="button" data-i18n="copyCode">Copy result code</button>
+          <div class="notice-card result-notice"><span>→</span><p data-i18n="resultInstruction">Save this code and provide it to the Danco administrator or hiring contact. Your score and private work-style guide are not shown on this screen.</p></div>
+          <div class="completion-meta" id="completion-meta"></div>
+          <button class="button button-gold application-submit-button" id="submit-application" type="button" hidden data-i18n="submitApplication">Submit application for review</button>
+          <p class="fine application-submit-note" id="application-submit-note" hidden data-i18n="submitApplicationNote">Prototype safeguard: an administrator PIN is required before this application is stored.</p>
+          <button class="button button-primary" id="next-applicant" type="button" data-i18n="nextApplicant">Start next applicant</button>
+        </div>
+        <img class="result-helper right" id="result-helper-spanish" src="danco-helper-spanish.png" alt="Danco team helper">
+      </div>
+    </section>
+  </main>
+
+  <button class="help-tab" id="help-tab" type="button" aria-label="Open help"><span>?</span><b data-i18n="help">Help</b></button>
+
+  <div class="drawer-backdrop" id="help-backdrop"></div>
+  <aside class="help-drawer" id="help-drawer" aria-hidden="true" aria-labelledby="help-title">
+    <button class="drawer-close" type="button" data-action="close-help" aria-label="Close help">×</button>
+    <div class="drawer-helper-duo" aria-hidden="true">
+      <img class="drawer-primary" id="help-helper" src="danco-helper-english.png" alt="Danco team helper">
+      <img class="drawer-secondary" id="help-helper-secondary" src="danco-helper-spanish.png" alt="Second Danco team helper">
+    </div>
+    <span class="eyebrow" data-i18n="helperLabel">YOUR DANCO TEAM HELPER</span>
+    <h2 id="help-title" data-i18n="helpTitle">Need a hand?</h2>
+    <p id="help-copy" data-i18n="helpDefault">Follow the instruction shown at the top of the current screen. During the timed assessment, review first and select one answer when the cards become active.</p>
+    <div class="help-audio-action">
+      <button class="button button-secondary button-wide" type="button" data-action="repeat-audio"><span aria-hidden="true">↻</span><span data-i18n="repeatAudio">Repeat spoken audio</span></button>
+      <small data-i18n="repeatAudioHint">Hear the current instruction or question again.</small>
+      <div class="voice-setup" id="narration-voice-setup">
+        <span class="voice-label" data-i18n="voiceLabel">Narration audio</span>
+        <div class="standard-voice-badge"><span aria-hidden="true">✓</span><div><b data-i18n="standardVoiceTitle">Danco standard voice</b><small data-i18n="standardVoiceCopy">The same clear recorded narration on iPhone, Android and desktop.</small></div></div>
+        <button class="button voice-test-button" type="button" data-action="test-narration"><span aria-hidden="true">▶</span><span data-i18n="testVoice">Test standard narration</span></button>
+      </div>
+    </div>
+    <button class="button button-primary button-wide help-confirm" type="button" data-action="close-help" data-i18n="gotIt">Got it</button>
   </aside>
 
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <div id="announcer" class="sr-only" aria-live="assertive"></div>
-  <audio id="banterPlayer" preload="auto" playsinline hidden></audio>
-  <script type="module" src="./app-v28.js"></script>
+  <div class="modal-backdrop" id="unlock-modal" role="dialog" aria-modal="true" aria-labelledby="unlock-title">
+    <div class="modal-card small-modal">
+      <button class="modal-close" type="button" data-action="close-unlock" aria-label="Close">×</button>
+      <div class="modal-icon">🔐</div>
+      <span class="eyebrow">PROTOTYPE ACCESS</span>
+      <h2 id="unlock-title" data-i18n="unlockTitle">Unlock the assessment trial</h2>
+      <p data-i18n="unlockCopy">Enter the private access code supplied by Danco. A valid trial code activates up to three completed assessments on this browser or device.</p>
+      <div class="instruction-strip"><b>1</b><span data-i18n="unlockStepOne">Enter the supplied code below.</span><b>2</b><span data-i18n="unlockStepTwo">Select “Activate trial”.</span><b>3</b><span data-i18n="unlockStepThree">Return to setup and begin the assessment.</span></div>
+      <label class="field"><span data-i18n="accessCodeLabel">Private access code</span><input id="unlock-code" autocomplete="off" autocapitalize="characters" placeholder="Enter code"></label>
+      <p class="form-error" id="unlock-error" role="alert"></p>
+      <button class="button button-primary button-wide" id="unlock-submit" type="button" data-i18n="activateTrial">Activate trial</button>
+      <p class="fine" data-i18n="unlockPrivacy">Codes are never displayed by the app. Re-entering the same code does not restore used trial runs.</p>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="admin-modal" role="dialog" aria-modal="true" aria-labelledby="admin-title">
+    <div class="modal-card admin-modal-card">
+      <button class="modal-close" type="button" data-action="close-admin" aria-label="Close">×</button>
+      <section id="admin-login">
+        <span class="eyebrow">DANCO ADMINISTRATOR</span>
+        <h2 id="admin-title">Results dashboard</h2>
+        <p>Enter the administrator PIN to view shared applications and assessment-only results from any device.</p>
+        <label class="field"><span>Administrator PIN</span><input id="admin-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="••••"></label>
+        <p class="form-error" id="admin-error" role="alert"></p>
+        <button class="button button-primary button-wide" id="admin-login-button" type="button">Open dashboard</button>
+      </section>
+      <section id="admin-dashboard" class="admin-dashboard" hidden>
+        <div class="print-report-header">
+          <div class="print-brand"><img src="danco-logo-white.png" alt="Danco Roofing Services, Inc."><span><b>Applicant Assessment Report</b><small>Private hiring view</small></span></div>
+          <div class="print-date" id="print-date"></div>
+        </div>
+        <div class="dashboard-heading"><div><span class="eyebrow">PRIVATE HIRING VIEW</span><h2>Applicant assessment breakdown</h2></div><span class="dashboard-status">ADMIN</span></div>
+        <section class="admin-mode-card" aria-labelledby="admin-mode-title">
+          <div><span class="eyebrow">PROTOTYPE START MODE</span><h3 id="admin-mode-title">Choose what applicants see first</h3><p>Assessment mode requests a name only. Application mode adds the optional job-application form before the existing assessment.</p></div>
+          <div class="mode-toggle" role="group" aria-label="Prototype start mode"><button type="button" data-admin-mode="assessment">Assessment mode</button><button type="button" data-admin-mode="application">Application mode</button></div>
+        </section>
+        <section class="stored-applications-card" aria-labelledby="stored-applications-title">
+          <div><span class="eyebrow">SHARED SUBMISSION DATABASE</span><h3 id="stored-applications-title">Applications and assessment results</h3><p id="shared-service-status">Submitted records are shared across authorised phones, tablets and computers.</p></div>
+          <div class="shared-submission-browser">
+            <div class="submission-queue-tabs" role="tablist" aria-label="Submission status">
+              <button class="active" type="button" data-queue-status="pending">Yet to process <span data-queue-count>0</span></button>
+              <button type="button" data-queue-status="actioned">Actioned <span data-queue-count>0</span></button>
+              <button type="button" data-queue-status="archived">Archived <span data-queue-count>0</span></button>
+            </div>
+            <div class="stored-applicant-controls"><label class="field"><span>Select applicant or assessment</span><select id="stored-applicant-select"><option value="">Open the dashboard to load submissions</option></select></label><button class="button button-secondary" id="load-stored-applicant" type="button">Open full result</button></div>
+          </div>
+        </section>
+        <details class="manual-code-decoder"><summary>Manual prototype result-code decoder</summary><div class="decode-grid">
+          <label class="field"><span>Applicant result code</span><input id="admin-result-code" autocomplete="off" autocapitalize="characters" placeholder="DRA-XXXX-XXXX-XXXX"></label>
+          <label class="field"><span>Applicant name (optional)</span><input id="admin-candidate-name" maxlength="80" placeholder="For this report"></label>
+          <label class="field"><span>Reference (optional)</span><input id="admin-candidate-reference" maxlength="30" placeholder="Reference"></label>
+          <button class="button button-primary" id="decode-result" type="button">Decode result</button>
+        </div></details>
+        <p class="form-error" id="decode-error" role="alert"></p>
+        <div id="dashboard-output" class="dashboard-output"></div>
+        <div class="submission-status-actions" id="submission-status-actions" hidden>
+          <span>Move this shared record to:</span>
+          <button class="button button-secondary" type="button" data-set-submission-status="pending">Yet to process</button>
+          <button class="button button-secondary" type="button" data-set-submission-status="actioned">Actioned</button>
+          <button class="button button-secondary" type="button" data-set-submission-status="archived">Archived</button>
+        </div>
+        <div class="admin-actions">
+          <button class="button button-secondary" id="load-example" type="button">Load example report</button>
+          <button class="button button-secondary" id="print-report" type="button">Print / save PDF</button>
+          <button class="button button-danger" id="reset-device" type="button">Reset applicant on this device</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="submit-modal" role="dialog" aria-modal="true" aria-labelledby="submit-title">
+    <div class="modal-card small-modal">
+      <button class="modal-close" type="button" data-action="close-submit" aria-label="Close">×</button>
+      <div class="modal-icon">✓</div>
+      <span class="eyebrow">PROTOTYPE SUBMISSION</span>
+      <h2 id="submit-title" data-i18n="submitTitle">Confirm secure submission</h2>
+      <p data-i18n="submitCopy">Enter the administrator PIN to add this completed result to the shared Danco review list.</p>
+      <label class="field"><span data-i18n="administratorPin">Administrator PIN</span><input id="submit-pin" type="password" inputmode="numeric" autocomplete="off" placeholder="••••"></label>
+      <p class="form-error" id="submit-error" role="alert"></p>
+      <button class="button button-primary button-wide" id="confirm-submit" type="button" data-i18n="confirmSubmit">Submit securely</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <aside class="creator-credit" aria-label="Design and production by Joseph Whelan EDS">
+    <span>Design &amp; Production by</span>
+    <img src="joseph-whelan-eds-white.png" alt="" aria-hidden="true">
+  </aside>
+
+  <script src="narration-manifest.js?v=23.0.0" defer></script>
+  <script src="app.js?v=23.0.0" defer></script>
 </body>
 </html>
