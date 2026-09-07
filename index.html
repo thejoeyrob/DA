@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
   <meta name="theme-color" content="#043323">
   <meta name="description" content="A game-show recap of Trakway lifting and installation training for teams or solo play.">
-  <meta name="app-version" content="2.3.0">
+  <meta name="app-version" content="2.8.0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Trakway Trivia">
@@ -14,10 +14,27 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
-  <link rel="stylesheet" href="./styles-v27.css">
+  <link rel="stylesheet" href="./styles-v28.css">
   <script src="./jw-eds-brand-tab.js" defer></script>
 </head>
 <body>
+  <section id="installWelcome" class="install-welcome" hidden aria-labelledby="installWelcomeTitle">
+    <div class="install-welcome-card">
+      <img src="./game-show-badge.png" alt="Ellerby’s Trakway Trivia" class="install-welcome-logo">
+      <p class="eyebrow">Trakway Trivia · Quick install</p>
+      <h1 id="installWelcomeTitle">Put the game on your Home Screen</h1>
+      <p id="installWelcomeIntro" class="install-welcome-intro">Install once, then open it like any other app.</p>
+      <div id="iosInstallSteps" class="install-steps" hidden>
+        <div><b>1</b><span>Tap <strong>Share</strong> <span class="share-symbol">↑</span></span></div>
+        <div><b>2</b><span>Tap <strong>Add to Home Screen</strong></span></div>
+        <div><b>3</b><span>Tap <strong>Add</strong></span></div>
+      </div>
+      <button id="nativeInstallButton" class="primary-button install-big-button" type="button" hidden>Install Trakway Trivia</button>
+      <p id="installBrowserHint" class="install-browser-hint" hidden>For the easiest install, open this link in <strong>Safari</strong>, then follow the three steps above.</p>
+      <button id="continueBrowserButton" class="continue-browser-button" type="button">Continue without installing</button>
+      <small>Once installed, this screen is skipped automatically.</small>
+    </div>
+  </section>
   <div id="app" class="app-shell">
     <header class="topbar">
       <button id="homeButton" class="brand-button" type="button" aria-label="Return to game setup">
@@ -181,6 +198,6 @@
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <div id="announcer" class="sr-only" aria-live="assertive"></div>
   <audio id="banterPlayer" preload="auto" playsinline hidden></audio>
-  <script type="module" src="./app-v27.js"></script>
+  <script type="module" src="./app-v28.js"></script>
 </body>
 </html>

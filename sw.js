@@ -1,9 +1,9 @@
-const CACHE_NAME = 'trakway-trivia-v2.7.0-flat';
+const CACHE_NAME = 'trakway-trivia-v2.8.0-flat';
 const CORE = [
   "./",
   "./index.html",
-  "./styles-v27.css",
-  "./app-v27.js",
+  "./styles-v28.css",
+  "./app-v28.js",
   "./questions.js",
   "./jw-eds-brand-tab.js",
   "./manifest.webmanifest",
@@ -112,7 +112,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  const isVersionedCode = /\/(?:styles-v27.css|app-v27.js)$/.test(requestUrl.pathname);
+  const isVersionedCode = /\/(?:styles-v28.css|app-v28.js)$/.test(requestUrl.pathname);
   if (isVersionedCode) {
     event.respondWith(fetch(event.request, { cache: 'no-store' }).then((response) => {
       if (response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(event.request, response.clone()));

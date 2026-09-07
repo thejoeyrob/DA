@@ -1,11 +1,11 @@
 {
-  "version": "2.7.0",
+  "version": "2.8.0",
   "questions": 128,
-  "builtAt": "2026-09-07T13:58:00+01:00",
+  "builtAt": "2026-09-07T14:05:00+01:00",
   "layout": "solo-full-width-flex-and-side-ladder-team",
   "branding": "JW EDS fixed brand tab",
   "banter": "64 short Chesterfield/Mansfield-style generated voice clips; local recordings only; no TTS fallback",
   "voicePack": "jon-chesterfield-v2",
   "voiceSource": "chesterfield_50yo_gameshow_all_phrases.wav",
-  "notes": "Phrases-only update. No intro jingle or logo intro animation added; existing game flow preserved."
+  "notes": "Adds device-aware one-link PWA install onboarding. Installed/standalone launches skip onboarding automatically. Existing game and Chesterfield generated voice pack preserved."
 }
