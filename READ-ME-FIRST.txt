@@ -1,0 +1,30 @@
+DANCO LIVE DATA BACKEND — REPLACEMENT FILE
+
+Use this package if you want the quickest manual route without editing app.js.
+
+WHAT TO REPLACE
+1. Open the GitHub repository: thejoeyrob/DA
+2. Open service-worker.js
+3. Replace the existing service-worker.js with the service-worker.js in this ZIP.
+4. Commit directly to the main branch.
+
+WHAT IT DOES
+- Preserves the existing Danco PWA and its current interface.
+- Preserves the existing app.js.
+- Intercepts the old Danco shared-service API calls.
+- Forwards /api/submissions and /api/admin to:
+  https://uneqycntlykjedaaynou.supabase.co/functions/v1/danco-service
+- Uses a new cache version so the PWA updates.
+
+AFTER UPLOADING
+1. Open https://thejoeyrob.github.io/DA/
+2. Refresh/reopen the app so the new service worker activates.
+3. If testing an already-installed iPhone PWA and it still behaves like the old version,
+   close it completely and reopen it. If necessary, test once in a fresh Safari tab.
+4. Complete one test assessment/application and submit it.
+5. Then tell ChatGPT "uploaded and tested" so the Supabase database can be checked.
+
+This is a live-data bridge. The cleaner long-term code change is still to point
+SHARED_SERVICE_URL in app.js directly at Supabase, but this replacement file
+gets the existing PWA routing its shared API traffic to Supabase without
+requiring you to edit the large app.js file manually.
